@@ -1,5 +1,5 @@
 {
-  "name": "GR Test Theme",
+  "name": "GR Test Theme (VC demo)",
   "user_id": null,
   "json_data": {
     "customProperties": {
@@ -251,6 +251,6 @@
     ]
   },
   "id": "22060356-1447-4fe8-82f8-afb77c1e3c4f",
-  "updated_at": "2025-03-13T15:54:31.800720Z",
+  "updated_at": "2026-06-30T18:10:51.474835Z",
   "created_at": "2024-07-25T16:46:51.598332Z"
 }
