@@ -1,0 +1,79 @@
+{
+  "name": "Patrick Runner",
+  "sql": "SELECT * FROM bookshop.bookshop",
+  "json_data": {
+    "column_types": {}
+  },
+  "tags": [],
+  "default_params": [],
+  "id": "27da692a-85b0-466a-ad4c-5edcc0f7bcfb",
+  "columns": [
+    {
+      "name": "__index__",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "sale_date",
+      "type_code": 1082,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "DATE"
+    },
+    {
+      "name": "isbn",
+      "type_code": 1043,
+      "display_size": null,
+      "internal_size": 17,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "VARCHAR"
+    },
+    {
+      "name": "item_id",
+      "type_code": 1043,
+      "display_size": null,
+      "internal_size": 14,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "VARCHAR"
+    },
+    {
+      "name": "order_id",
+      "type_code": 1043,
+      "display_size": null,
+      "internal_size": 11,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "VARCHAR"
+    },
+    {
+      "name": "discount",
+      "type_code": 701,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "FLOAT(8)"
+    }
+  ],
+  "updated_at": "2024-07-22T15:37:45.786720Z",
+  "created_at": "2023-08-17T22:27:56.683407Z",
+  "error": null,
+  "database_connection": {
+    "type": "stored",
+    "id": "616231d564664e1eb0c4021a126c6a83"
+  }
+}

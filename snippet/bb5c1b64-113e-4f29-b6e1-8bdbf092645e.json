@@ -1,0 +1,7 @@
+{
+  "name": "search",
+  "snippet": "const searchInput = document.getElementById(\"searchInput\");\nconst menuItems = Array.from(document.querySelectorAll(\"#menu li a\"));\nconst searchResults = document.getElementById(\"searchResults\");\n\nsearchInput.addEventListener(\"input\", handleSearch);\n\nfunction handleSearch() {\n  const searchTerm = searchInput.value.toLowerCase();\n  const filteredItems = menuItems.filter((item) =>\n    item.textContent.toLowerCase().includes(searchTerm)\n  );\n\n  displaySearchResults(filteredItems);\n}\n\nfunction displaySearchResults(items) {\n  searchResults.innerHTML = \"\";\n\n  if (items.length === 0) {\n    searchResults.textContent = \"No results found.\";\n    return;\n  }\n\n  const ul = document.createElement(\"ul\");\n  items.forEach((item) => {\n    const li = document.createElement(\"li\");\n    li.innerHTML = item.outerHTML;\n    ul.appendChild(li);\n  });\n\n  searchResults.appendChild(ul);\n}\n",
+  "id": "bb5c1b64-113e-4f29-b6e1-8bdbf092645e",
+  "updated_at": "2023-07-19T18:17:19.329411Z",
+  "created_at": "2023-07-19T18:17:19.329424Z"
+}

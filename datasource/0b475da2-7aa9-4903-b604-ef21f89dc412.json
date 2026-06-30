@@ -1,0 +1,87 @@
+{
+  "name": "FIN · Banking — Sample",
+  "sql": "SELECT * FROM (VALUES\n  ('Northeast', 'Boston Main', 'Mortgage', 142, 28500000, 12000000, 72),\n  ('Northeast', 'Boston Main', 'Auto Loan', 310, 8200000, 12000000, 68),\n  ('Northeast', 'NYC Midtown', 'Mortgage', 198, 41000000, 19000000, 75),\n  ('Northeast', 'NYC Midtown', 'Business Loan', 88, 15600000, 19000000, 71),\n  ('Southeast', 'Atlanta Peach', 'Mortgage', 167, 23700000, 9800000, 69),\n  ('Southeast', 'Atlanta Peach', 'Auto Loan', 289, 7100000, 9800000, 66),\n  ('Southeast', 'Miami Beach', 'Mortgage', 211, 38200000, 16400000, 74),\n  ('Midwest', 'Chicago Loop', 'Business Loan', 104, 18900000, 11200000, 70),\n  ('Midwest', 'Chicago Loop', 'Auto Loan', 341, 9400000, 11200000, 67),\n  ('West', 'LA Downtown', 'Mortgage', 256, 52000000, 22000000, 76),\n  ('West', 'SF Financial', 'Business Loan', 119, 24000000, 18000000, 78),\n  ('West', 'SF Financial', 'Mortgage', 183, 47000000, 18000000, 79)\n) AS t(region, branch, product, new_accounts, loan_volume, deposit_volume, nps_score)",
+  "json_data": null,
+  "tags": [
+    "financial",
+    "sample"
+  ],
+  "default_params": [],
+  "id": "0b475da2-7aa9-4903-b604-ef21f89dc412",
+  "columns": [
+    {
+      "name": "region",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "branch",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "product",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "new_accounts",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "loan_volume",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "deposit_volume",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "nps_score",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    }
+  ],
+  "updated_at": "2026-06-29T16:06:51.471176Z",
+  "created_at": "2026-05-06T14:30:21.519167Z",
+  "error": null,
+  "database_connection": null
+}

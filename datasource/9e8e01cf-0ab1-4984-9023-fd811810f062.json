@@ -1,0 +1,87 @@
+{
+  "name": "SC · Logistics — Sample",
+  "sql": "SELECT * FROM (VALUES\n  ('North America', 'FastFreight', 'Ground', 8420, 94.2, 3.1, 1240000),\n  ('North America', 'FastFreight', 'Air', 2100, 97.8, 1.2, 3800000),\n  ('North America', 'QuickShip', 'Ground', 6310, 91.4, 3.8, 890000),\n  ('North America', 'QuickShip', 'LTL', 3200, 88.9, 4.2, 640000),\n  ('Europe', 'EuroLogix', 'Ground', 5140, 90.1, 4.4, 1120000),\n  ('Europe', 'EuroLogix', 'Air', 1820, 96.3, 1.8, 4200000),\n  ('Europe', 'TransEU', 'Rail', 4290, 93.7, 5.1, 780000),\n  ('Asia Pacific', 'AsiaCargo', 'Ocean', 9800, 82.4, 18.2, 2100000),\n  ('Asia Pacific', 'AsiaCargo', 'Air', 2640, 95.6, 2.1, 5900000),\n  ('Asia Pacific', 'PacRoute', 'Ocean', 7200, 79.8, 20.1, 1740000),\n  ('Latin America', 'LatamEx', 'Ground', 3100, 86.2, 6.3, 520000),\n  ('Latin America', 'LatamEx', 'Air', 980, 93.1, 2.4, 1980000)\n) AS t(region, carrier, shipment_type, shipments, on_time_pct, avg_transit_days, freight_cost)",
+  "json_data": null,
+  "tags": [
+    "sample",
+    "supply-chain"
+  ],
+  "default_params": [],
+  "id": "9e8e01cf-0ab1-4984-9023-fd811810f062",
+  "columns": [
+    {
+      "name": "region",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "carrier",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "shipment_type",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "shipments",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "on_time_pct",
+      "type_code": 1700,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": 65535,
+      "scale": 65535,
+      "null_ok": null,
+      "type": "NUMERIC"
+    },
+    {
+      "name": "avg_transit_days",
+      "type_code": 1700,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": 65535,
+      "scale": 65535,
+      "null_ok": null,
+      "type": "NUMERIC"
+    },
+    {
+      "name": "freight_cost",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    }
+  ],
+  "updated_at": "2026-06-29T16:07:25.774780Z",
+  "created_at": "2026-05-06T14:30:21.647697Z",
+  "error": null,
+  "database_connection": null
+}

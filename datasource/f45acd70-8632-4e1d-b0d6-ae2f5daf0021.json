@@ -1,0 +1,66 @@
+{
+  "name": "New datasource",
+  "sql": "SELECT * FROM events",
+  "json_data": {
+    "column_types": {}
+  },
+  "tags": [],
+  "default_params": [],
+  "id": "f45acd70-8632-4e1d-b0d6-ae2f5daf0021",
+  "columns": [
+    {
+      "name": "id",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "uuid",
+      "type_code": 2950,
+      "display_size": null,
+      "internal_size": 16,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "UUID"
+    },
+    {
+      "name": "date_created",
+      "type_code": 1184,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TIMESTAMPTZ"
+    },
+    {
+      "name": "type",
+      "type_code": 1043,
+      "display_size": null,
+      "internal_size": 255,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "VARCHAR"
+    },
+    {
+      "name": "value",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    }
+  ],
+  "updated_at": "2024-05-21T20:19:26.303198Z",
+  "created_at": "2024-05-21T20:19:26.303234Z",
+  "error": null,
+  "database_connection": null
+}

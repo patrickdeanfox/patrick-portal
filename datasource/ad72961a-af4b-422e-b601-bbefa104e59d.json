@@ -1,0 +1,119 @@
+{
+  "name": "SYS · Events",
+  "sql": "SELECT\n    e.id,\n    e.type,\n    e.date_created,\n    e.value::jsonb->>'username'             AS value__username,\n    e.value::jsonb->>'user_id'              AS value__user_id,\n    e.value::jsonb->>'page_id'              AS value__page_id,\n    e.value::jsonb->>'page_url'             AS value__page_url,\n    e.value::jsonb->>'email'                AS value__email,\n    e.value::jsonb->>'error_text'           AS value__error_text,\n    (e.value::jsonb->>'success')::BOOLEAN   AS value__success\nFROM events e\nWHERE\n    e.type = 'PAGE_VIEW'\nORDER BY e.date_created desc",
+  "json_data": {
+    "column_types": {}
+  },
+  "tags": [
+    "system",
+    "telemetry"
+  ],
+  "default_params": [],
+  "id": "ad72961a-af4b-422e-b601-bbefa104e59d",
+  "columns": [
+    {
+      "name": "id",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "type",
+      "type_code": 1043,
+      "display_size": null,
+      "internal_size": 255,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "VARCHAR"
+    },
+    {
+      "name": "date_created",
+      "type_code": 1184,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TIMESTAMPTZ"
+    },
+    {
+      "name": "value__username",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "value__user_id",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "value__page_id",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "value__page_url",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "value__email",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "value__error_text",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "value__success",
+      "type_code": 16,
+      "display_size": null,
+      "internal_size": 1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "BOOL"
+    }
+  ],
+  "updated_at": "2026-06-29T16:07:34.933648Z",
+  "created_at": "2024-06-06T17:29:41.953545Z",
+  "error": null,
+  "database_connection": null
+}

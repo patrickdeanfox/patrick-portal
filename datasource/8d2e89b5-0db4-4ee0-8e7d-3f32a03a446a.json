@@ -1,0 +1,67 @@
+{
+  "name": "CRM · Sales Bookings — Sample",
+  "sql": "SELECT * FROM (VALUES\n  ('Alice Johnson', 'Enterprise', 'Closed Won', 42000, 42000),\n  ('Alice Johnson', 'SMB', 'Closed Won', 18500, 18500),\n  ('Alice Johnson', 'Mid-Market', 'Proposal', 22000, 22000),\n  ('Bob Martinez', 'Enterprise', 'Closed Won', 67000, 67000),\n  ('Bob Martinez', 'Enterprise', 'Negotiation', 55000, 55000),\n  ('Bob Martinez', 'SMB', 'Closed Won', 9800, 9800),\n  ('Carol Lee', 'Mid-Market', 'Closed Won', 31000, 31000),\n  ('Carol Lee', 'SMB', 'Proposal', 14000, 14000),\n  ('Carol Lee', 'Enterprise', 'Closed Won', 48000, 48000),\n  ('David Kim', 'SMB', 'Closed Won', 11200, 11200),\n  ('David Kim', 'Mid-Market', 'Negotiation', 27000, 27000),\n  ('Eve Patel', 'Enterprise', 'Closed Won', 91000, 91000),\n  ('Eve Patel', 'Mid-Market', 'Closed Won', 34000, 34000),\n  ('Eve Patel', 'SMB', 'Proposal', 8500, 8500),\n  ('Frank Wu', 'Enterprise', 'Negotiation', 72000, 72000),\n  ('Frank Wu', 'Mid-Market', 'Closed Won', 29000, 29000),\n  ('Frank Wu', 'SMB', 'Closed Won', 15000, 15000)\n) AS t(sales_rep, product_line, deal_stage, bookings_amount, pipeline_value)",
+  "json_data": null,
+  "tags": [
+    "crm",
+    "sample"
+  ],
+  "default_params": [],
+  "id": "8d2e89b5-0db4-4ee0-8e7d-3f32a03a446a",
+  "columns": [
+    {
+      "name": "sales_rep",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "product_line",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "deal_stage",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "bookings_amount",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "pipeline_value",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    }
+  ],
+  "updated_at": "2026-06-29T16:07:48.865207Z",
+  "created_at": "2026-05-06T14:29:47.366718Z",
+  "error": null,
+  "database_connection": null
+}

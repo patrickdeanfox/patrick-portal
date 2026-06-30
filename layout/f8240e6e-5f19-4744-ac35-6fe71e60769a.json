@@ -1,0 +1,169 @@
+{
+  "user_id": null,
+  "name": "Industry Showcase · Financial Services",
+  "order": 1000,
+  "icon": null,
+  "json_data": {
+    "slug": "industry-showcase-3",
+    "grid": {
+      "id": "content",
+      "layouts": {
+        "lg": {
+          "width": 100,
+          "height": 100,
+          "align": "center",
+          "sizingUnit": "%",
+          "cellSize": 2
+        },
+        "md": {
+          "width": 100,
+          "height": 120,
+          "align": "center",
+          "sizingUnit": "%",
+          "cellSize": 6
+        },
+        "sm": {
+          "width": 100,
+          "height": 175,
+          "align": "center",
+          "sizingUnit": "%",
+          "cellSize": 10
+        }
+      },
+      "blocks": [
+        "3c734ed8-de7a-4cf1-baa4-ffa60bc87cca",
+        "b9cafbe3-3500-4191-a4f6-cdefe8e03755",
+        "a3152fde-4e03-45ca-a22c-3325469be384",
+        "e769b901-7bae-4426-9b87-72143eae2ba5"
+      ],
+      "block_layouts": {
+        "lg": {
+          "3c734ed8-de7a-4cf1-baa4-ffa60bc87cca": {
+            "left": 0,
+            "top": 0,
+            "height": 9,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "b9cafbe3-3500-4191-a4f6-cdefe8e03755": {
+            "left": 0,
+            "top": 9,
+            "height": 15,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "a3152fde-4e03-45ca-a22c-3325469be384": {
+            "left": 0,
+            "top": 24,
+            "height": 42,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "e769b901-7bae-4426-9b87-72143eae2ba5": {
+            "left": 0,
+            "top": 66,
+            "height": 33,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          }
+        },
+        "md": {
+          "3c734ed8-de7a-4cf1-baa4-ffa60bc87cca": {
+            "left": 0,
+            "top": 0,
+            "height": 12,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "b9cafbe3-3500-4191-a4f6-cdefe8e03755": {
+            "left": 0,
+            "top": 12,
+            "height": 26,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "a3152fde-4e03-45ca-a22c-3325469be384": {
+            "left": 0,
+            "top": 38,
+            "height": 44,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "e769b901-7bae-4426-9b87-72143eae2ba5": {
+            "left": 0,
+            "top": 82,
+            "height": 36,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          }
+        },
+        "sm": {
+          "3c734ed8-de7a-4cf1-baa4-ffa60bc87cca": {
+            "left": 0,
+            "top": 0,
+            "height": 16,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "b9cafbe3-3500-4191-a4f6-cdefe8e03755": {
+            "left": 0,
+            "top": 16,
+            "height": 46,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "a3152fde-4e03-45ca-a22c-3325469be384": {
+            "left": 0,
+            "top": 62,
+            "height": 64,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "e769b901-7bae-4426-9b87-72143eae2ba5": {
+            "left": 0,
+            "top": 126,
+            "height": 44,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          }
+        }
+      },
+      "block_hidden": []
+    },
+    "javascripts": {
+      "onPageLoad": []
+    },
+    "css": [],
+    "theme": {
+      "template": {
+        "header": true,
+        "leftSidebar": false,
+        "rightSidebar": false,
+        "footer": false
+      },
+      "customProperties": {}
+    }
+  },
+  "tags": [
+    "financial",
+    "industry-showcase"
+  ],
+  "access": {
+    "groups": []
+  },
+  "id": "f8240e6e-5f19-4744-ac35-6fe71e60769a",
+  "updated_at": "2026-06-29T15:10:59.197573Z",
+  "created_at": "2026-06-26T15:09:00.047232Z"
+}

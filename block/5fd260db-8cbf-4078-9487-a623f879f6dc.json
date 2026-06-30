@@ -1,0 +1,35 @@
+{
+  "name": "MKT · Detail Table",
+  "type": "html",
+  "css": [
+    ".ind-tbl-wrap{background:#fff;border:1px solid rgba(0,0,0,.07);border-radius:12px;box-shadow:0 1px 3px rgba(16,24,40,.06);height:100%;box-sizing:border-box;display:flex;flex-direction:column;padding:14px 16px 10px;font-family:var(--font-stack-primary,system-ui,-apple-system,sans-serif);}\n.ind-tbl-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px;flex-wrap:wrap;}\n.ind-tbl-head h3{margin:0;font-size:14px;font-weight:800;color:var(--color-text,#1f2937);}\n.ind-tbl-head .ind-tbl-meta{display:flex;align-items:center;gap:10px;}\n.ind-tbl-count{font-size:11px;color:#9ca3af;font-weight:600;}\n.ind-tbl-search{padding:7px 10px;border:1px solid rgba(0,0,0,.15);border-radius:8px;font-size:12px;min-width:170px;font-family:inherit;}\n.ind-tbl-search:focus{outline:none;border-color:var(--color-primary,#009fe4);box-shadow:0 0 0 3px rgba(0,159,228,.15);}\n.ind-tbl-scroll{flex:1 1 auto;overflow:auto;border-radius:8px;}\ntable.ind-tbl{width:100%;border-collapse:collapse;font-size:12.5px;}\n.ind-tbl thead th{position:sticky;top:0;background:#f8fafc;color:#475569;text-align:left;font-weight:700;font-size:11px;letter-spacing:.03em;text-transform:uppercase;padding:9px 10px;border-bottom:1px solid rgba(0,0,0,.08);cursor:pointer;white-space:nowrap;user-select:none;}\n.ind-tbl thead th.num{text-align:right;}\n.ind-tbl thead th .arr{color:var(--color-primary,#009fe4);font-size:9px;margin-left:4px;}\n.ind-tbl tbody td{padding:8px 10px;border-bottom:1px solid rgba(0,0,0,.05);color:var(--color-text,#334155);}\n.ind-tbl tbody td.num{text-align:right;font-variant-numeric:tabular-nums;}\n.ind-tbl tbody tr:hover{background:#f1f5f9;}"
+  ],
+  "json_data": {
+    "isolated": false,
+    "html": [
+      "<div class=\"ind-tbl-wrap\">\n  <div class=\"ind-tbl-head\"><h3>Campaign Detail</h3><div class=\"ind-tbl-meta\"><span class=\"ind-tbl-count\" id=\"ind-tbl-count\"></span><input class=\"ind-tbl-search\" id=\"ind-tbl-search\" type=\"text\" placeholder=\"Search…\"></div></div>\n  <div class=\"ind-tbl-scroll\"><table class=\"ind-tbl\"><thead><tr id=\"ind-thead-row\"></tr></thead><tbody id=\"ind-tbody\"></tbody></table></div>\n</div>\n<script>(function(){\n  var CONFIG={dsId:\"32f80cc4-7102-4074-aad7-b916da9bc28d\",cols:[{k:'client',l:'Client'},{k:'campaign_type',l:'Campaign'},{k:'channel',l:'Channel'},{k:'spend',l:'Spend',n:true,money:true},{k:'revenue',l:'Revenue',n:true,money:true},{k:'impressions',l:'Impr.',n:true},{k:'clicks',l:'Clicks',n:true},{k:'conversions',l:'Conv.',n:true}]};\n  var D=String.fromCharCode(36);var state={sortK:'spend',dir:-1,q:''};\n  function g(id){return document.getElementById(id);}\n  function rows(){var cb=(typeof currentBlock!=='undefined')?currentBlock:null;var r=cb&&cb.queryResults&&cb.queryResults[0];if(!r)return[];if(Array.isArray(r.mappedData))return r.mappedData;var cols=(r.columns||[]).map(function(c){return typeof c==='string'?c:(c&&c.name);});return(r.data||[]).map(function(rw){var o={};cols.forEach(function(c,i){o[c]=rw[i];});return o;});}\n  function num(v){var n=parseFloat(v);return isNaN(n)?0:n;}\n  function esc(s){return String(s).replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}\n  function fmt(c,v){if(v==null||v==='')return '';if(c.money)return D+Number(v).toLocaleString();if(c.n)return Number(v).toLocaleString();return esc(v);}\n  function data(){var d=rows().slice();if(state.q){var s=state.q.toLowerCase();d=d.filter(function(r){return CONFIG.cols.some(function(c){return String(r[c.k]==null?'':r[c.k]).toLowerCase().indexOf(s)>=0;});});}var col=CONFIG.cols.filter(function(c){return c.k===state.sortK;})[0];d.sort(function(a,b){if(col&&col.n)return (num(a[state.sortK])-num(b[state.sortK]))*state.dir;return String(a[state.sortK]==null?'':a[state.sortK]).localeCompare(String(b[state.sortK]==null?'':b[state.sortK]))*state.dir;});return d;}\n  function renderHead(){var tr=g('ind-thead-row');if(!tr)return;tr.innerHTML='';CONFIG.cols.forEach(function(c){var th=document.createElement('th');if(c.n)th.className='num';th.textContent=c.l;if(state.sortK===c.k){var a=document.createElement('span');a.className='arr';a.textContent=state.dir<0?'▼':'▲';th.appendChild(a);}th.addEventListener('click',function(){if(state.sortK===c.k)state.dir*=-1;else{state.sortK=c.k;state.dir=c.n?-1:1;}renderHead();renderBody();});tr.appendChild(th);});}\n  function renderBody(){var tb=g('ind-tbody');if(!tb)return;var d=data();var html='';d.forEach(function(r){html+='<tr>';CONFIG.cols.forEach(function(c){html+='<td class=\"'+(c.n?'num':'')+'\">'+fmt(c,r[c.k])+'</td>';});html+='</tr>';});tb.innerHTML=html;var cnt=g('ind-tbl-count');if(cnt)cnt.textContent=d.length+' rows';}\n  function init(){var loaded=(typeof currentBlock!=='undefined'&&currentBlock&&currentBlock.getOnLoadedCallback)?currentBlock.getOnLoadedCallback():function(){};try{renderHead();renderBody();var s=g('ind-tbl-search');if(s)s.addEventListener('input',function(){state.q=s.value;renderBody();});}finally{loaded();}try{if(typeof zPortal!=='undefined'&&zPortal.dataSource&&zPortal.dataSource.on)zPortal.dataSource.on('load',CONFIG.dsId,renderBody);}catch(e){}}\n  init();\n})();</script>"
+    ]
+  },
+  "ui_queries": [
+    {
+      "enabled": true,
+      "page_size": null,
+      "filter_strategy": {
+        "type": "blacklist",
+        "value": []
+      },
+      "query_id": "c2974fb8-dd4a-4958-8806-b9782e86507d"
+    }
+  ],
+  "tags": [
+    "industry-showcase",
+    "marketing",
+    "table"
+  ],
+  "access": {
+    "groups": []
+  },
+  "id": "5fd260db-8cbf-4078-9487-a623f879f6dc",
+  "updated_at": "2026-06-26T16:21:13.041449Z",
+  "created_at": "2026-06-26T16:21:13.041460Z"
+}

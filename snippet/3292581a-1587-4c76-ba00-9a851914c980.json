@@ -1,0 +1,7 @@
+{
+  "name": "Video Gallery",
+  "snippet": "const videoHash = {\n    'mitto-tour': 'content-1-ba493c89-f357-4a1c-82a6-85966331c2eb',\n    'mitto-io-job': 'content-1-07853b38-5625-46f4-9518-6bae97fe087b',\n    'mitto-sql-job': 'content-1-63b12d97-7135-4d6f-8798-39d14c2833ba',\n    'mitto-sequence-job': 'content-1-ae5d624d-5b8a-499f-b1fc-b785971dec40'\n}\n\nfunction setVideo() {\n   let videoSlug = location.hash.substring(1);\n   const requestedVideoIid = videoHash[videoSlug];\n   Object.values(videoHash).forEach(iid => {\n        if (iid === requestedVideoIid) {\n            zPortal.block.show(iid);\n        } else {\n            zPortal.block.hide(iid);\n        }\n   });\n}\n\n// Set proper video on page load\nsetVideo();\n\n// Set proper video on nav link click\nfunction locationHashChanged (e) {\n   if (location.href.includes('zuar-training-videos')) {\n       setVideo();\n   }\n}\nwindow.onhashchange = locationHashChanged;",
+  "id": "3292581a-1587-4c76-ba00-9a851914c980",
+  "updated_at": "2022-10-03T16:01:14.978690Z",
+  "created_at": "2022-10-03T15:27:53.304873Z"
+}

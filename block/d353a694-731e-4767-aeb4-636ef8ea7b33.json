@@ -1,0 +1,37 @@
+{
+  "name": "SYS · User Menu",
+  "type": "html",
+  "css": [
+    ".user-menu-wrapper {}",
+    "",
+    ".user-menu-wrapper .user-menu {}",
+    "",
+    ".user-menu-wrapper .user-menu .trigger {}",
+    "",
+    ".user-menu-wrapper .user-menu .trigger .trigger-icon {}",
+    "",
+    ".user-menu-wrapper .dropdown-wrapper {}",
+    "",
+    ".user-menu-wrapper .dropdown-wrapper .menu-item {}",
+    "",
+    ".user-menu-wrapper .dropdown-wrapper .menu-item-icon {}",
+    "",
+    ".user-menu-wrapper .dropdown-wrapper .menu-devider {}"
+  ],
+  "json_data": {
+    "showUsername": false,
+    "showIcon": true,
+    "icon": "fa-user"
+  },
+  "ui_queries": [],
+  "tags": [
+    "navigation",
+    "system"
+  ],
+  "access": {
+    "groups": []
+  },
+  "id": "d353a694-731e-4767-aeb4-636ef8ea7b33",
+  "updated_at": "2026-06-29T15:09:47.497595Z",
+  "created_at": "2025-03-13T15:55:38.468767Z"
+}

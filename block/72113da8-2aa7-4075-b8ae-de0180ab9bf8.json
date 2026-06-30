@@ -1,0 +1,35 @@
+{
+  "name": "MKT · Chart Band",
+  "type": "html",
+  "css": [
+    ".ind-charts{display:flex;flex-wrap:wrap;gap:14px;height:100%;box-sizing:border-box;font-family:var(--font-stack-primary,system-ui,-apple-system,sans-serif);}\n.ind-charts .ind-card{flex:1 1 0;min-width:240px;background:#fff;border:1px solid rgba(0,0,0,.07);border-radius:12px;box-shadow:0 1px 3px rgba(16,24,40,.06);display:flex;flex-direction:column;padding:14px 16px 10px;}\n.ind-charts .ind-card-head{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:4px;}\n.ind-charts .ind-card-head h3{margin:0;font-size:14px;font-weight:800;color:var(--color-text,#1f2937);}\n.ind-charts .ind-card-sub{font-size:11px;color:#9ca3af;font-weight:600;}\n.ind-charts .ind-canvas{flex:1 1 auto;min-height:200px;width:100%;}"
+  ],
+  "json_data": {
+    "isolated": false,
+    "html": [
+      "<div class=\"ind-charts\">\n  <div class=\"ind-card\"><div class=\"ind-card-head\"><h3>ROAS by Client</h3><span class=\"ind-card-sub\">Revenue / Spend</span></div><div class=\"ind-canvas\" id=\"ind-c1\"></div></div>\n  <div class=\"ind-card\"><div class=\"ind-card-head\"><h3>Spend vs Revenue by Channel</h3><span class=\"ind-card-sub\">USD</span></div><div class=\"ind-canvas\" id=\"ind-c2\"></div></div>\n</div>\n<script>(function(){\n  var CONFIG={dsId:\"32f80cc4-7102-4074-aad7-b916da9bc28d\",src:\"https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js\",el1:\"ind-c1\",el2:\"ind-c2\"};\n  var DEBUG=false;function log(){if(DEBUG&&window.console)console.log.apply(console,['[mkt-charts]'].concat([].slice.call(arguments)));}\n  var D=String.fromCharCode(36);var R1={i:null,o:null},R2={i:null,o:null};\n  function rows(){var cb=(typeof currentBlock!=='undefined')?currentBlock:null;var r=cb&&cb.queryResults&&cb.queryResults[0];if(!r)return[];if(Array.isArray(r.mappedData))return r.mappedData;var cols=(r.columns||[]).map(function(c){return typeof c==='string'?c:(c&&c.name);});return(r.data||[]).map(function(rw){var o={};cols.forEach(function(c,i){o[c]=rw[i];});return o;});}\n  function num(v){var n=parseFloat(v);return isNaN(n)?0:n;}\n  function tv(name,fb){try{var v=getComputedStyle(document.documentElement).getPropertyValue(name);return v&&v.trim()?v.trim():fb;}catch(e){return fb;}}\n  function loadScript(src){var sd=window.define;window.define=undefined;return Promise.resolve(zPortal.resources.load(src)).finally(function(){window.define=sd;});}\n  function loadECharts(){if(typeof echarts!=='undefined')return Promise.resolve();return loadScript(CONFIG.src);}\n  function mk(elId,R){var el=document.getElementById(elId);if(!el)return null;if(R.i){try{R.o&&R.o.disconnect();}catch(e){}try{R.i.dispose();}catch(e){}R.i=null;}var ex=echarts.getInstanceByDom(el);if(ex){try{ex.dispose();}catch(e){}}R.i=echarts.init(el);R.o=new ResizeObserver(function(){try{R.i.resize();}catch(e){}});R.o.observe(el);return R.i;}\n  function renderC1(){var c=mk(CONFIG.el1,R1);if(!c)return;var m={};rows().forEach(function(r){var k=r.client||'—';if(!m[k])m[k]={s:0,rv:0};m[k].s+=num(r.spend);m[k].rv+=num(r.revenue);});var data=Object.keys(m).map(function(k){return{name:k,value:m[k].s?(m[k].rv/m[k].s):0};}).sort(function(a,b){return a.value-b.value;});var text=tv('--color-text','#2b2b2b');var a1=tv('--color-primary','#009fe4');if(!data.length){c.clear();return;}c.setOption({grid:{left:6,right:44,top:8,bottom:4,containLabel:true},tooltip:{trigger:'axis',axisPointer:{type:'shadow'},valueFormatter:function(v){return Number(v).toFixed(2)+'x';}},xAxis:{type:'value',axisLabel:{color:text,fontSize:10,formatter:'{value}x'},splitLine:{lineStyle:{color:text,opacity:.08}}},yAxis:{type:'category',data:data.map(function(d){return d.name;}),axisLabel:{color:text,fontSize:11,fontWeight:600},axisTick:{show:false},axisLine:{lineStyle:{color:text,opacity:.2}}},series:[{type:'bar',data:data.map(function(d){return d.value;}),itemStyle:{color:a1,borderRadius:[0,4,4,0]},barWidth:'56%',label:{show:true,position:'right',color:text,fontSize:10,fontWeight:700,formatter:function(p){return Number(p.value).toFixed(2)+'x';}}}]});}\n  function renderC2(){var c=mk(CONFIG.el2,R2);if(!c)return;var m={};rows().forEach(function(r){var k=r.channel||'—';if(!m[k])m[k]={s:0,rv:0};m[k].s+=num(r.spend);m[k].rv+=num(r.revenue);});var cats=Object.keys(m);var text=tv('--color-text','#2b2b2b');var a1=tv('--color-primary','#009fe4');var a2='#1ebba6';if(!cats.length){c.clear();return;}c.setOption({legend:{top:0,textStyle:{color:text,fontSize:11},data:['Spend','Revenue']},grid:{left:6,right:48,top:26,bottom:4,containLabel:true},tooltip:{trigger:'axis',axisPointer:{type:'shadow'},valueFormatter:function(v){return D+Number(v).toLocaleString();}},xAxis:{type:'value',axisLabel:{color:text,fontSize:10,formatter:function(v){return v>=1e6?(v/1e6)+'M':Math.round(v/1e3)+'K';}},splitLine:{lineStyle:{color:text,opacity:.08}}},yAxis:{type:'category',data:cats,axisLabel:{color:text,fontSize:11,fontWeight:600},axisTick:{show:false},axisLine:{lineStyle:{color:text,opacity:.2}}},series:[{name:'Spend',type:'bar',data:cats.map(function(k){return m[k].s;}),itemStyle:{color:a1,borderRadius:[0,3,3,0]},barWidth:'34%'},{name:'Revenue',type:'bar',data:cats.map(function(k){return m[k].rv;}),itemStyle:{color:a2,borderRadius:[0,3,3,0]},barWidth:'34%'}]});}\n  function render(){if(typeof echarts==='undefined')return;renderC1();renderC2();}\n  function init(){var loaded=(typeof currentBlock!=='undefined'&&currentBlock&&currentBlock.getOnLoadedCallback)?currentBlock.getOnLoadedCallback():function(){};loadECharts().then(function(){render();}).catch(function(e){log('echarts load fail',e);}).finally(function(){loaded();});try{if(typeof zPortal!=='undefined'&&zPortal.dataSource&&zPortal.dataSource.on)zPortal.dataSource.on('load',CONFIG.dsId,function(){if(typeof echarts!=='undefined')render();});}catch(e){}}\n  init();\n})();</script>"
+    ]
+  },
+  "ui_queries": [
+    {
+      "enabled": true,
+      "page_size": null,
+      "filter_strategy": {
+        "type": "blacklist",
+        "value": []
+      },
+      "query_id": "c2974fb8-dd4a-4958-8806-b9782e86507d"
+    }
+  ],
+  "tags": [
+    "chart",
+    "industry-showcase",
+    "marketing"
+  ],
+  "access": {
+    "groups": []
+  },
+  "id": "72113da8-2aa7-4075-b8ae-de0180ab9bf8",
+  "updated_at": "2026-06-29T15:08:16.212304Z",
+  "created_at": "2026-06-26T16:20:49.796292Z"
+}

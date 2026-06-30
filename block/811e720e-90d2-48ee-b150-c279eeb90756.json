@@ -1,0 +1,35 @@
+{
+  "name": "IOT · Chart Band",
+  "type": "html",
+  "css": [
+    ".ind-charts{display:flex;flex-wrap:wrap;gap:14px;height:100%;box-sizing:border-box;font-family:var(--font-stack-primary,system-ui,-apple-system,sans-serif);}\n.ind-charts .ind-card{flex:1 1 0;min-width:240px;background:#fff;border:1px solid rgba(0,0,0,.07);border-radius:12px;box-shadow:0 1px 3px rgba(16,24,40,.06);display:flex;flex-direction:column;padding:14px 16px 10px;}\n.ind-charts .ind-card-head{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:4px;}\n.ind-charts .ind-card-head h3{margin:0;font-size:14px;font-weight:800;color:var(--color-text,#1f2937);}\n.ind-charts .ind-card-sub{font-size:11px;color:#9ca3af;font-weight:600;}\n.ind-charts .ind-canvas{flex:1 1 auto;min-height:200px;width:100%;}"
+  ],
+  "json_data": {
+    "isolated": false,
+    "html": [
+      "<div class=\"ind-charts\">\n  <div class=\"ind-card\"><div class=\"ind-card-head\"><h3>Alerts by Equipment Type</h3><span class=\"ind-card-sub\">Count</span></div><div class=\"ind-canvas\" id=\"ind-c1\"></div></div>\n  <div class=\"ind-card\"><div class=\"ind-card-head\"><h3>Availability % by Facility</h3><span class=\"ind-card-sub\">Uptime ratio</span></div><div class=\"ind-canvas\" id=\"ind-c2\"></div></div>\n</div>\n<script>(function(){\n  var CONFIG={dsId:\"496fad86-25e2-4483-b971-a82702cb714c\",src:\"https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js\",el1:\"ind-c1\",el2:\"ind-c2\"};\n  var DEBUG=false;function log(){if(DEBUG&&window.console)console.log.apply(console,['[iot-charts]'].concat([].slice.call(arguments)));}\n  var R1={i:null,o:null},R2={i:null,o:null};\n  function rows(){var cb=(typeof currentBlock!=='undefined')?currentBlock:null;var r=cb&&cb.queryResults&&cb.queryResults[0];if(!r)return[];if(Array.isArray(r.mappedData))return r.mappedData;var cols=(r.columns||[]).map(function(c){return typeof c==='string'?c:(c&&c.name);});return(r.data||[]).map(function(rw){var o={};cols.forEach(function(c,i){o[c]=rw[i];});return o;});}\n  function num(v){var n=parseFloat(v);return isNaN(n)?0:n;}\n  function tv(name,fb){try{var v=getComputedStyle(document.documentElement).getPropertyValue(name);return v&&v.trim()?v.trim():fb;}catch(e){return fb;}}\n  function loadScript(src){var sd=window.define;window.define=undefined;return Promise.resolve(zPortal.resources.load(src)).finally(function(){window.define=sd;});}\n  function loadECharts(){if(typeof echarts!=='undefined')return Promise.resolve();return loadScript(CONFIG.src);}\n  function mk(elId,R){var el=document.getElementById(elId);if(!el)return null;if(R.i){try{R.o&&R.o.disconnect();}catch(e){}try{R.i.dispose();}catch(e){}R.i=null;}var ex=echarts.getInstanceByDom(el);if(ex){try{ex.dispose();}catch(e){}}R.i=echarts.init(el);R.o=new ResizeObserver(function(){try{R.i.resize();}catch(e){}});R.o.observe(el);return R.i;}\n  function renderC1(){var c=mk(CONFIG.el1,R1);if(!c)return;var m={};rows().forEach(function(r){var k=r.equipment_type||'—';m[k]=(m[k]||0)+num(r.alerts);});var data=Object.keys(m).map(function(k){return{name:k,value:m[k]};}).sort(function(a,b){return a.value-b.value;});var text=tv('--color-text','#2b2b2b');var a1=tv('--color-primary','#009fe4');if(!data.length){c.clear();return;}c.setOption({grid:{left:6,right:40,top:8,bottom:4,containLabel:true},tooltip:{trigger:'axis',axisPointer:{type:'shadow'}},xAxis:{type:'value',axisLabel:{color:text,fontSize:10},splitLine:{lineStyle:{color:text,opacity:.08}}},yAxis:{type:'category',data:data.map(function(d){return d.name;}),axisLabel:{color:text,fontSize:11,fontWeight:600},axisTick:{show:false},axisLine:{lineStyle:{color:text,opacity:.2}}},series:[{type:'bar',data:data.map(function(d){return d.value;}),itemStyle:{color:a1,borderRadius:[0,4,4,0]},barWidth:'56%',label:{show:true,position:'right',color:text,fontSize:10,fontWeight:700,formatter:function(p){return Number(p.value).toLocaleString();}}}]});}\n  function renderC2(){var c=mk(CONFIG.el2,R2);if(!c)return;var m={};rows().forEach(function(r){var k=r.facility||'—';if(!m[k])m[k]={up:0,dn:0};m[k].up+=num(r.uptime_minutes);m[k].dn+=num(r.downtime_minutes);});var data=Object.keys(m).map(function(k){var t=m[k].up+m[k].dn;return{name:k,value:t?(m[k].up/t*100):0};}).sort(function(a,b){return a.value-b.value;});var text=tv('--color-text','#2b2b2b');var good=tv('--color-success','#1ebba6');var danger=tv('--color-danger','#ef5777');if(!data.length){c.clear();return;}c.setOption({grid:{left:6,right:52,top:8,bottom:4,containLabel:true},tooltip:{trigger:'axis',axisPointer:{type:'shadow'},valueFormatter:function(v){return Number(v).toFixed(1)+'%';}},xAxis:{type:'value',max:100,axisLabel:{color:text,fontSize:10,formatter:'{value}%'},splitLine:{lineStyle:{color:text,opacity:.08}}},yAxis:{type:'category',data:data.map(function(d){return d.name;}),axisLabel:{color:text,fontSize:11,fontWeight:600},axisTick:{show:false},axisLine:{lineStyle:{color:text,opacity:.2}}},series:[{type:'bar',data:data.map(function(d){var col=d.value>=98?good:(d.value>=95?'#f6a609':danger);return{value:d.value,itemStyle:{color:col,borderRadius:[0,4,4,0]}};}),barWidth:'56%',label:{show:true,position:'right',color:text,fontSize:10,fontWeight:700,formatter:function(p){return Number(p.value).toFixed(1)+'%';}}}]});}\n  function render(){if(typeof echarts==='undefined')return;renderC1();renderC2();}\n  function init(){var loaded=(typeof currentBlock!=='undefined'&&currentBlock&&currentBlock.getOnLoadedCallback)?currentBlock.getOnLoadedCallback():function(){};loadECharts().then(function(){render();}).catch(function(e){log('echarts load fail',e);}).finally(function(){loaded();});try{if(typeof zPortal!=='undefined'&&zPortal.dataSource&&zPortal.dataSource.on)zPortal.dataSource.on('load',CONFIG.dsId,function(){if(typeof echarts!=='undefined')render();});}catch(e){}}\n  init();\n})();</script>"
+    ]
+  },
+  "ui_queries": [
+    {
+      "enabled": true,
+      "page_size": null,
+      "filter_strategy": {
+        "type": "blacklist",
+        "value": []
+      },
+      "query_id": "2e1148b4-8ab8-418b-92c3-1686bd35e7bc"
+    }
+  ],
+  "tags": [
+    "chart",
+    "industry-showcase",
+    "iot"
+  ],
+  "access": {
+    "groups": []
+  },
+  "id": "811e720e-90d2-48ee-b150-c279eeb90756",
+  "updated_at": "2026-06-29T15:08:09.220060Z",
+  "created_at": "2026-06-26T16:16:51.574433Z"
+}

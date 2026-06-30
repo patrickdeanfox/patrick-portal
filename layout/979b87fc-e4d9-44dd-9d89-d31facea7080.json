@@ -1,0 +1,99 @@
+{
+  "user_id": null,
+  "name": "CRM Sales Bookings · Interactive Dashboard",
+  "order": 1000,
+  "icon": null,
+  "json_data": {
+    "slug": "new-page-5",
+    "grid": {
+      "id": "content",
+      "layouts": {
+        "lg": {
+          "width": 100,
+          "height": 100,
+          "align": "center",
+          "sizingUnit": "%",
+          "cellSize": 2
+        },
+        "md": {
+          "width": 100,
+          "height": 100,
+          "align": "center",
+          "sizingUnit": "%",
+          "cellSize": 6
+        },
+        "sm": {
+          "width": 100,
+          "height": 100,
+          "align": "center",
+          "sizingUnit": "%",
+          "cellSize": 10
+        }
+      },
+      "blocks": [
+        "dabee89b-cc03-4d96-a73c-7f251f0c89af"
+      ],
+      "sidebar": {
+        "collapsable": false,
+        "openIcon": "fa-chevron-left",
+        "closeIcon": "fa-chevron-right",
+        "iconPosition": "middle"
+      },
+      "block_layouts": {
+        "lg": {
+          "dabee89b-cc03-4d96-a73c-7f251f0c89af": {
+            "sizingUnit": "%",
+            "top": 0,
+            "left": 0,
+            "width": 100,
+            "height": 96,
+            "zIndex": 0
+          }
+        },
+        "md": {
+          "dabee89b-cc03-4d96-a73c-7f251f0c89af": {
+            "sizingUnit": "%",
+            "top": 0,
+            "left": 0,
+            "width": 102,
+            "height": 96,
+            "zIndex": 0
+          }
+        },
+        "sm": {
+          "dabee89b-cc03-4d96-a73c-7f251f0c89af": {
+            "sizingUnit": "%",
+            "top": 0,
+            "left": 0,
+            "width": 100,
+            "height": 100,
+            "zIndex": 0
+          }
+        }
+      },
+      "block_hidden": []
+    },
+    "javascripts": {
+      "onPageLoad": []
+    },
+    "css": [],
+    "theme": {
+      "template": {
+        "header": false,
+        "leftSidebar": false,
+        "rightSidebar": false,
+        "footer": false
+      },
+      "customProperties": {}
+    }
+  },
+  "tags": [
+    "crm"
+  ],
+  "access": {
+    "groups": []
+  },
+  "id": "979b87fc-e4d9-44dd-9d89-d31facea7080",
+  "updated_at": "2026-06-29T15:11:15.541829Z",
+  "created_at": "2026-06-26T14:37:24.871577Z"
+}

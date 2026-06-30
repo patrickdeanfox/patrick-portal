@@ -1,0 +1,67 @@
+{
+  "name": "IOT · SCADA Telemetry — Sample",
+  "sql": "SELECT * FROM (VALUES\n  ('Plant A', 'Pump', 12, 2880, 120),\n  ('Plant A', 'Compressor', 7, 2940, 60),\n  ('Plant A', 'Sensor', 3, 2990, 10),\n  ('Plant B', 'Pump', 21, 2760, 240),\n  ('Plant B', 'Compressor', 15, 2820, 180),\n  ('Plant B', 'Sensor', 5, 2970, 30),\n  ('Plant C', 'Pump', 9, 2910, 90),\n  ('Plant C', 'Compressor', 4, 2960, 40),\n  ('Plant C', 'Sensor', 2, 2995, 5),\n  ('Facility D', 'Pump', 18, 2790, 210),\n  ('Facility D', 'Compressor', 11, 2860, 140),\n  ('Facility D', 'Sensor', 6, 2955, 45),\n  ('Facility E', 'Pump', 25, 2700, 300),\n  ('Facility E', 'Compressor', 19, 2760, 240),\n  ('Facility E', 'Sensor', 8, 2940, 60)\n) AS t(facility, equipment_type, alerts, uptime_minutes, downtime_minutes)",
+  "json_data": null,
+  "tags": [
+    "iot",
+    "sample"
+  ],
+  "default_params": [],
+  "id": "496fad86-25e2-4483-b971-a82702cb714c",
+  "columns": [
+    {
+      "name": "facility",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "equipment_type",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "alerts",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "uptime_minutes",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "downtime_minutes",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    }
+  ],
+  "updated_at": "2026-06-29T16:07:39.561100Z",
+  "created_at": "2026-05-06T14:29:47.587125Z",
+  "error": null,
+  "database_connection": null
+}

@@ -1,0 +1,319 @@
+{
+  "user_id": null,
+  "name": "Helios · Executive Overview",
+  "order": 10,
+  "icon": "fa-gauge-high",
+  "json_data": {
+    "slug": "helios-overview",
+    "grid": {
+      "blocks": [
+        "e340637d-41ae-45c7-9ae9-6e82ecb350b4",
+        "c3f4c9e4-9c70-4cbf-ac80-f123c51529e7",
+        "439fdf61-7978-44e7-bab6-a650506c321f",
+        "bdf67105-c68c-4b11-9ebd-e006b50c34ba",
+        "7fd8f5e8-786f-433e-8f77-949acfcb966a",
+        "07949ef6-740c-4713-8e99-f936319f98e5",
+        "be7bcf00-88d3-41f5-8ad8-511fe7ab3d1f",
+        "9aed7716-a038-433f-b05f-20048d7445f4",
+        "1c73bc8f-2ca4-4789-a358-d484b674fac3",
+        "e3b9ac0d-bf87-4d30-adbc-00612e6ebe05"
+      ],
+      "block_layouts": {
+        "lg": {
+          "e340637d-41ae-45c7-9ae9-6e82ecb350b4": {
+            "left": 0,
+            "top": 0,
+            "width": 100,
+            "height": 18,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "c3f4c9e4-9c70-4cbf-ac80-f123c51529e7": {
+            "left": 0,
+            "top": 18,
+            "width": 100,
+            "height": 16,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "439fdf61-7978-44e7-bab6-a650506c321f": {
+            "left": 0,
+            "top": 34,
+            "width": 100,
+            "height": 28,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "bdf67105-c68c-4b11-9ebd-e006b50c34ba": {
+            "left": 0,
+            "top": 62,
+            "width": 50,
+            "height": 28,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "7fd8f5e8-786f-433e-8f77-949acfcb966a": {
+            "left": 50,
+            "top": 62,
+            "width": 50,
+            "height": 28,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "07949ef6-740c-4713-8e99-f936319f98e5": {
+            "left": 0,
+            "top": 90,
+            "width": 50,
+            "height": 28,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "be7bcf00-88d3-41f5-8ad8-511fe7ab3d1f": {
+            "left": 50,
+            "top": 90,
+            "width": 50,
+            "height": 26,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "9aed7716-a038-433f-b05f-20048d7445f4": {
+            "left": 0,
+            "top": 118,
+            "width": 50,
+            "height": 26,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "1c73bc8f-2ca4-4789-a358-d484b674fac3": {
+            "left": 50,
+            "top": 118,
+            "width": 50,
+            "height": 26,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "e3b9ac0d-bf87-4d30-adbc-00612e6ebe05": {
+            "left": 0,
+            "top": 144,
+            "width": 100,
+            "height": 24,
+            "sizingUnit": "%",
+            "zIndex": 0
+          }
+        },
+        "md": {
+          "e340637d-41ae-45c7-9ae9-6e82ecb350b4": {
+            "left": 0,
+            "top": 0,
+            "width": 100,
+            "height": 18,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "c3f4c9e4-9c70-4cbf-ac80-f123c51529e7": {
+            "left": 0,
+            "top": 18,
+            "width": 100,
+            "height": 16,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "439fdf61-7978-44e7-bab6-a650506c321f": {
+            "left": 0,
+            "top": 34,
+            "width": 100,
+            "height": 28,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "bdf67105-c68c-4b11-9ebd-e006b50c34ba": {
+            "left": 0,
+            "top": 62,
+            "width": 50,
+            "height": 28,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "7fd8f5e8-786f-433e-8f77-949acfcb966a": {
+            "left": 50,
+            "top": 62,
+            "width": 50,
+            "height": 28,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "07949ef6-740c-4713-8e99-f936319f98e5": {
+            "left": 0,
+            "top": 90,
+            "width": 50,
+            "height": 28,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "be7bcf00-88d3-41f5-8ad8-511fe7ab3d1f": {
+            "left": 50,
+            "top": 90,
+            "width": 50,
+            "height": 26,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "9aed7716-a038-433f-b05f-20048d7445f4": {
+            "left": 0,
+            "top": 118,
+            "width": 50,
+            "height": 26,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "1c73bc8f-2ca4-4789-a358-d484b674fac3": {
+            "left": 50,
+            "top": 118,
+            "width": 50,
+            "height": 26,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "e3b9ac0d-bf87-4d30-adbc-00612e6ebe05": {
+            "left": 0,
+            "top": 144,
+            "width": 100,
+            "height": 24,
+            "sizingUnit": "%",
+            "zIndex": 0
+          }
+        },
+        "sm": {
+          "e340637d-41ae-45c7-9ae9-6e82ecb350b4": {
+            "left": 0,
+            "top": 0,
+            "width": 100,
+            "height": 18,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "c3f4c9e4-9c70-4cbf-ac80-f123c51529e7": {
+            "left": 0,
+            "top": 18,
+            "width": 100,
+            "height": 16,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "439fdf61-7978-44e7-bab6-a650506c321f": {
+            "left": 0,
+            "top": 34,
+            "width": 100,
+            "height": 28,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "bdf67105-c68c-4b11-9ebd-e006b50c34ba": {
+            "left": 0,
+            "top": 62,
+            "width": 100,
+            "height": 28,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "7fd8f5e8-786f-433e-8f77-949acfcb966a": {
+            "left": 0,
+            "top": 90,
+            "width": 100,
+            "height": 28,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "07949ef6-740c-4713-8e99-f936319f98e5": {
+            "left": 0,
+            "top": 118,
+            "width": 100,
+            "height": 28,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "be7bcf00-88d3-41f5-8ad8-511fe7ab3d1f": {
+            "left": 0,
+            "top": 146,
+            "width": 100,
+            "height": 26,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "9aed7716-a038-433f-b05f-20048d7445f4": {
+            "left": 0,
+            "top": 172,
+            "width": 100,
+            "height": 26,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "1c73bc8f-2ca4-4789-a358-d484b674fac3": {
+            "left": 0,
+            "top": 198,
+            "width": 100,
+            "height": 26,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "e3b9ac0d-bf87-4d30-adbc-00612e6ebe05": {
+            "left": 0,
+            "top": 224,
+            "width": 100,
+            "height": 24,
+            "sizingUnit": "%",
+            "zIndex": 0
+          }
+        }
+      },
+      "id": "content",
+      "layouts": {
+        "lg": {
+          "width": 100,
+          "height": 100,
+          "align": "center",
+          "sizingUnit": "%",
+          "cellSize": 2
+        },
+        "md": {
+          "width": 100,
+          "height": 100,
+          "align": "center",
+          "sizingUnit": "%",
+          "cellSize": 6
+        },
+        "sm": {
+          "width": 100,
+          "height": 100,
+          "align": "center",
+          "sizingUnit": "%",
+          "cellSize": 10
+        }
+      },
+      "block_hidden": []
+    },
+    "javascripts": {
+      "onPageLoad": []
+    },
+    "css": [],
+    "theme": {
+      "template": {
+        "header": true,
+        "leftSidebar": true,
+        "rightSidebar": false,
+        "footer": false
+      },
+      "customProperties": {}
+    }
+  },
+  "tags": [
+    "executive",
+    "helios"
+  ],
+  "access": {
+    "groups": []
+  },
+  "id": "87aa7539-26ed-4eda-ae10-678e91ccc647",
+  "updated_at": "2026-06-29T19:05:14.983593Z",
+  "created_at": "2026-06-29T18:32:37.487550Z"
+}

@@ -1,0 +1,98 @@
+{
+  "name": "DW · Dim Supplier",
+  "sql": "SELECT\n    gs                                                                          AS supplier_id,\n    'SUP-' || lpad(gs::text, 4, '0')                                           AS supplier_code,\n    (ARRAY['Acme','Globex','Initech','Umbrella','Stark','Wayne','Oscorp','Hooli','Soylent','Tyrell'])\n        [1 + (('x'||substr(md5('SNM'||gs::text),1,8))::bit(32)::bigint % 10)]\n        || ' ' ||\n    (ARRAY['Industries','Supply Co','Logistics','Partners','Holdings'])\n        [1 + (('x'||substr(md5('SSUF'||gs::text),1,8))::bit(32)::bigint % 5)]   AS supplier_name,\n    (ARRAY['USA','China','Germany','Mexico','India','Vietnam'])\n        [1 + (('x'||substr(md5('SCNTRY'||gs::text),1,8))::bit(32)::bigint % 6)] AS country,\n    (ARRAY['Net 30','Net 45','Net 60','Prepaid'])\n        [1 + (('x'||substr(md5('STERM'||gs::text),1,8))::bit(32)::bigint % 4)]  AS payment_terms,\n    round((( ('x'||substr(md5('SRATE'||gs::text),1,8))::bit(32)::bigint % 300)/100.0 + 2)::numeric, 2) AS quality_rating, -- 2.00-5.00\n    1 + (('x'||substr(md5('SLEAD'||gs::text),1,8))::bit(32)::bigint % 45)       AS lead_time_days,\n    (ARRAY['Active','Active','Active','Inactive'])\n        [1 + (('x'||substr(md5('SSTAT'||gs::text),1,8))::bit(32)::bigint % 4)]  AS status\nFROM generate_series(1, 150) AS gs",
+  "json_data": null,
+  "tags": [
+    "data-warehouse",
+    "dimension",
+    "sample"
+  ],
+  "default_params": [],
+  "id": "4c75d296-0c69-4fdd-9623-e79ff1c066fb",
+  "columns": [
+    {
+      "name": "supplier_id",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "supplier_code",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "supplier_name",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "country",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "payment_terms",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "quality_rating",
+      "type_code": 1700,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": 65535,
+      "scale": 65535,
+      "null_ok": null,
+      "type": "NUMERIC"
+    },
+    {
+      "name": "lead_time_days",
+      "type_code": 20,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(8)"
+    },
+    {
+      "name": "status",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    }
+  ],
+  "updated_at": "2026-06-29T16:46:30.377517Z",
+  "created_at": "2026-06-29T16:46:30.377531Z",
+  "error": null,
+  "database_connection": null
+}

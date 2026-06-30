@@ -1,0 +1,26 @@
+{
+  "name": "SYS · amCharts Loader",
+  "type": "html",
+  "css": [
+    ".wrapper {}",
+    "",
+    "iframe {}"
+  ],
+  "json_data": {
+    "isolated": false,
+    "html": [
+      "<script>\n// ============================================================================\n// GLOBAL AMCHARTS v5 LOADER — Add this ONCE at the top of your page\n// ============================================================================\nwindow.AMCHARTS_LOADER = (function() {\n  const AMCHARTS_CONFIG = {\n    licenseKey: 'AM5C-3736-6373-6263',\n    cdnBase: 'https://cdn.amcharts.com/lib/5/',\n    scripts: [\n      '{ file: 'index.js',\n      'ready: () => !!(window.am5 && window.am5.Root) }',\n      '{ file: 'percent.js',\n      'ready: () => !!(window.am5 && window.am5.PieChart) }',\n      '{ file: 'xy.js',\n      'ready: () => !!(window.am5 && window.am5.XYChart) }',\n      '{ file: 'radar.js',\n      'ready: () => !!(window.am5radar && window.am5radar.RadarChart) }',\n      '{ file: 'gauge.js',\n      'ready: () => !!(window.am5radar && window.am5radar.ClockHand) }',\n      '{ file: 'themes/Animated.js',\n      'ready: () => !!window.am5themes_Animated }',\n      'index.js',\n      'themes/Animated.js',\n      'percent.js'\n    ]\n  };\n\n  let loadingPromise = null;\n\n  function loadScript(src) {\n    return new Promise((resolve, reject) => {\n      const existing = document.querySelector(`script[src=\"${src}\"]`);\n      if (existing) { resolve(src); return; }\n      const script = document.createElement('script');\n      script.src = src;\n      script.onload = () => resolve(src);\n      script.onerror = () => reject(new Error(`Failed to load: ${src}`));\n      document.head.appendChild(script);\n    });\n  }\n\n  async function loadAmCharts() {\n    console.log('🔄 Loading amCharts v5 libraries...');\n    try {\n      for (const file of AMCHARTS_CONFIG.scripts) {\n        const url = AMCHARTS_CONFIG.cdnBase + file;\n        await loadScript(url);\n        console.log(`  ✓ Loaded: ${file}`);\n      }\n      if (window.am5 && AMCHARTS_CONFIG.licenseKey) {\n        am5.addLicense(AMCHARTS_CONFIG.licenseKey);\n        console.log('  ✓ License key applied');\n      }\n      console.log('✅ amCharts v5 loaded successfully');\n      return true;\n    } catch (error) {\n      console.error('❌ Error loading amCharts:', error);\n      throw error;\n    }\n  }\n\n  return {\n    load: function() {\n      if (loadingPromise) return loadingPromise;\n      if (window.am5 && window.am5percent && window.am5xy && window.am5themes_Animated) {\n        console.log('✅ amCharts already loaded');\n        return Promise.resolve(true);\n      }\n      loadingPromise = loadAmCharts();\n      return loadingPromise;\n    }\n  };\n})();\n</script>"
+    ]
+  },
+  "ui_queries": [],
+  "tags": [
+    "charting",
+    "system"
+  ],
+  "access": {
+    "groups": []
+  },
+  "id": "c4269dde-90e5-450b-a279-9a8bd5748827",
+  "updated_at": "2026-06-29T15:10:00.625801Z",
+  "created_at": "2026-04-06T19:08:56.173052Z"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Announcements Load",
+  "snippet": "let slides = [];\nlet currentSlideIndex = 0;\n",
+  "id": "8c1f2d04-c930-49d8-80e4-6cdb48db5337",
+  "updated_at": "2023-07-20T17:08:02.151241Z",
+  "created_at": "2023-07-20T17:08:02.151262Z"
+}

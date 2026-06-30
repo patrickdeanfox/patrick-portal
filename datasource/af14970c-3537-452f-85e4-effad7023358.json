@@ -1,0 +1,109 @@
+{
+  "name": "DW · Fact GL Transaction",
+  "sql": "SELECT\n    gs                                                                          AS gl_transaction_id,\n    'GL-' || lpad(gs::text, 7, '0')                                            AS journal_ref,\n    (CURRENT_DATE - (('x'||substr(md5('GLDATE'||gs::text),1,8))::bit(32)::bigint % 1095)::int) AS txn_date,\n    (ARRAY['4000 Revenue','5000 COGS','6000 Opex','6100 Payroll','7000 Marketing','8000 Tax'])\n        [1 + (('x'||substr(md5('GLACCT'||gs::text),1,8))::bit(32)::bigint % 6)] AS account,\n    (ARRAY['Revenue','COGS','Operating Expense','Payroll','Marketing','Tax'])\n        [1 + (('x'||substr(md5('GLACCT'||gs::text),1,8))::bit(32)::bigint % 6)] AS account_category, -- same salt as account\n    1 + (('x'||substr(md5('GLSTORE'||gs::text),1,8))::bit(32)::bigint % 50)     AS store_id,\n    1 + (('x'||substr(md5('GLEMP'||gs::text),1,8))::bit(32)::bigint % 300)      AS employee_id,\n    CASE WHEN (('x'||substr(md5('GLDR'||gs::text),1,8))::bit(32)::bigint % 2) = 0 THEN 'Debit' ELSE 'Credit' END AS entry_type,\n    round((( ('x'||substr(md5('GLAMT'||gs::text),1,8))::bit(32)::bigint % 5000000)/100.0)::numeric, 2) AS amount\nFROM generate_series(1, 5000) AS gs",
+  "json_data": null,
+  "tags": [
+    "data-warehouse",
+    "fact",
+    "financial",
+    "sample"
+  ],
+  "default_params": [],
+  "id": "af14970c-3537-452f-85e4-effad7023358",
+  "columns": [
+    {
+      "name": "gl_transaction_id",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "journal_ref",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "txn_date",
+      "type_code": 1082,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "DATE"
+    },
+    {
+      "name": "account",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "account_category",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "store_id",
+      "type_code": 20,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(8)"
+    },
+    {
+      "name": "employee_id",
+      "type_code": 20,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(8)"
+    },
+    {
+      "name": "entry_type",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "amount",
+      "type_code": 1700,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": 65535,
+      "scale": 65535,
+      "null_ok": null,
+      "type": "NUMERIC"
+    }
+  ],
+  "updated_at": "2026-06-29T16:48:34.147395Z",
+  "created_at": "2026-06-29T16:48:34.147406Z",
+  "error": null,
+  "database_connection": null
+}

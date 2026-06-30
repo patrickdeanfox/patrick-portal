@@ -1,0 +1,45 @@
+{
+  "name": "rightSidebar",
+  "json_data": {
+    "id": "rightSidebar",
+    "blocks": [],
+    "layouts": {
+      "lg": {
+        "align": "left",
+        "cellSize": 2,
+        "sizingUnit": "%",
+        "height": 100,
+        "width": 100
+      },
+      "md": {
+        "align": "left",
+        "cellSize": 5,
+        "sizingUnit": "%",
+        "height": 100,
+        "width": 100
+      },
+      "sm": {
+        "align": "left",
+        "cellSize": 5,
+        "sizingUnit": "%",
+        "height": 100,
+        "width": 100
+      }
+    },
+    "block_hidden": [],
+    "sidebar": {
+      "collapsable": true,
+      "openIcon": "fa-chevron-right",
+      "closeIcon": "fa-chevron-left",
+      "iconPosition": "middle"
+    },
+    "block_layouts": {
+      "lg": {},
+      "md": {},
+      "sm": {}
+    }
+  },
+  "id": "9e3971fe-05de-4d9b-85fd-042bf5c84a8d",
+  "updated_at": "2025-03-20T18:18:46.760734Z",
+  "created_at": "2020-12-03T15:59:36.724258Z"
+}

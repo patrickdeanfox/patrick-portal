@@ -1,0 +1,87 @@
+{
+  "name": "RT · eCommerce — Sample",
+  "sql": "SELECT * FROM (VALUES\n  ('Electronics', 'TechPro', 'Online', 4200, 1890000, 310, 28.4),\n  ('Electronics', 'TechPro', 'In-Store', 2800, 1260000, 140, 24.1),\n  ('Electronics', 'NovaBrand', 'Online', 3100, 1240000, 280, 26.8),\n  ('Apparel', 'StyleCo', 'Online', 12400, 620000, 1820, 52.3),\n  ('Apparel', 'StyleCo', 'In-Store', 8700, 435000, 640, 48.9),\n  ('Apparel', 'UrbanWear', 'Online', 9800, 490000, 1420, 51.1),\n  ('Home & Garden', 'HomeLux', 'Online', 5600, 840000, 310, 42.7),\n  ('Home & Garden', 'HomeLux', 'In-Store', 3900, 585000, 170, 39.2),\n  ('Sports', 'ActiveGear', 'Online', 7200, 1080000, 520, 38.6),\n  ('Sports', 'ActiveGear', 'In-Store', 4100, 615000, 190, 34.9),\n  ('Beauty', 'GlowUp', 'Online', 18600, 744000, 920, 63.2),\n  ('Beauty', 'NaturalMe', 'Online', 14200, 568000, 710, 61.8)\n) AS t(category, brand, channel, units_sold, revenue, returns, margin_pct)",
+  "json_data": null,
+  "tags": [
+    "retail",
+    "sample"
+  ],
+  "default_params": [],
+  "id": "3e261a43-4818-46d0-8956-2ae7f4de1f5c",
+  "columns": [
+    {
+      "name": "category",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "brand",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "channel",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "units_sold",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "revenue",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "returns",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "margin_pct",
+      "type_code": 1700,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": 65535,
+      "scale": 65535,
+      "null_ok": null,
+      "type": "NUMERIC"
+    }
+  ],
+  "updated_at": "2026-06-29T16:07:30.234903Z",
+  "created_at": "2026-05-06T14:30:21.582848Z",
+  "error": null,
+  "database_connection": null
+}

@@ -1,0 +1,37 @@
+{
+  "name": "MKT · Traffic Sources — Sample",
+  "sql": "SELECT * FROM (VALUES ('Direct', 4200), ('Organic Search', 3100), ('Paid Search', 1800), ('Social Media', 2400), ('Email', 950), ('Referral', 620)) AS t(source, count)",
+  "json_data": null,
+  "tags": [
+    "marketing",
+    "sample"
+  ],
+  "default_params": [],
+  "id": "8c8bbc2f-843b-4504-ae03-0ebb582fe1d0",
+  "columns": [
+    {
+      "name": "source",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "count",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    }
+  ],
+  "updated_at": "2026-06-29T16:07:05.112854Z",
+  "created_at": "2026-05-12T17:39:32.296371Z",
+  "error": null,
+  "database_connection": null
+}

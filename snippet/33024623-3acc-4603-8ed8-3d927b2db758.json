@@ -1,0 +1,7 @@
+{
+  "name": "synchronize Announcements",
+  "snippet": "\nfunction synchronizeAnnouncements() {\n  // Clear existing slides but keep the header\n  const header = document.querySelector('#slideshowContainer .announcementLabel');\n  while (slideshowContainer.lastChild !== header) {\n    slideshowContainer.removeChild(slideshowContainer.lastChild);\n  }\n\n  const gridItems = document.querySelectorAll(\"#announcementGrid .gridItem\");\n\n  gridItems.forEach(item => {\n    const iconElement = item.querySelector('i');\n    const textElement = item.querySelector('h6');\n\n    if (iconElement && textElement) {\n      const slide = document.createElement('div');\n      slide.className = 'slide';\n\n      const slideContent = document.createElement('div');\n      slideContent.className = 'slideContent';\n\n      const icon = iconElement.cloneNode(true);\n      const text = textElement.cloneNode(true);\n\n      slideContent.appendChild(icon);\n      slideContent.appendChild(text);\n      slide.appendChild(slideContent);\n\n      slideshowContainer.appendChild(slide);\n    }\n  });\n\n  slides = Array.from(slideshowContainer.querySelectorAll('.slide'));\n  if (slides.length > 0) {\n    slides[0].classList.add('active');\n  }\n  currentSlideIndex = 0;\n}\n\n",
+  "id": "33024623-3acc-4603-8ed8-3d927b2db758",
+  "updated_at": "2023-07-20T17:39:52.195576Z",
+  "created_at": "2023-07-20T17:22:15.512232Z"
+}

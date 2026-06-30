@@ -1,0 +1,97 @@
+{
+  "name": "MKT · Agency Performance — Sample",
+  "sql": "SELECT * FROM (VALUES\n  ('Acme Corp', 'Search', 'Google Ads', 12000, 85000, 420000, 18900, 1240),\n  ('Acme Corp', 'Display', 'Programmatic', 8500, 41000, 980000, 9800, 510),\n  ('Acme Corp', 'Social', 'Meta', 6200, 38000, 750000, 22500, 870),\n  ('BlueSky Inc', 'Search', 'Google Ads', 9800, 72000, 510000, 21000, 1050),\n  ('BlueSky Inc', 'Video', 'YouTube', 11000, 54000, 1200000, 31000, 640),\n  ('BlueSky Inc', 'Social', 'LinkedIn', 7400, 29000, 330000, 8200, 290),\n  ('ClearPath', 'Search', 'Google Ads', 14500, 98000, 620000, 27800, 1580),\n  ('ClearPath', 'Display', 'Programmatic', 5100, 22000, 870000, 7400, 320),\n  ('ClearPath', 'Social', 'Meta', 8900, 61000, 910000, 34100, 990),\n  ('Delta Brands', 'Video', 'YouTube', 13200, 77000, 1500000, 42000, 780),\n  ('Delta Brands', 'Search', 'Google Ads', 10700, 81000, 490000, 19600, 1120),\n  ('Delta Brands', 'Social', 'LinkedIn', 6600, 31000, 280000, 7100, 250)\n) AS t(client, campaign_type, channel, spend, revenue, impressions, clicks, conversions)",
+  "json_data": null,
+  "tags": [
+    "marketing",
+    "sample"
+  ],
+  "default_params": [],
+  "id": "32f80cc4-7102-4074-aad7-b916da9bc28d",
+  "columns": [
+    {
+      "name": "client",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "campaign_type",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "channel",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "spend",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "revenue",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "impressions",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "clicks",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "conversions",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    }
+  ],
+  "updated_at": "2026-06-29T16:07:51.427687Z",
+  "created_at": "2026-05-06T14:29:47.493444Z",
+  "error": null,
+  "database_connection": null
+}

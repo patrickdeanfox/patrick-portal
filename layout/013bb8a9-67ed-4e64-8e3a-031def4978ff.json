@@ -1,0 +1,100 @@
+{
+  "user_id": null,
+  "name": "Portal Usage Report",
+  "order": 1000,
+  "icon": null,
+  "json_data": {
+    "slug": "portal-usage-report",
+    "grid": {
+      "id": "content",
+      "layouts": {
+        "lg": {
+          "width": 100,
+          "height": 600,
+          "align": "center",
+          "sizingUnit": "%",
+          "cellSize": 2
+        },
+        "md": {
+          "width": 100,
+          "height": 100,
+          "align": "center",
+          "sizingUnit": "%",
+          "cellSize": 6
+        },
+        "sm": {
+          "width": 100,
+          "height": 100,
+          "align": "center",
+          "sizingUnit": "%",
+          "cellSize": 10
+        }
+      },
+      "blocks": [
+        "f998e7b8-d28d-4a87-9020-f21dfca0cbf3"
+      ],
+      "sidebar": {
+        "collapsable": false,
+        "openIcon": "fa-chevron-left",
+        "closeIcon": "fa-chevron-right",
+        "iconPosition": "middle"
+      },
+      "block_layouts": {
+        "lg": {
+          "f998e7b8-d28d-4a87-9020-f21dfca0cbf3": {
+            "left": 0,
+            "top": 0,
+            "height": 100,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          }
+        },
+        "md": {
+          "f998e7b8-d28d-4a87-9020-f21dfca0cbf3": {
+            "left": 0,
+            "top": 0,
+            "height": 102,
+            "width": 102,
+            "sizingUnit": "%",
+            "zIndex": 0
+          }
+        },
+        "sm": {
+          "f998e7b8-d28d-4a87-9020-f21dfca0cbf3": {
+            "left": 0,
+            "top": 0,
+            "height": 100,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          }
+        }
+      },
+      "block_hidden": []
+    },
+    "javascripts": {
+      "onPageLoad": []
+    },
+    "css": [],
+    "theme": {
+      "template": {
+        "header": true,
+        "leftSidebar": false,
+        "rightSidebar": false,
+        "footer": false
+      },
+      "customProperties": {}
+    }
+  },
+  "tags": [
+    "analytics",
+    "system"
+  ],
+  "access": {
+    "groups": []
+  },
+  "id": "013bb8a9-67ed-4e64-8e3a-031def4978ff",
+  "updated_at": "2026-06-24T18:41:43.040257Z",
+  "created_at": "2026-06-24T18:38:29.912466Z"
+}

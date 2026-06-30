@@ -1,0 +1,40 @@
+{
+  "code": "en_us",
+  "name": "English (United States)",
+  "json_data": {
+    "translations": {
+      "PAGINATION_DETAIL": "{{start}} - {{end}} of {{count}}",
+      "MESSAGE_SHOWN_COUNT": "Called {{count}} times.",
+      "Error": "Error",
+      "Language": "Language",
+      "— Languages —": "— Languages —",
+      "Clear": "Clear",
+      "Apply": "Apply",
+      "To": "To",
+      "From": "From",
+      "All": "All",
+      "Only": "Only",
+      "Today": "Today",
+      "Yesterday": "Yesterday",
+      "This Week": "This Week",
+      "Last Week": "Last Week",
+      "This Month": "This Month",
+      "Last Month": "Last Month",
+      "This Quarter": "This Quarter",
+      "Last Quarter": "Last Quarter",
+      "This Year": "This Year",
+      "Last Year": "Last Year",
+      "Last 24 Hours": "Last 24 Hours",
+      "Last 7 Days": "Last 7 Days",
+      "Last 30 Days": "Last 30 Days",
+      "All Time": "All Time",
+      "No Data": "No Data",
+      "Search": "Seach",
+      "Copied!": "Copied!",
+      "Click to copy": "Click to copy"
+    }
+  },
+  "id": "a267c418-9c76-497b-b811-92f5bf14eaf1",
+  "updated_at": "2021-10-19T15:36:12.473878Z",
+  "created_at": "2021-10-19T15:36:12.473892Z"
+}

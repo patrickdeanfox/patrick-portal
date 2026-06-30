@@ -1,0 +1,219 @@
+{
+  "user_id": null,
+  "name": "Industry Showcase · Healthcare",
+  "order": 1000,
+  "icon": null,
+  "json_data": {
+    "slug": "industry-showcase-2",
+    "grid": {
+      "id": "content",
+      "layouts": {
+        "lg": {
+          "width": 100,
+          "height": 100,
+          "align": "center",
+          "sizingUnit": "%",
+          "cellSize": 2
+        },
+        "md": {
+          "width": 100,
+          "height": 140,
+          "align": "center",
+          "sizingUnit": "%",
+          "cellSize": 6
+        },
+        "sm": {
+          "width": 100,
+          "height": 200,
+          "align": "center",
+          "sizingUnit": "%",
+          "cellSize": 10
+        }
+      },
+      "blocks": [
+        "f20e0574-231e-48c7-8104-4d6a9b453dac",
+        "c8855c63-e7fc-4c80-80ee-7a98904196c4",
+        "2ec2efd7-a648-42bd-8552-33f94a16691d",
+        "628d14dd-7e5b-4cc6-985a-8aa00be0dc69",
+        "ea7a6bf1-e77a-4719-b164-e8bc60a8ab25",
+        "ca9ccb95-014c-41e1-88e7-60738061c724"
+      ],
+      "block_layouts": {
+        "lg": {
+          "f20e0574-231e-48c7-8104-4d6a9b453dac": {
+            "left": 0,
+            "top": 0,
+            "height": 9,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "c8855c63-e7fc-4c80-80ee-7a98904196c4": {
+            "left": 0,
+            "top": 9,
+            "height": 15,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "2ec2efd7-a648-42bd-8552-33f94a16691d": {
+            "left": 0,
+            "top": 24,
+            "height": 35,
+            "width": 34,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "628d14dd-7e5b-4cc6-985a-8aa00be0dc69": {
+            "left": 34,
+            "top": 24,
+            "height": 35,
+            "width": 33,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "ea7a6bf1-e77a-4719-b164-e8bc60a8ab25": {
+            "left": 67,
+            "top": 24,
+            "height": 35,
+            "width": 33,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "ca9ccb95-014c-41e1-88e7-60738061c724": {
+            "left": 0,
+            "top": 59,
+            "height": 40,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          }
+        },
+        "md": {
+          "f20e0574-231e-48c7-8104-4d6a9b453dac": {
+            "left": 0,
+            "top": 0,
+            "height": 12,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "c8855c63-e7fc-4c80-80ee-7a98904196c4": {
+            "left": 0,
+            "top": 12,
+            "height": 24,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "2ec2efd7-a648-42bd-8552-33f94a16691d": {
+            "left": 0,
+            "top": 36,
+            "height": 30,
+            "width": 50,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "628d14dd-7e5b-4cc6-985a-8aa00be0dc69": {
+            "left": 50,
+            "top": 36,
+            "height": 30,
+            "width": 50,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "ea7a6bf1-e77a-4719-b164-e8bc60a8ab25": {
+            "left": 0,
+            "top": 66,
+            "height": 30,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "ca9ccb95-014c-41e1-88e7-60738061c724": {
+            "left": 0,
+            "top": 96,
+            "height": 38,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          }
+        },
+        "sm": {
+          "f20e0574-231e-48c7-8104-4d6a9b453dac": {
+            "left": 0,
+            "top": 0,
+            "height": 16,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "c8855c63-e7fc-4c80-80ee-7a98904196c4": {
+            "left": 0,
+            "top": 16,
+            "height": 42,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "2ec2efd7-a648-42bd-8552-33f94a16691d": {
+            "left": 0,
+            "top": 58,
+            "height": 32,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "628d14dd-7e5b-4cc6-985a-8aa00be0dc69": {
+            "left": 0,
+            "top": 90,
+            "height": 32,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "ea7a6bf1-e77a-4719-b164-e8bc60a8ab25": {
+            "left": 0,
+            "top": 122,
+            "height": 32,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "ca9ccb95-014c-41e1-88e7-60738061c724": {
+            "left": 0,
+            "top": 154,
+            "height": 40,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          }
+        }
+      },
+      "block_hidden": []
+    },
+    "javascripts": {
+      "onPageLoad": []
+    },
+    "css": [],
+    "theme": {
+      "template": {
+        "header": true,
+        "leftSidebar": false,
+        "rightSidebar": false,
+        "footer": false
+      },
+      "customProperties": {}
+    }
+  },
+  "tags": [
+    "healthcare",
+    "industry-showcase"
+  ],
+  "access": {
+    "groups": []
+  },
+  "id": "0dbcc7ee-15b9-441d-8401-0cdbfc1457e3",
+  "updated_at": "2026-06-29T15:10:57.933426Z",
+  "created_at": "2026-06-26T15:08:52.552673Z"
+}

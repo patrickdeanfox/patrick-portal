@@ -1,0 +1,128 @@
+{
+  "name": "DW · CRM Support Ticket",
+  "sql": "SELECT\n    gs                                                                          AS ticket_id,\n    'TKT-' || lpad(gs::text, 6, '0')                                           AS ticket_code,\n    1 + (('x'||substr(md5('TKCUST'||gs::text),1,8))::bit(32)::bigint % 2000)    AS customer_id,\n    1 + (('x'||substr(md5('TKAGENT'||gs::text),1,8))::bit(32)::bigint % 300)    AS agent_employee_id,\n    1 + (('x'||substr(md5('TKPROD'||gs::text),1,8))::bit(32)::bigint % 200)     AS product_id,\n    (ARRAY['Billing','Technical','Shipping','Return','Account','Other'])\n        [1 + (('x'||substr(md5('TKCAT'||gs::text),1,8))::bit(32)::bigint % 6)]  AS category,\n    (ARRAY['Low','Medium','High','Urgent'])\n        [1 + (('x'||substr(md5('TKPRIO'||gs::text),1,8))::bit(32)::bigint % 4)] AS priority,\n    (ARRAY['Open','In Progress','Resolved','Resolved','Closed'])\n        [1 + (('x'||substr(md5('TKSTAT'||gs::text),1,8))::bit(32)::bigint % 5)] AS status,\n    (CURRENT_DATE - (('x'||substr(md5('TKDATE'||gs::text),1,8))::bit(32)::bigint % 365)::int) AS created_date,\n    (('x'||substr(md5('TKRES'||gs::text),1,8))::bit(32)::bigint % 72) + 1       AS resolution_hours,\n    (('x'||substr(md5('TKCSAT'||gs::text),1,8))::bit(32)::bigint % 5) + 1       AS csat_score\nFROM generate_series(1, 4000) AS gs",
+  "json_data": null,
+  "tags": [
+    "crm",
+    "data-warehouse",
+    "sample"
+  ],
+  "default_params": [],
+  "id": "53ac2850-7b7d-4cd1-83a3-d0cddbf66c03",
+  "columns": [
+    {
+      "name": "ticket_id",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "ticket_code",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "customer_id",
+      "type_code": 20,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(8)"
+    },
+    {
+      "name": "agent_employee_id",
+      "type_code": 20,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(8)"
+    },
+    {
+      "name": "product_id",
+      "type_code": 20,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(8)"
+    },
+    {
+      "name": "category",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "priority",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "status",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "created_date",
+      "type_code": 1082,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "DATE"
+    },
+    {
+      "name": "resolution_hours",
+      "type_code": 20,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(8)"
+    },
+    {
+      "name": "csat_score",
+      "type_code": 20,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(8)"
+    }
+  ],
+  "updated_at": "2026-06-29T16:49:58.448560Z",
+  "created_at": "2026-06-29T16:49:58.448571Z",
+  "error": null,
+  "database_connection": null
+}

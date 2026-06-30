@@ -1,0 +1,35 @@
+{
+  "name": "HC · Chart Readmission Rate by Physician",
+  "type": "html",
+  "css": [
+    ".hc-card{background:#fff;border:1px solid rgba(0,0,0,.07);border-radius:12px;box-shadow:0 1px 3px rgba(16,24,40,.06);height:100%;box-sizing:border-box;display:flex;flex-direction:column;padding:14px 16px 10px;font-family:var(--font-stack-primary,system-ui,-apple-system,sans-serif);}\n.hc-card-head{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:4px;}\n.hc-card-head h3{margin:0;font-size:14px;font-weight:800;color:var(--color-text,#1f2937);}\n.hc-card-sub{font-size:11px;color:#9ca3af;font-weight:600;}\n.hc-canvas{flex:1 1 auto;min-height:200px;width:100%;}"
+  ],
+  "json_data": {
+    "isolated": false,
+    "html": [
+      "<div class=\"hc-card\">\n  <div class=\"hc-card-head\"><h3>Readmission Rate by Physician</h3><span class=\"hc-card-sub\">% of patients</span></div>\n  <div class=\"hc-canvas\" id=\"hc-readmit-phys\"></div>\n</div>\n<script>(function(){\n  var CONFIG={dsId:\"dd2191e6-9dc3-4ff3-8b63-6f2e33c07c2a\",src:\"https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js\",el:\"hc-readmit-phys\"};\n  var DEBUG=false;function log(){if(DEBUG&&window.console)console.log.apply(console,['[hc-readmit-phys]'].concat([].slice.call(arguments)));}\n  var inst=null,obs=null;\n  function rows(){var cb=(typeof currentBlock!=='undefined')?currentBlock:null;var r=cb&&cb.queryResults&&cb.queryResults[0];if(!r)return[];if(Array.isArray(r.mappedData))return r.mappedData;var cols=(r.columns||[]).map(function(c){return typeof c==='string'?c:(c&&c.name);});return(r.data||[]).map(function(rw){var o={};cols.forEach(function(c,i){o[c]=rw[i];});return o;});}\n  function num(v){var n=parseFloat(v);return isNaN(n)?0:n;}\n  function tv(name,fb){try{var v=getComputedStyle(document.documentElement).getPropertyValue(name);return v&&v.trim()?v.trim():fb;}catch(e){return fb;}}\n  function loadScript(src){var sd=window.define;window.define=undefined;return Promise.resolve(zPortal.resources.load(src)).finally(function(){window.define=sd;});}\n  function loadECharts(){if(typeof echarts!=='undefined')return Promise.resolve();return loadScript(CONFIG.src);}\n  function chart(){var el=document.getElementById(CONFIG.el);if(!el)return null;if(inst){try{obs&&obs.disconnect();}catch(e){}try{inst.dispose();}catch(e){}inst=null;}var ex=echarts.getInstanceByDom(el);if(ex){try{ex.dispose();}catch(e){}}inst=echarts.init(el);obs=new ResizeObserver(function(){try{inst.resize();}catch(e){}});obs.observe(el);return inst;}\n  function agg(){var d=rows();var m={};d.forEach(function(r){var k=r.physician||'—';if(!m[k])m[k]={re:0,pat:0};m[k].re+=num(r.readmissions);m[k].pat+=num(r.patient_count);});return Object.keys(m).map(function(k){return{name:k,value:m[k].pat?(m[k].re/m[k].pat*100):0};}).sort(function(a,b){return a.value-b.value;});}\n  function render(){if(typeof echarts==='undefined')return;var data=agg();var c=chart();if(!c)return;var text=tv('--color-text','#2b2b2b');var warn=tv('--color-danger','#ef5777');var good=tv('--color-success','#1ebba6');if(!data.length){c.clear();return;}var max=Math.max.apply(null,data.map(function(d){return d.value;}))||1;\n    c.setOption({grid:{left:6,right:44,top:8,bottom:4,containLabel:true},tooltip:{trigger:'axis',axisPointer:{type:'shadow'},valueFormatter:function(v){return Number(v).toFixed(1)+'%';}},xAxis:{type:'value',axisLabel:{color:text,fontSize:10,formatter:'{value}%'},splitLine:{lineStyle:{color:text,opacity:.08}}},yAxis:{type:'category',data:data.map(function(d){return d.name;}),axisLabel:{color:text,fontSize:11,fontWeight:600},axisTick:{show:false},axisLine:{lineStyle:{color:text,opacity:.2}}},series:[{type:'bar',data:data.map(function(d){var t=d.value/max;var col=t>0.66?warn:(t>0.33?'#f6a609':good);return{value:d.value,itemStyle:{color:col,borderRadius:[0,4,4,0]}};}),barWidth:'56%',label:{show:true,position:'right',color:text,fontSize:10,fontWeight:700,formatter:function(p){return Number(p.value).toFixed(1)+'%';}}}]});}\n  function init(){var loaded=(typeof currentBlock!=='undefined'&&currentBlock&&currentBlock.getOnLoadedCallback)?currentBlock.getOnLoadedCallback():function(){};loadECharts().then(function(){render();}).catch(function(e){log('echarts load fail',e);}).finally(function(){loaded();});try{if(typeof zPortal!=='undefined'&&zPortal.dataSource&&zPortal.dataSource.on)zPortal.dataSource.on('load',CONFIG.dsId,function(){if(typeof echarts!=='undefined')render();});}catch(e){}}\n  init();\n})();</script>"
+    ]
+  },
+  "ui_queries": [
+    {
+      "enabled": true,
+      "page_size": null,
+      "filter_strategy": {
+        "type": "blacklist",
+        "value": []
+      },
+      "query_id": "ad4f4c31-e9e8-438a-9a44-426c2a3bcda0"
+    }
+  ],
+  "tags": [
+    "chart",
+    "healthcare",
+    "industry-showcase"
+  ],
+  "access": {
+    "groups": []
+  },
+  "id": "ea7a6bf1-e77a-4719-b164-e8bc60a8ab25",
+  "updated_at": "2026-06-26T15:40:16.352889Z",
+  "created_at": "2026-06-26T15:40:16.352902Z"
+}

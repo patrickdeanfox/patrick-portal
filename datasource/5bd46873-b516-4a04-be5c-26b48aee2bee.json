@@ -1,0 +1,109 @@
+{
+  "name": "SYS · Pages",
+  "sql": "SELECT * FROM layouts",
+  "json_data": {
+    "column_types": {}
+  },
+  "tags": [
+    "system",
+    "telemetry"
+  ],
+  "default_params": [],
+  "id": "5bd46873-b516-4a04-be5c-26b48aee2bee",
+  "columns": [
+    {
+      "name": "id",
+      "type_code": 2950,
+      "display_size": null,
+      "internal_size": 16,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "UUID"
+    },
+    {
+      "name": "user_id",
+      "type_code": 2950,
+      "display_size": null,
+      "internal_size": 16,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "UUID"
+    },
+    {
+      "name": "name",
+      "type_code": 1043,
+      "display_size": null,
+      "internal_size": 256,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "VARCHAR"
+    },
+    {
+      "name": "order",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "icon",
+      "type_code": 1043,
+      "display_size": null,
+      "internal_size": 256,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "VARCHAR"
+    },
+    {
+      "name": "screenshot",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "json_data",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "updated_at",
+      "type_code": 1184,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TIMESTAMPTZ"
+    },
+    {
+      "name": "created_at",
+      "type_code": 1184,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TIMESTAMPTZ"
+    }
+  ],
+  "updated_at": "2026-06-29T16:07:13.154834Z",
+  "created_at": "2024-05-20T20:36:18.366991Z",
+  "error": null,
+  "database_connection": null
+}

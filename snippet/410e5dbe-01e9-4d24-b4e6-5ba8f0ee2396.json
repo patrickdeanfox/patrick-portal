@@ -1,0 +1,7 @@
+{
+  "name": "Remove Global Filters",
+  "snippet": "zPortal.dataSource.clearFilters();",
+  "id": "410e5dbe-01e9-4d24-b4e6-5ba8f0ee2396",
+  "updated_at": "2024-05-28T20:10:06.908291Z",
+  "created_at": "2024-05-28T19:26:05.881241Z"
+}

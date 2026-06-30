@@ -1,0 +1,92 @@
+{
+  "name": "SYS · Navigation",
+  "type": "html",
+  "css": [
+    ".search {}",
+    "",
+    ".search input {}",
+    "",
+    ".horizontal .list {}",
+    "",
+    ".horizontal .item {}",
+    "",
+    ".horizontal .item .link {}",
+    "",
+    ".horizontal .item .label {}",
+    "",
+    ".horizontal .item .label .text {}",
+    "",
+    ".horizontal .item .label .icon {}",
+    "",
+    ".horizontal .item .label:hover {}",
+    "",
+    ".horizontal .item .label:hover .text {}",
+    "",
+    ".horizontal .item .label:hover .icon {}",
+    "",
+    ".horizontal .item .dropdown {}",
+    "",
+    ".horizontal .item.collapsed .dropdown {}",
+    "",
+    ".vertical .list {}",
+    "",
+    ".vertical .item {}",
+    "",
+    ".vertical .item .link {}",
+    "",
+    ".vertical .item .label {}",
+    "",
+    ".vertical .item .label .text {}",
+    "",
+    ".vertical .item .label .icon {}",
+    "",
+    ".vertical .item .label:hover {}",
+    "",
+    ".vertical .item .label:hover .text {}",
+    "",
+    ".vertical .item .label:hover .icon {}",
+    "",
+    ".vertical .item .dropdown {}",
+    "",
+    ".vertical .item.collapsed .dropdown {}",
+    "",
+    ""
+  ],
+  "json_data": {
+    "search": true,
+    "layout": "vertical",
+    "menuTree": [
+      {
+        "id": "0ee9d1c3-f801-4c16-89a1-c99ecdb66683",
+        "label": "Financial analytics",
+        "type": "page",
+        "itemType": "manual",
+        "pageId": "786920f9-a27a-437d-a2e7-36f6695fd182",
+        "iconClass": "fa-home",
+        "tags": [],
+        "hidden": false
+      },
+      {
+        "id": "c3f6bfd4-f00d-438d-afb5-9a97ac3dfd1c",
+        "label": "New Page",
+        "type": "page",
+        "itemType": "manual",
+        "pageId": "9b1b97bb-7c54-48da-91bb-3f0b18607a35",
+        "iconClass": "fa-chart-line",
+        "tags": [],
+        "hidden": false
+      }
+    ]
+  },
+  "ui_queries": [],
+  "tags": [
+    "navigation",
+    "system"
+  ],
+  "access": {
+    "groups": []
+  },
+  "id": "5b4f2972-359c-4ffd-a26d-d73b47bfcc03",
+  "updated_at": "2026-06-29T15:09:55.057873Z",
+  "created_at": "2025-06-18T21:09:11.879255Z"
+}

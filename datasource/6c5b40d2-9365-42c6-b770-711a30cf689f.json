@@ -1,0 +1,118 @@
+{
+  "name": "DW · CRM Opportunity",
+  "sql": "SELECT\n    gs                                                                          AS opportunity_id,\n    'OPP-' || lpad(gs::text, 6, '0')                                           AS opportunity_code,\n    1 + (('x'||substr(md5('OPLEAD'||gs::text),1,8))::bit(32)::bigint % 3000)    AS lead_id,\n    1 + (('x'||substr(md5('OPCUST'||gs::text),1,8))::bit(32)::bigint % 2000)    AS customer_id,\n    1 + (('x'||substr(md5('OPEMP'||gs::text),1,8))::bit(32)::bigint % 300)      AS owner_employee_id,\n    (ARRAY['Prospecting','Qualification','Proposal','Negotiation','Closed Won','Closed Lost'])\n        [1 + (('x'||substr(md5('OPSTAGE'||gs::text),1,8))::bit(32)::bigint % 6)] AS stage,\n    round((( ('x'||substr(md5('OPAMT'||gs::text),1,8))::bit(32)::bigint % 25000000)/100.0 + 500)::numeric, 2) AS amount,\n    (('x'||substr(md5('OPPROB'||gs::text),1,8))::bit(32)::bigint % 100)         AS win_probability,\n    (CURRENT_DATE - (('x'||substr(md5('OPCREATE'||gs::text),1,8))::bit(32)::bigint % 540)::int) AS created_date,\n    (CURRENT_DATE + (('x'||substr(md5('OPCLOSE'||gs::text),1,8))::bit(32)::bigint % 120)::int) AS expected_close_date\nFROM generate_series(1, 2000) AS gs",
+  "json_data": null,
+  "tags": [
+    "crm",
+    "data-warehouse",
+    "sample"
+  ],
+  "default_params": [],
+  "id": "6c5b40d2-9365-42c6-b770-711a30cf689f",
+  "columns": [
+    {
+      "name": "opportunity_id",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "opportunity_code",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "lead_id",
+      "type_code": 20,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(8)"
+    },
+    {
+      "name": "customer_id",
+      "type_code": 20,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(8)"
+    },
+    {
+      "name": "owner_employee_id",
+      "type_code": 20,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(8)"
+    },
+    {
+      "name": "stage",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "amount",
+      "type_code": 1700,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": 65535,
+      "scale": 65535,
+      "null_ok": null,
+      "type": "NUMERIC"
+    },
+    {
+      "name": "win_probability",
+      "type_code": 20,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(8)"
+    },
+    {
+      "name": "created_date",
+      "type_code": 1082,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "DATE"
+    },
+    {
+      "name": "expected_close_date",
+      "type_code": 1082,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "DATE"
+    }
+  ],
+  "updated_at": "2026-06-29T16:49:14.784109Z",
+  "created_at": "2026-06-29T16:49:14.784119Z",
+  "error": null,
+  "database_connection": null
+}

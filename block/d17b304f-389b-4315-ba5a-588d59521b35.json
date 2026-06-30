@@ -1,0 +1,25 @@
+{
+  "name": "EXEC · Hero",
+  "type": "html",
+  "css": [
+    ".exh{height:100%;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;gap:14px;padding:20px 28px;background:linear-gradient(135deg,var(--color-primary,#009fe4) 0%,#0a6aa8 100%);border-radius:14px;color:#fff;font-family:var(--font-stack-primary,system-ui,-apple-system,sans-serif);box-shadow:0 2px 8px rgba(16,24,40,.12);}\n.exh-eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;opacity:.85;}\n.exh-title{margin:2px 0 0;font-size:30px;font-weight:800;letter-spacing:-.01em;line-height:1.05;}\n.exh-sub{font-size:13px;opacity:.92;margin-top:2px;max-width:760px;}\n.exh-tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:6px;}\n.exh-tile{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:12px 14px;}\n.exh-tile .v{font-size:24px;font-weight:800;line-height:1;}\n.exh-tile .l{font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;opacity:.88;margin-top:6px;font-weight:600;}\n@media(max-width:900px){.exh-tiles{grid-template-columns:repeat(2,1fr);}.exh-title{font-size:24px;}}"
+  ],
+  "json_data": {
+    "isolated": false,
+    "html": [
+      "<div class=\"exh\">\n  <div>\n    <div class=\"exh-eyebrow\">patrick-portal · Executive View</div>\n    <h1 class=\"exh-title\">Industry Performance Portfolio</h1>\n    <div class=\"exh-sub\">High-level KPIs across seven industry showcase dashboards. Select any card below to drill into the detailed, filterable view.</div>\n  </div>\n  <div class=\"exh-tiles\">\n    <div class=\"exh-tile\"><div class=\"v\">7</div><div class=\"l\">Industry Dashboards</div></div>\n    <div class=\"exh-tile\"><div class=\"v\">&#36;18.9M</div><div class=\"l\">Tracked Revenue</div></div>\n    <div class=\"exh-tile\"><div class=\"v\">&#36;313.6M</div><div class=\"l\">Loan Volume</div></div>\n    <div class=\"exh-tile\"><div class=\"v\">96.1%</div><div class=\"l\">Avg Uptime</div></div>\n  </div>\n</div>"
+    ]
+  },
+  "ui_queries": [],
+  "tags": [
+    "executive",
+    "hero",
+    "industry-showcase"
+  ],
+  "access": {
+    "groups": []
+  },
+  "id": "d17b304f-389b-4315-ba5a-588d59521b35",
+  "updated_at": "2026-06-26T16:25:59.513575Z",
+  "created_at": "2026-06-26T16:25:59.513587Z"
+}

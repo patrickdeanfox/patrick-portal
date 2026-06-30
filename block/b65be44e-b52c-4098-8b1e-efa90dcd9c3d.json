@@ -1,0 +1,35 @@
+{
+  "name": "IOT · Filter Bar",
+  "type": "html",
+  "css": [
+    ".ind-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;height:100%;box-sizing:border-box;padding:14px 22px;background:#fff;border:1px solid rgba(0,0,0,.07);border-radius:12px;box-shadow:0 1px 3px rgba(16,24,40,.06);font-family:var(--font-stack-primary,system-ui,-apple-system,sans-serif);}\n.ind-bar .ind-eyebrow{font-size:11px;letter-spacing:.14em;font-weight:700;color:var(--color-primary,#009fe4);text-transform:uppercase;}\n.ind-bar .ind-title{margin:3px 0 0;font-size:22px;font-weight:800;line-height:1.1;color:var(--color-text,#222);}\n.ind-bar .ind-controls{display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px;}\n.ind-bar .ind-field{display:flex;flex-direction:column;gap:4px;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:#6b7280;font-weight:700;}\n.ind-bar .ind-field select{min-width:148px;padding:8px 10px;border:1px solid rgba(0,0,0,.15);border-radius:8px;background:#fff;color:var(--color-text,#222);font-size:13px;font-family:inherit;cursor:pointer;}\n.ind-bar .ind-field select:focus{outline:none;border-color:var(--color-primary,#009fe4);box-shadow:0 0 0 3px rgba(0,159,228,.15);}\n.ind-bar .ind-clear{align-self:flex-end;padding:9px 16px;border:1px solid var(--color-primary,#009fe4);border-radius:8px;background:transparent;color:var(--color-primary,#009fe4);font-weight:700;font-size:12px;cursor:pointer;}\n.ind-bar .ind-clear:hover{background:var(--color-primary,#009fe4);color:#fff;}"
+  ],
+  "json_data": {
+    "isolated": false,
+    "html": [
+      "<div class=\"ind-bar\">\n  <div><div class=\"ind-eyebrow\">Industry Showcase · IoT SCADA</div><h1 class=\"ind-title\">Telemetry &amp; Uptime</h1></div>\n  <div class=\"ind-controls\">\n    <label class=\"ind-field\">Facility<select id=\"ind-f-facility\"><option value=\"\">All facilities</option></select></label>\n    <label class=\"ind-field\">Equipment<select id=\"ind-f-equipment_type\"><option value=\"\">All equipment</option></select></label>\n    <button id=\"ind-clear\" class=\"ind-clear\" type=\"button\">Clear filters</button>\n  </div>\n</div>\n<script>(function(){\n  var DS_ID=\"496fad86-25e2-4483-b971-a82702cb714c\";\n  var COLS=[\"facility\",\"equipment_type\"];\n  var built=false;\n  function g(id){return document.getElementById(id);}\n  function rows(){var cb=(typeof currentBlock!=='undefined')?currentBlock:null;var r=cb&&cb.queryResults&&cb.queryResults[0];if(!r)return[];if(Array.isArray(r.mappedData))return r.mappedData;var cols=(r.columns||[]).map(function(c){return typeof c==='string'?c:(c&&c.name);});return(r.data||[]).map(function(rw){var o={};cols.forEach(function(c,i){o[c]=rw[i];});return o;});}\n  function distinct(d,col){var s={};d.forEach(function(x){if(x[col]!=null&&x[col]!=='')s[x[col]]=1;});return Object.keys(s).sort();}\n  function buildOptions(){if(built)return;var d=rows();if(!d.length)return;COLS.forEach(function(col){var sel=g('ind-f-'+col);if(!sel)return;distinct(d,col).forEach(function(v){var o=document.createElement('option');o.value=v;o.textContent=v;sel.appendChild(o);});});built=true;}\n  function setF(col,val){try{zPortal.dataSource.setFilters(col,val?[val]:[]);}catch(e){console.error('setFilters',e);}}\n  function wire(){COLS.forEach(function(col){var sel=g('ind-f-'+col);if(sel)sel.addEventListener('change',function(){setF(col,sel.value);});});var c=g('ind-clear');if(c)c.addEventListener('click',function(){COLS.forEach(function(col){var sel=g('ind-f-'+col);if(sel)sel.value='';setF(col,'');});});}\n  function applyUrl(){try{var p=new URLSearchParams(window.location.search);COLS.forEach(function(col){var v=p.get(col);if(v){var sel=g('ind-f-'+col);if(sel)sel.value=v;setF(col,v);}});}catch(e){}}\n  function init(){var loaded=(typeof currentBlock!=='undefined'&&currentBlock&&currentBlock.getOnLoadedCallback)?currentBlock.getOnLoadedCallback():function(){};try{buildOptions();wire();applyUrl();}finally{loaded();}try{if(typeof zPortal!=='undefined'&&zPortal.dataSource&&zPortal.dataSource.on)zPortal.dataSource.on('load',DS_ID,buildOptions);}catch(e){}}\n  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();\n})();</script>"
+    ]
+  },
+  "ui_queries": [
+    {
+      "enabled": true,
+      "page_size": null,
+      "filter_strategy": {
+        "type": "blacklist",
+        "value": []
+      },
+      "query_id": "2e1148b4-8ab8-418b-92c3-1686bd35e7bc"
+    }
+  ],
+  "tags": [
+    "filter",
+    "industry-showcase",
+    "iot"
+  ],
+  "access": {
+    "groups": []
+  },
+  "id": "b65be44e-b52c-4098-8b1e-efa90dcd9c3d",
+  "updated_at": "2026-06-26T16:16:07.455168Z",
+  "created_at": "2026-06-26T16:16:07.455181Z"
+}

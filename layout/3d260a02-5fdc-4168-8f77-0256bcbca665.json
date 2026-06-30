@@ -1,0 +1,169 @@
+{
+  "user_id": null,
+  "name": "Industry Showcase · Marketing",
+  "order": 1000,
+  "icon": null,
+  "json_data": {
+    "slug": "industry-showcase-8",
+    "grid": {
+      "id": "content",
+      "layouts": {
+        "lg": {
+          "width": 100,
+          "height": 100,
+          "align": "center",
+          "sizingUnit": "%",
+          "cellSize": 2
+        },
+        "md": {
+          "width": 100,
+          "height": 120,
+          "align": "center",
+          "sizingUnit": "%",
+          "cellSize": 6
+        },
+        "sm": {
+          "width": 100,
+          "height": 175,
+          "align": "center",
+          "sizingUnit": "%",
+          "cellSize": 10
+        }
+      },
+      "blocks": [
+        "bc8e3af2-451e-4d2c-8e22-ec54324b06e9",
+        "398d8c38-21df-4f25-a0df-c0ef63b176ec",
+        "72113da8-2aa7-4075-b8ae-de0180ab9bf8",
+        "5fd260db-8cbf-4078-9487-a623f879f6dc"
+      ],
+      "block_layouts": {
+        "lg": {
+          "bc8e3af2-451e-4d2c-8e22-ec54324b06e9": {
+            "left": 0,
+            "top": 0,
+            "height": 9,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "398d8c38-21df-4f25-a0df-c0ef63b176ec": {
+            "left": 0,
+            "top": 9,
+            "height": 15,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "72113da8-2aa7-4075-b8ae-de0180ab9bf8": {
+            "left": 0,
+            "top": 24,
+            "height": 42,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "5fd260db-8cbf-4078-9487-a623f879f6dc": {
+            "left": 0,
+            "top": 66,
+            "height": 33,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          }
+        },
+        "md": {
+          "bc8e3af2-451e-4d2c-8e22-ec54324b06e9": {
+            "left": 0,
+            "top": 0,
+            "height": 12,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "398d8c38-21df-4f25-a0df-c0ef63b176ec": {
+            "left": 0,
+            "top": 12,
+            "height": 26,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "72113da8-2aa7-4075-b8ae-de0180ab9bf8": {
+            "left": 0,
+            "top": 38,
+            "height": 44,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "5fd260db-8cbf-4078-9487-a623f879f6dc": {
+            "left": 0,
+            "top": 82,
+            "height": 36,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          }
+        },
+        "sm": {
+          "bc8e3af2-451e-4d2c-8e22-ec54324b06e9": {
+            "left": 0,
+            "top": 0,
+            "height": 16,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "398d8c38-21df-4f25-a0df-c0ef63b176ec": {
+            "left": 0,
+            "top": 16,
+            "height": 46,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "72113da8-2aa7-4075-b8ae-de0180ab9bf8": {
+            "left": 0,
+            "top": 62,
+            "height": 64,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "5fd260db-8cbf-4078-9487-a623f879f6dc": {
+            "left": 0,
+            "top": 126,
+            "height": 44,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          }
+        }
+      },
+      "block_hidden": []
+    },
+    "javascripts": {
+      "onPageLoad": []
+    },
+    "css": [],
+    "theme": {
+      "template": {
+        "header": true,
+        "leftSidebar": false,
+        "rightSidebar": false,
+        "footer": false
+      },
+      "customProperties": {}
+    }
+  },
+  "tags": [
+    "industry-showcase",
+    "marketing"
+  ],
+  "access": {
+    "groups": []
+  },
+  "id": "3d260a02-5fdc-4168-8f77-0256bcbca665",
+  "updated_at": "2026-06-29T15:11:11.298486Z",
+  "created_at": "2026-06-26T15:21:28.195504Z"
+}

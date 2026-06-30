@@ -1,0 +1,7 @@
+{
+  "name": "Color Picker updates text box",
+  "snippet": "// When color picker changes, update hex input\ndocument.querySelectorAll('input[type=\"color\"]').forEach((picker) => {\n  picker.addEventListener('input', (event) => {\n    let hexInput = document.getElementById(event.target.id + 'Hex');\n    hexInput.value = event.target.value;\n  });\n});\n\n// When hex input changes, update color picker\ndocument.querySelectorAll('input[type=\"text\"]').forEach((hexInput) => {\n  hexInput.addEventListener('input', (event) => {\n    let colorId = event.target.id.replace('Hex', '');\n    let colorPicker = document.getElementById(colorId);\n    colorPicker.value = event.target.value;\n  });\n});\n",
+  "id": "88186f26-8ba4-4e3a-aff3-2257b8560b5a",
+  "updated_at": "2023-06-15T19:22:53.306858Z",
+  "created_at": "2023-06-15T19:21:24.930847Z"
+}

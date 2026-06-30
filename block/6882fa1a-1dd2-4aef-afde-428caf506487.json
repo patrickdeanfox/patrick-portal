@@ -1,0 +1,35 @@
+{
+  "name": "SC · KPI Band",
+  "type": "html",
+  "css": [
+    ".ind-kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;height:100%;box-sizing:border-box;font-family:var(--font-stack-primary,system-ui,-apple-system,sans-serif);}\n.ind-kpis .ind-kpi{background:#fff;border:1px solid rgba(0,0,0,.07);border-radius:12px;box-shadow:0 1px 3px rgba(16,24,40,.06);padding:14px 16px;display:flex;flex-direction:column;justify-content:center;gap:6px;min-width:0;}\n.ind-kpis .ind-kpi-top{display:flex;align-items:center;gap:8px;}\n.ind-kpis .ind-kpi-dot{width:8px;height:8px;border-radius:50%;background:var(--color-primary,#009fe4);flex:0 0 auto;}\n.ind-kpis .ind-kpi-label{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:#6b7280;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}\n.ind-kpis .ind-kpi-val{font-size:26px;font-weight:800;color:var(--color-text,#1f2937);line-height:1;letter-spacing:-.01em;}\n.ind-kpis .ind-kpi-sub{font-size:11px;color:#9ca3af;font-weight:600;}\n@media(max-width:1100px){.ind-kpis{grid-template-columns:repeat(3,1fr);}}\n@media(max-width:640px){.ind-kpis{grid-template-columns:repeat(2,1fr);}}"
+  ],
+  "json_data": {
+    "isolated": false,
+    "html": [
+      "<div class=\"ind-kpis\">\n  <div class=\"ind-kpi\"><div class=\"ind-kpi-top\"><span class=\"ind-kpi-dot\"></span><span class=\"ind-kpi-label\">Total Shipments</span></div><div class=\"ind-kpi-val\" id=\"k-ship\">—</div><div class=\"ind-kpi-sub\">&nbsp;</div></div>\n  <div class=\"ind-kpi\"><div class=\"ind-kpi-top\"><span class=\"ind-kpi-dot\"></span><span class=\"ind-kpi-label\">Avg On-Time</span></div><div class=\"ind-kpi-val\" id=\"k-ontime\">—</div><div class=\"ind-kpi-sub\">weighted by shipments</div></div>\n  <div class=\"ind-kpi\"><div class=\"ind-kpi-top\"><span class=\"ind-kpi-dot\"></span><span class=\"ind-kpi-label\">Avg Transit</span></div><div class=\"ind-kpi-val\" id=\"k-transit\">—</div><div class=\"ind-kpi-sub\">days, weighted</div></div>\n  <div class=\"ind-kpi\"><div class=\"ind-kpi-top\"><span class=\"ind-kpi-dot\"></span><span class=\"ind-kpi-label\">Freight Cost</span></div><div class=\"ind-kpi-val\" id=\"k-freight\">—</div><div class=\"ind-kpi-sub\">&nbsp;</div></div>\n  <div class=\"ind-kpi\"><div class=\"ind-kpi-top\"><span class=\"ind-kpi-dot\"></span><span class=\"ind-kpi-label\">Cost / Shipment</span></div><div class=\"ind-kpi-val\" id=\"k-cps\">—</div><div class=\"ind-kpi-sub\">&nbsp;</div></div>\n  <div class=\"ind-kpi\"><div class=\"ind-kpi-top\"><span class=\"ind-kpi-dot\"></span><span class=\"ind-kpi-label\">Carriers</span></div><div class=\"ind-kpi-val\" id=\"k-carriers\">—</div><div class=\"ind-kpi-sub\">in view</div></div>\n</div>\n<script>(function(){\n  var DS_ID=\"9e8e01cf-0ab1-4984-9023-fd811810f062\";\n  var D=String.fromCharCode(36);\n  function rows(){var cb=(typeof currentBlock!=='undefined')?currentBlock:null;var r=cb&&cb.queryResults&&cb.queryResults[0];if(!r)return[];if(Array.isArray(r.mappedData))return r.mappedData;var cols=(r.columns||[]).map(function(c){return typeof c==='string'?c:(c&&c.name);});return(r.data||[]).map(function(rw){var o={};cols.forEach(function(c,i){o[c]=rw[i];});return o;});}\n  function num(v){var n=parseFloat(v);return isNaN(n)?0:n;}\n  function fmtInt(n){return Math.round(n).toLocaleString();}\n  function fmtMoney(n){if(n>=1e6)return D+(n/1e6).toFixed(2)+'M';if(n>=1e3)return D+Math.round(n/1e3)+'K';return D+fmtInt(n);}\n  function set(id,v){var e=document.getElementById(id);if(e)e.textContent=v;}\n  function render(){var d=rows();var ship=0,otw=0,trw=0,fr=0,car={};d.forEach(function(r){var s=num(r.shipments);ship+=s;otw+=num(r.on_time_pct)*s;trw+=num(r.avg_transit_days)*s;fr+=num(r.freight_cost);if(r.carrier)car[r.carrier]=1;});set('k-ship',fmtInt(ship));set('k-ontime',(ship?(otw/ship):0).toFixed(1)+'%');set('k-transit',(ship?(trw/ship):0).toFixed(1)+' d');set('k-freight',fmtMoney(fr));set('k-cps',fmtMoney(ship?(fr/ship):0));set('k-carriers',Object.keys(car).length);}\n  function init(){var loaded=(typeof currentBlock!=='undefined'&&currentBlock&&currentBlock.getOnLoadedCallback)?currentBlock.getOnLoadedCallback():function(){};try{render();}finally{loaded();}try{if(typeof zPortal!=='undefined'&&zPortal.dataSource&&zPortal.dataSource.on)zPortal.dataSource.on('load',DS_ID,render);}catch(e){}}\n  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();\n})();</script>"
+    ]
+  },
+  "ui_queries": [
+    {
+      "enabled": true,
+      "page_size": null,
+      "filter_strategy": {
+        "type": "blacklist",
+        "value": []
+      },
+      "query_id": "ddfc3bda-4e59-44ea-89d6-d890aebb7b35"
+    }
+  ],
+  "tags": [
+    "industry-showcase",
+    "kpi",
+    "supply-chain"
+  ],
+  "access": {
+    "groups": []
+  },
+  "id": "6882fa1a-1dd2-4aef-afde-428caf506487",
+  "updated_at": "2026-06-26T16:11:49.311989Z",
+  "created_at": "2026-06-26T16:11:49.312013Z"
+}

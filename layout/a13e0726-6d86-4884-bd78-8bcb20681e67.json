@@ -1,0 +1,119 @@
+{
+  "user_id": null,
+  "name": "Industry Showcase · Executive Overview",
+  "order": 1000,
+  "icon": null,
+  "json_data": {
+    "slug": "industry-showcase-1",
+    "grid": {
+      "id": "content",
+      "layouts": {
+        "lg": {
+          "width": 100,
+          "height": 100,
+          "align": "center",
+          "sizingUnit": "%",
+          "cellSize": 2
+        },
+        "md": {
+          "width": 100,
+          "height": 130,
+          "align": "center",
+          "sizingUnit": "%",
+          "cellSize": 6
+        },
+        "sm": {
+          "width": 100,
+          "height": 200,
+          "align": "center",
+          "sizingUnit": "%",
+          "cellSize": 10
+        }
+      },
+      "blocks": [
+        "d17b304f-389b-4315-ba5a-588d59521b35",
+        "a5110e26-1f39-4904-93fb-075cbe6f2867"
+      ],
+      "block_layouts": {
+        "lg": {
+          "d17b304f-389b-4315-ba5a-588d59521b35": {
+            "left": 0,
+            "top": 0,
+            "height": 25,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "a5110e26-1f39-4904-93fb-075cbe6f2867": {
+            "left": 0,
+            "top": 25,
+            "height": 73,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          }
+        },
+        "md": {
+          "d17b304f-389b-4315-ba5a-588d59521b35": {
+            "left": 0,
+            "top": 0,
+            "height": 32,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "a5110e26-1f39-4904-93fb-075cbe6f2867": {
+            "left": 0,
+            "top": 32,
+            "height": 96,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          }
+        },
+        "sm": {
+          "d17b304f-389b-4315-ba5a-588d59521b35": {
+            "left": 0,
+            "top": 0,
+            "height": 40,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "a5110e26-1f39-4904-93fb-075cbe6f2867": {
+            "left": 0,
+            "top": 40,
+            "height": 158,
+            "width": 100,
+            "sizingUnit": "%",
+            "zIndex": 0
+          }
+        }
+      },
+      "block_hidden": []
+    },
+    "javascripts": {
+      "onPageLoad": []
+    },
+    "css": [],
+    "theme": {
+      "template": {
+        "header": true,
+        "leftSidebar": false,
+        "rightSidebar": false,
+        "footer": false
+      },
+      "customProperties": {}
+    }
+  },
+  "tags": [
+    "executive",
+    "industry-showcase"
+  ],
+  "access": {
+    "groups": []
+  },
+  "id": "a13e0726-6d86-4884-bd78-8bcb20681e67",
+  "updated_at": "2026-06-29T15:10:49.249673Z",
+  "created_at": "2026-06-26T15:08:41.084530Z"
+}

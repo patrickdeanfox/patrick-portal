@@ -1,0 +1,49 @@
+{
+  "name": "SYS · Page Views by Day & Hour",
+  "sql": "WITH day_of_week_events AS (\n    SELECT \n        CASE EXTRACT(DOW FROM date_created)\n            WHEN 0 THEN 'Sunday'\n            WHEN 1 THEN 'Monday'\n            WHEN 2 THEN 'Tuesday'\n            WHEN 3 THEN 'Wednesday'\n            WHEN 4 THEN 'Thursday'\n            WHEN 5 THEN 'Friday'\n            WHEN 6 THEN 'Saturday'\n        END AS day_of_week,\n        EXTRACT(HOUR FROM date_created) AS hour_of_day,\n        COUNT(*) AS page_views_count\n    FROM events\n    WHERE type = 'PAGE_VIEW'\n    GROUP BY day_of_week, hour_of_day\n)\nSELECT \n    day_of_week,\n    hour_of_day,\n    page_views_count\nFROM day_of_week_events\nORDER BY \n    CASE day_of_week\n        WHEN 'Sunday' THEN 1\n        WHEN 'Monday' THEN 2\n        WHEN 'Tuesday' THEN 3\n        WHEN 'Wednesday' THEN 4\n        WHEN 'Thursday' THEN 5\n        WHEN 'Friday' THEN 6\n        WHEN 'Saturday' THEN 7\n    END,\n    page_views_count DESC,\n    hour_of_day\n",
+  "json_data": {
+    "column_types": {}
+  },
+  "tags": [
+    "system",
+    "telemetry"
+  ],
+  "default_params": [],
+  "id": "a1f3fb24-5e69-4016-b2df-2b9d53bc8753",
+  "columns": [
+    {
+      "name": "day_of_week",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "hour_of_day",
+      "type_code": 701,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "FLOAT(8)"
+    },
+    {
+      "name": "page_views_count",
+      "type_code": 20,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(8)"
+    }
+  ],
+  "updated_at": "2026-06-29T16:07:21.531109Z",
+  "created_at": "2024-06-06T18:56:23.240156Z",
+  "error": null,
+  "database_connection": null
+}

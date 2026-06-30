@@ -1,0 +1,89 @@
+{
+  "name": "DW · Fact Purchase Order",
+  "sql": "SELECT\n    gs                                                                          AS purchase_order_id,\n    'PO-' || lpad(gs::text, 6, '0')                                            AS po_number,\n    1 + (('x'||substr(md5('POSUP'||gs::text),1,8))::bit(32)::bigint % 150)::int      AS supplier_id,\n    1 + (('x'||substr(md5('POEMP'||gs::text),1,8))::bit(32)::bigint % 300)::int      AS employee_id,\n    (CURRENT_DATE - (('x'||substr(md5('PODATE'||gs::text),1,8))::bit(32)::bigint % 1095)::int) AS order_date,\n    (ARRAY['Received','Received','Received','Open','Cancelled'])\n        [1 + (('x'||substr(md5('POSTAT'||gs::text),1,8))::bit(32)::bigint % 5)::int] AS status,\n    (ARRAY['Net 30','Net 45','Net 60','Prepaid'])\n        [1 + (('x'||substr(md5('POTERM'||gs::text),1,8))::bit(32)::bigint % 4)::int] AS payment_terms\nFROM generate_series(1, 2000) AS gs",
+  "json_data": null,
+  "tags": [
+    "data-warehouse",
+    "fact",
+    "purchasing",
+    "sample"
+  ],
+  "default_params": [],
+  "id": "ae44f95a-87a4-4f6b-a8fd-055fd9067bfb",
+  "columns": [
+    {
+      "name": "purchase_order_id",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "po_number",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "supplier_id",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "employee_id",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "order_date",
+      "type_code": 1082,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "DATE"
+    },
+    {
+      "name": "status",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "payment_terms",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    }
+  ],
+  "updated_at": "2026-06-29T16:53:52.218725Z",
+  "created_at": "2026-06-29T16:53:52.218737Z",
+  "error": null,
+  "database_connection": null
+}

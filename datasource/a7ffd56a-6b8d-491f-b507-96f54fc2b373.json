@@ -1,0 +1,159 @@
+{
+  "name": "SYS · Users",
+  "sql": "SELECT * FROM users",
+  "json_data": {
+    "column_types": {}
+  },
+  "tags": [
+    "system",
+    "telemetry"
+  ],
+  "default_params": [],
+  "id": "a7ffd56a-6b8d-491f-b507-96f54fc2b373",
+  "columns": [
+    {
+      "name": "id",
+      "type_code": 2950,
+      "display_size": null,
+      "internal_size": 16,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "UUID"
+    },
+    {
+      "name": "hashed_password",
+      "type_code": 1043,
+      "display_size": null,
+      "internal_size": 255,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "VARCHAR"
+    },
+    {
+      "name": "name",
+      "type_code": 1043,
+      "display_size": null,
+      "internal_size": 255,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "VARCHAR"
+    },
+    {
+      "name": "fullname",
+      "type_code": 1043,
+      "display_size": null,
+      "internal_size": 255,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "VARCHAR"
+    },
+    {
+      "name": "email",
+      "type_code": 1043,
+      "display_size": null,
+      "internal_size": 255,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "VARCHAR"
+    },
+    {
+      "name": "auth_user_id",
+      "type_code": 1043,
+      "display_size": null,
+      "internal_size": 255,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "VARCHAR"
+    },
+    {
+      "name": "site_role",
+      "type_code": 1043,
+      "display_size": null,
+      "internal_size": 63,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "VARCHAR"
+    },
+    {
+      "name": "admin",
+      "type_code": 16,
+      "display_size": null,
+      "internal_size": 1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "BOOL"
+    },
+    {
+      "name": "workgroup_session_id",
+      "type_code": 1043,
+      "display_size": null,
+      "internal_size": 255,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "VARCHAR"
+    },
+    {
+      "name": "session_expiry",
+      "type_code": 1184,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TIMESTAMPTZ"
+    },
+    {
+      "name": "updated_at",
+      "type_code": 1184,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TIMESTAMPTZ"
+    },
+    {
+      "name": "created_at",
+      "type_code": 1184,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TIMESTAMPTZ"
+    },
+    {
+      "name": "source",
+      "type_code": 1043,
+      "display_size": null,
+      "internal_size": 64,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "VARCHAR"
+    },
+    {
+      "name": "json_data",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    }
+  ],
+  "updated_at": "2026-06-29T16:07:46.907717Z",
+  "created_at": "2023-09-05T20:06:48.584854Z",
+  "error": null,
+  "database_connection": null
+}

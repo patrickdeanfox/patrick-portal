@@ -1,0 +1,25 @@
+{
+  "name": "EXEC · Industry Navigator",
+  "type": "html",
+  "css": [
+    ".exn{height:100%;box-sizing:border-box;overflow:auto;font-family:var(--font-stack-primary,system-ui,-apple-system,sans-serif);}\n.exn-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(258px,1fr));gap:14px;}\n.exn-card{display:flex;flex-direction:column;gap:3px;text-decoration:none;background:#fff;border:1px solid rgba(0,0,0,.08);border-left:4px solid var(--color-primary,#009fe4);border-radius:12px;box-shadow:0 1px 3px rgba(16,24,40,.06);padding:16px 18px;transition:transform .12s ease,box-shadow .12s ease;color:var(--color-text,#1f2937);}\n.exn-card:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(16,24,40,.13);}\n.exn-card .ind{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--color-primary,#009fe4);font-weight:800;}\n.exn-card .name{font-size:16px;font-weight:800;margin-top:1px;}\n.exn-card .metric{font-size:25px;font-weight:800;margin-top:8px;line-height:1;letter-spacing:-.01em;}\n.exn-card .sub{font-size:12px;color:#6b7280;font-weight:600;margin-top:2px;}\n.exn-card .go{margin-top:10px;font-size:12px;font-weight:700;color:var(--color-primary,#009fe4);}"
+  ],
+  "json_data": {
+    "isolated": false,
+    "html": [
+      "<div class=\"exn\"><div class=\"exn-grid\">\n  <a class=\"exn-card\" href=\"/p/industry-showcase-2\"><div class=\"ind\">Healthcare</div><div class=\"name\">Clinical Performance</div><div class=\"metric\">&#36;7.85M</div><div class=\"sub\">Revenue · 1,938 patients</div><div class=\"go\">Open dashboard →</div></a>\n  <a class=\"exn-card\" href=\"/p/industry-showcase-3\"><div class=\"ind\">Financial Services</div><div class=\"name\">Banking Performance</div><div class=\"metric\">&#36;313.6M</div><div class=\"sub\">Loan volume · 2,408 new accounts</div><div class=\"go\">Open dashboard →</div></a>\n  <a class=\"exn-card\" href=\"/p/industry-showcase-4\"><div class=\"ind\">Supply Chain</div><div class=\"name\">Logistics Performance</div><div class=\"metric\">55,000</div><div class=\"sub\">Shipments · &#36;24.9M freight</div><div class=\"go\">Open dashboard →</div></a>\n  <a class=\"exn-card\" href=\"/p/industry-showcase-5\"><div class=\"ind\">Retail eCommerce</div><div class=\"name\">Commerce Performance</div><div class=\"metric\">&#36;10.4M</div><div class=\"sub\">Revenue · 94.6K units sold</div><div class=\"go\">Open dashboard →</div></a>\n  <a class=\"exn-card\" href=\"/p/industry-showcase-6\"><div class=\"ind\">IoT SCADA</div><div class=\"name\">Telemetry &amp; Uptime</div><div class=\"metric\">96.1%</div><div class=\"sub\">Availability · 165 alerts</div><div class=\"go\">Open dashboard →</div></a>\n  <a class=\"exn-card\" href=\"/p/industry-showcase-7\"><div class=\"ind\">CRM Sales</div><div class=\"name\">Sales &amp; Pipeline</div><div class=\"metric\">&#36;595K</div><div class=\"sub\">Pipeline · 11 won deals</div><div class=\"go\">Open dashboard →</div></a>\n  <a class=\"exn-card\" href=\"/p/industry-showcase-8\"><div class=\"ind\">Marketing</div><div class=\"name\">Campaign Performance</div><div class=\"metric\">6.0x</div><div class=\"sub\">ROAS · &#36;689K revenue</div><div class=\"go\">Open dashboard →</div></a>\n</div></div>"
+    ]
+  },
+  "ui_queries": [],
+  "tags": [
+    "executive",
+    "industry-showcase",
+    "navigation"
+  ],
+  "access": {
+    "groups": []
+  },
+  "id": "a5110e26-1f39-4904-93fb-075cbe6f2867",
+  "updated_at": "2026-06-26T16:26:13.171677Z",
+  "created_at": "2026-06-26T16:26:13.171687Z"
+}

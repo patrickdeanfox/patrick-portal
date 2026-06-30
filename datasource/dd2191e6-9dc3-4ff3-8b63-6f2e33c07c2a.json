@@ -1,0 +1,87 @@
+{
+  "name": "HC · Clinical — Sample",
+  "sql": "SELECT * FROM (VALUES\n  ('Cardiology', 'Dr. Patel', 'Catheterization', 142, 3.2, 8, 420000),\n  ('Cardiology', 'Dr. Patel', 'Bypass Surgery', 61, 7.4, 5, 890000),\n  ('Cardiology', 'Dr. Chen', 'Catheterization', 118, 3.0, 6, 340000),\n  ('Orthopedics', 'Dr. Nguyen', 'Knee Replacement', 98, 2.8, 4, 510000),\n  ('Orthopedics', 'Dr. Nguyen', 'Hip Replacement', 74, 3.1, 3, 440000),\n  ('Orthopedics', 'Dr. Lewis', 'Spinal Fusion', 55, 4.5, 7, 680000),\n  ('Oncology', 'Dr. Rossi', 'Chemotherapy', 210, 1.2, 18, 920000),\n  ('Oncology', 'Dr. Rossi', 'Radiation', 175, 1.0, 12, 640000),\n  ('Neurology', 'Dr. Okafor', 'Stroke Care', 89, 5.1, 14, 730000),\n  ('Neurology', 'Dr. Okafor', 'Epilepsy', 63, 2.3, 6, 310000),\n  ('Emergency', 'Dr. Walsh', 'Trauma', 312, 1.8, 22, 1100000),\n  ('Emergency', 'Dr. Walsh', 'General', 541, 0.9, 31, 870000)\n) AS t(department, physician, procedure_type, patient_count, avg_los_days, readmissions, revenue)",
+  "json_data": null,
+  "tags": [
+    "healthcare",
+    "sample"
+  ],
+  "default_params": [],
+  "id": "dd2191e6-9dc3-4ff3-8b63-6f2e33c07c2a",
+  "columns": [
+    {
+      "name": "department",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "physician",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "procedure_type",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "patient_count",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "avg_los_days",
+      "type_code": 1700,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": 65535,
+      "scale": 65535,
+      "null_ok": null,
+      "type": "NUMERIC"
+    },
+    {
+      "name": "readmissions",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "revenue",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    }
+  ],
+  "updated_at": "2026-06-29T16:06:38.781138Z",
+  "created_at": "2026-05-06T14:30:21.419955Z",
+  "error": null,
+  "database_connection": null
+}

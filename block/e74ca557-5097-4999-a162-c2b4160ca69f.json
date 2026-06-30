@@ -1,0 +1,35 @@
+{
+  "name": "SYS · RSS Feed (Hendrick)",
+  "type": "html",
+  "css": [
+    ".html-wrapper {",
+    "\tdisplay: block;",
+    "\twidth: 100%;",
+    "\theight: 100%;",
+    "\tbackground-color: transparent;",
+    "}",
+    "iframe {",
+    "\theight: 100%;",
+    "\twidth: 100%;",
+    "\tdisplay: block;",
+    "\tborder: none;",
+    "}"
+  ],
+  "json_data": {
+    "isolated": false,
+    "html": [
+      "<div class='sk-ww-rss-feed' data-embed-id='149317'></div><script src='https://widgets.sociablekit.com/rss-feed/widget.js' async defer></script>"
+    ]
+  },
+  "ui_queries": [],
+  "tags": [
+    "integration",
+    "system"
+  ],
+  "access": {
+    "groups": []
+  },
+  "id": "e74ca557-5097-4999-a162-c2b4160ca69f",
+  "updated_at": "2026-06-29T15:09:31.183551Z",
+  "created_at": "2023-12-05T19:32:52.890997Z"
+}

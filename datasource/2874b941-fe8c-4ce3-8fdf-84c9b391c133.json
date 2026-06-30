@@ -1,0 +1,248 @@
+{
+  "name": "Fitness — Sample",
+  "sql": "WITH sample_data AS (\r\n  SELECT *\r\n  FROM (VALUES\r\n    (1, 'Airdrie Towerlane Centre', '303-505 Main Street SW', 'Airdrie', 'AB', 'Canada', 'T4B 3K3', 51.28597, -114.01062, CAST('2026-04-01' AS date), 'April     2026', 2620, 13, 64, 2556, 2569, 224, 260, 41, 222, 2, 4.4, 2),\r\n    (1, 'Airdrie Towerlane Centre', '303-505 Main Street SW', 'Airdrie', 'AB', 'Canada', 'T4B 3K3', 51.28597, -114.01062, CAST('2026-03-01' AS date), 'March     2026', 2679, 28, 87, 2592, 2620, 209, 224, 22, 207, 2, 4.4, 2),\r\n    (1, 'Airdrie Towerlane Centre', '303-505 Main Street SW', 'Airdrie', 'AB', 'Canada', 'T4B 3K3', 51.28597, -114.01062, CAST('2026-02-01' AS date), 'February  2026', 2680, 46, 47, 2633, 2679, 188, 209, 24, 186, 2, 4, 2),\r\n    (1, 'Airdrie Towerlane Centre', '303-505 Main Street SW', 'Airdrie', 'AB', 'Canada', 'T4B 3K3', 51.28597, -114.01062, CAST('2026-01-01' AS date), 'January   2026', 2659, 56, 35, 2624, 2680, 134, 188, 52, 133, 1, 4.1, 2),\r\n    (1, 'Airdrie Towerlane Centre', '303-505 Main Street SW', 'Airdrie', 'AB', 'Canada', 'T4B 3K3', 51.28597, -114.01062, CAST('2025-12-01' AS date), 'December  2025', 2676, 53, 70, 2606, 2659, 107, 134, 26, 106, 1, 4.1, 2),\r\n    (1, 'Airdrie Towerlane Centre', '303-505 Main Street SW', 'Airdrie', 'AB', 'Canada', 'T4B 3K3', 51.28597, -114.01062, CAST('2025-11-01' AS date), 'November  2025', 2698, 59, 81, 2617, 2676, 90, 107, 16, 89, 1, 4.5, 2),\r\n    (2, 'Calgary Canyon Meadows', '13226 MacLeod Trail SE', 'Calgary', 'AB', 'Canada', 'T2J 7E5', 50.9327524, -114.0673904, CAST('2026-04-01' AS date), 'April     2026', 2373, 48, 58, 2315, 2363, 261, 260, 2, 260, 1, 4.4, 1),\r\n    (2, 'Calgary Canyon Meadows', '13226 MacLeod Trail SE', 'Calgary', 'AB', 'Canada', 'T2J 7E5', 50.9327524, -114.0673904, CAST('2026-03-01' AS date), 'March     2026', 2413, 39, 79, 2334, 2373, 250, 261, 20, 246, 4, 4, 1),\r\n    (2, 'Calgary Canyon Meadows', '13226 MacLeod Trail SE', 'Calgary', 'AB', 'Canada', 'T2J 7E5', 50.9327524, -114.0673904, CAST('2026-02-01' AS date), 'February  2026', 2459, 34, 80, 2379, 2413, 248, 250, 7, 247, 1, 4.1, 1),\r\n    (2, 'Calgary Canyon Meadows', '13226 MacLeod Trail SE', 'Calgary', 'AB', 'Canada', 'T2J 7E5', 50.9327524, -114.0673904, CAST('2026-01-01' AS date), 'January   2026', 2468, 62, 71, 2397, 2459, 227, 248, 23, 225, 2, 4.3, 1),\r\n    (2, 'Calgary Canyon Meadows', '13226 MacLeod Trail SE', 'Calgary', 'AB', 'Canada', 'T2J 7E5', 50.9327524, -114.0673904, CAST('2025-12-01' AS date), 'December  2025', 2433, 80, 45, 2388, 2468, 199, 227, 31, 197, 2, 4, 1),\r\n    (2, 'Calgary Canyon Meadows', '13226 MacLeod Trail SE', 'Calgary', 'AB', 'Canada', 'T2J 7E5', 50.9327524, -114.0673904, CAST('2025-11-01' AS date), 'November  2025', 2444, 41, 52, 2392, 2433, 186, 199, 16, 184, 2, 4.1, 1),\r\n    (3, 'Calgary Country Village and Harvest Hills', '100 Country Village Road NE', 'Calgary', 'AB', 'Canada', 'T3K 5Z2', 51.1618828, -114.070064, CAST('2026-04-01' AS date), 'April     2026', 2580, 13, 68, 2512, 2525, 63, 85, 23, 62, 1, 4.1, 2),\r\n    (3, 'Calgary Country Village and Harvest Hills', '100 Country Village Road NE', 'Calgary', 'AB', 'Canada', 'T3K 5Z2', 51.1618828, -114.070064, CAST('2026-03-01' AS date), 'March     2026', 2614, 44, 78, 2536, 2580, 30, 63, 32, 30, 0, 3.9, 1),\r\n    (3, 'Calgary Country Village and Harvest Hills', '100 Country Village Road NE', 'Calgary', 'AB', 'Canada', 'T3K 5Z2', 51.1618828, -114.070064, CAST('2026-02-01' AS date), 'February  2026', 2557, 89, 32, 2525, 2614, 228, 30, 26, 226, 2, 3.9, 0),\r\n    (3, 'Calgary Country Village and Harvest Hills', '100 Country Village Road NE', 'Calgary', 'AB', 'Canada', 'T3K 5Z2', 51.1618828, -114.070064, CAST('2026-01-01' AS date), 'January   2026', 2593, 27, 63, 2530, 2557, 202, 228, 31, 199, 3, 4.5, 1),\r\n    (3, 'Calgary Country Village and Harvest Hills', '100 Country Village Road NE', 'Calgary', 'AB', 'Canada', 'T3K 5Z2', 51.1618828, -114.070064, CAST('2025-12-01' AS date), 'December  2025', 2637, 57, 101, 2536, 2593, 169, 202, 37, 168, 1, 4.5, 1),\r\n    (3, 'Calgary Country Village and Harvest Hills', '100 Country Village Road NE', 'Calgary', 'AB', 'Canada', 'T3K 5Z2', 51.1618828, -114.070064, CAST('2025-11-01' AS date), 'November  2025', 2611, 63, 37, 2574, 2637, 127, 169, 40, 126, 1, 4.1, 1),\r\n    (4, 'Calgary Creekside', '12330 Symons Valley Rd NW', 'Calgary', 'AB', 'Canada', 'T3P 0A3', 51.1636208, -114.1284314, CAST('2026-04-01' AS date), 'April     2026', 2861, 53, 146, 2715, 2768, 244, 256, 20, 242, 2, 4.1, 3),\r\n    (4, 'Calgary Creekside', '12330 Symons Valley Rd NW', 'Calgary', 'AB', 'Canada', 'T3P 0A3', 51.1636208, -114.1284314, CAST('2026-03-01' AS date), 'March     2026', 2893, 78, 110, 2783, 2861, 216, 244, 32, 214, 2, 3.9, 3),\r\n    (4, 'Calgary Creekside', '12330 Symons Valley Rd NW', 'Calgary', 'AB', 'Canada', 'T3P 0A3', 51.1636208, -114.1284314, CAST('2026-02-01' AS date), 'February  2026', 2902, 66, 75, 2827, 2893, 200, 216, 21, 198, 2, 4.2, 3),\r\n    (4, 'Calgary Creekside', '12330 Symons Valley Rd NW', 'Calgary', 'AB', 'Canada', 'T3P 0A3', 51.1636208, -114.1284314, CAST('2026-01-01' AS date), 'January   2026', 2884, 62, 47, 2837, 2902, 199, 200, 3, 197, 2, 3.9, 2),\r\n    (4, 'Calgary Creekside', '12330 Symons Valley Rd NW', 'Calgary', 'AB', 'Canada', 'T3P 0A3', 51.1636208, -114.1284314, CAST('2025-12-01' AS date), 'December  2025', 2897, 58, 71, 2826, 2884, 161, 199, 38, 160, 1, 4.5, 3),\r\n    (4, 'Calgary Creekside', '12330 Symons Valley Rd NW', 'Calgary', 'AB', 'Canada', 'T3P 0A3', 51.1636208, -114.1284314, CAST('2025-11-01' AS date), 'November  2025', 2904, 57, 64, 2840, 2897, 147, 161, 15, 145, 2, 4.1, 3),\r\n    (5, 'Calgary Deerfoot City', '#2120, 901 64th Avenue NE', 'Calgary', 'AB', 'Canada', 'T2E 7P4', 51.0456064, -114.057541, CAST('2026-04-01' AS date), 'April     2026', 2207, 33, 62, 2145, 2178, 214, 235, 27, 211, 3, 4.1, 3),\r\n    (5, 'Calgary Deerfoot City', '#2120, 901 64th Avenue NE', 'Calgary', 'AB', 'Canada', 'T2E 7P4', 51.0456064, -114.057541, CAST('2026-03-01' AS date), 'March     2026', 2222, 54, 69, 2153, 2207, 213, 214, 6, 211, 2, 4.2, 2),\r\n    (5, 'Calgary Deerfoot City', '#2120, 901 64th Avenue NE', 'Calgary', 'AB', 'Canada', 'T2E 7P4', 51.0456064, -114.057541, CAST('2026-02-01' AS date), 'February  2026', 2243, 38, 59, 2184, 2222, 204, 213, 14, 202, 2, 4.4, 2),\r\n    (5, 'Calgary Deerfoot City', '#2120, 901 64th Avenue NE', 'Calgary', 'AB', 'Canada', 'T2E 7P4', 51.0456064, -114.057541, CAST('2026-01-01' AS date), 'January   2026', 2224, 84, 65, 2159, 2243, 175, 204, 26, 174, 1, 3.9, 2),\r\n    (5, 'Calgary Deerfoot City', '#2120, 901 64th Avenue NE', 'Calgary', 'AB', 'Canada', 'T2E 7P4', 51.0456064, -114.057541, CAST('2025-12-01' AS date), 'December  2025', 2226, 47, 49, 2177, 2224, 142, 175, 36, 140, 2, 4.3, 2),\r\n    (5, 'Calgary Deerfoot City', '#2120, 901 64th Avenue NE', 'Calgary', 'AB', 'Canada', 'T2E 7P4', 51.0456064, -114.057541, CAST('2025-11-01' AS date), 'November  2025', 2271, 26, 71, 2200, 2226, 117, 142, 29, 115, 2, 3.8, 2),\r\n    (6, 'Calgary McKenzie Towne Centre', '18 McKenzie Towne Gate S.E.', 'Calgary', 'AB', 'Canada', 'T2Z 0N2', 51.0456064, -114.057541, CAST('2026-04-01' AS date), 'April     2026', 2056, 21, 74, 1982, 2003, 188, 192, 11, 186, 2, 3.7, 1),\r\n    (6, 'Calgary McKenzie Towne Centre', '18 McKenzie Towne Gate S.E.', 'Calgary', 'AB', 'Canada', 'T2Z 0N2', 51.0456064, -114.057541, CAST('2026-03-01' AS date), 'March     2026', 2087, 31, 62, 2025, 2056, 171, 188, 21, 169, 2, 3.7, 1),\r\n    (6, 'Calgary McKenzie Towne Centre', '18 McKenzie Towne Gate S.E.', 'Calgary', 'AB', 'Canada', 'T2Z 0N2', 51.0456064, -114.057541, CAST('2026-02-01' AS date), 'February  2026', 2085, 40, 38, 2047, 2087, 146, 171, 26, 145, 1, 4.2, 1),\r\n    (6, 'Calgary McKenzie Towne Centre', '18 McKenzie Towne Gate S.E.', 'Calgary', 'AB', 'Canada', 'T2Z 0N2', 51.0456064, -114.057541, CAST('2026-01-01' AS date), 'January   2026', 2084, 36, 35, 2049, 2085, 144, 146, 3, 142, 2, 4.1, 1),\r\n    (6, 'Calgary McKenzie Towne Centre', '18 McKenzie Towne Gate S.E.', 'Calgary', 'AB', 'Canada', 'T2Z 0N2', 51.0456064, -114.057541, CAST('2025-12-01' AS date), 'December  2025', 2112, 33, 61, 2051, 2084, 119, 144, 26, 118, 1, 3.9, 1),\r\n    (6, 'Calgary McKenzie Towne Centre', '18 McKenzie Towne Gate S.E.', 'Calgary', 'AB', 'Canada', 'T2Z 0N2', 51.0456064, -114.057541, CAST('2025-11-01' AS date), 'November  2025', 2130, 44, 62, 2068, 2112, 102, 119, 17, 101, 1, 4.3, 1),\r\n    (7, 'Calgary Mount Royal Village', '880 16th Avenue SW, Unit 200', 'Calgary', 'AB', 'Canada', 'T2R 1J9', 51.0456064, -114.057541, CAST('2026-04-01' AS date), 'April     2026', 1857, 38, 43, 1814, 1852, 174, 190, 20, 172, 2, 4.4, 3),\r\n    (7, 'Calgary Mount Royal Village', '880 16th Avenue SW, Unit 200', 'Calgary', 'AB', 'Canada', 'T2R 1J9', 51.0456064, -114.057541, CAST('2026-03-01' AS date), 'March     2026', 1933, 12, 88, 1845, 1857, 164, 174, 18, 162, 2, 4, 3),\r\n    (7, 'Calgary Mount Royal Village', '880 16th Avenue SW, Unit 200', 'Calgary', 'AB', 'Canada', 'T2R 1J9', 51.0456064, -114.057541, CAST('2026-02-01' AS date), 'February  2026', 1969, 44, 80, 1889, 1933, 167, 164, 2, 165, 2, 4.2, 2),\r\n    (7, 'Calgary Mount Royal Village', '880 16th Avenue SW, Unit 200', 'Calgary', 'AB', 'Canada', 'T2R 1J9', 51.0456064, -114.057541, CAST('2026-01-01' AS date), 'January   2026', 2045, 25, 101, 1944, 1969, 153, 167, 20, 151, 2, 3.8, 2),\r\n    (7, 'Calgary Mount Royal Village', '880 16th Avenue SW, Unit 200', 'Calgary', 'AB', 'Canada', 'T2R 1J9', 51.0456064, -114.057541, CAST('2025-12-01' AS date), 'December  2025', 2078, 40, 73, 2005, 2045, 119, 153, 36, 118, 1, 4.3, 2),\r\n    (7, 'Calgary Mount Royal Village', '880 16th Avenue SW, Unit 200', 'Calgary', 'AB', 'Canada', 'T2R 1J9', 51.0456064, -114.057541, CAST('2025-11-01' AS date), 'November  2025', 2136, 29, 87, 2049, 2078, 99, 119, 22, 98, 1, 4.3, 2),\r\n    (8, 'Calgary Northland Village', 'Unit 2230, 5235 Northland Drive NW', 'Calgary', 'AB', 'Canada', 'T2L 2J8', 51.0999689, -114.143049, CAST('2026-04-01' AS date), 'April     2026', 1791, 25, 70, 1721, 1746, 137, 156, 22, 136, 1, 3.9, 2),\r\n    (8, 'Calgary Northland Village', 'Unit 2230, 5235 Northland Drive NW', 'Calgary', 'AB', 'Canada', 'T2L 2J8', 51.0999689, -114.143049, CAST('2026-03-01' AS date), 'March     2026', 1778, 53, 40, 1738, 1791, 125, 137, 12, 124, 1, 4, 2),\r\n    (8, 'Calgary Northland Village', 'Unit 2230, 5235 Northland Drive NW', 'Calgary', 'AB', 'Canada', 'T2L 2J8', 51.0999689, -114.143049, CAST('2026-02-01' AS date), 'February  2026', 1825, 26, 73, 1752, 1778, 118, 125, 11, 116, 2, 3.6, 2),\r\n    (8, 'Calgary Northland Village', 'Unit 2230, 5235 Northland Drive NW', 'Calgary', 'AB', 'Canada', 'T2L 2J8', 51.0999689, -114.143049, CAST('2026-01-01' AS date), 'January   2026', 1861, 30, 69, 1792, 1825, 106, 118, 34, 104, 2, 4.5, 1),\r\n    (8, 'Calgary Northland Village', 'Unit 2230, 5235 Northland Drive NW', 'Calgary', 'AB', 'Canada', 'T2L 2J8', 51.0999689, -114.143049, CAST('2025-12-01' AS date), 'December  2025', 1914, 26, 79, 1835, 1861, 88, 106, 20, 87, 1, 4.2, 2),\r\n    (8, 'Calgary Northland Village', 'Unit 2230, 5235 Northland Drive NW', 'Calgary', 'AB', 'Canada', 'T2L 2J8', 51.0999689, -114.143049, CAST('2025-11-01' AS date), 'November  2025', 1935, 45, 66, 1869, 1914, 86, 88, 2, 85, 1, 4.2, 2),\r\n    (9, 'Calgary Richmond Square', '50-3915 51 Street SW', 'Calgary', 'AB', 'Canada', 'T3E 6N1', 51.0456064, -114.057541, CAST('2026-04-01' AS date), 'April     2026', 1932, 31, 68, 1864, 1895, 59, 73, 15, 58, 1, 4.5, 1),\r\n    (9, 'Calgary Richmond Square', '50-3915 51 Street SW', 'Calgary', 'AB', 'Canada', 'T3E 6N1', 51.0456064, -114.057541, CAST('2026-03-01' AS date), 'March     2026', 1932, 34, 34, 1898, 1932, 26, 59, 31, 26, 0, 4.2, 1),\r\n    (9, 'Calgary Richmond Square', '50-3915 51 Street SW', 'Calgary', 'AB', 'Canada', 'T3E 6N1', 51.0456064, -114.057541, CAST('2026-02-01' AS date), 'February  2026', 1962, 31, 61, 1901, 1932, 22, 26, 3, 22, 0, 4.2, 1),\r\n    (9, 'Calgary Richmond Square', '50-3915 51 Street SW', 'Calgary', 'AB', 'Canada', 'T3E 6N1', 51.0456064, -114.057541, CAST('2026-01-01' AS date), 'January   2026', 1970, 30, 38, 1932, 1962, 102, 22, 24, 101, 1, 3.9, 0),\r\n    (9, 'Calgary Richmond Square', '50-3915 51 Street SW', 'Calgary', 'AB', 'Canada', 'T3E 6N1', 51.0456064, -114.057541, CAST('2025-12-01' AS date), 'December  2025', 2011, 41, 82, 1929, 1970, 84, 102, 19, 83, 1, 4.4, 1),\r\n    (9, 'Calgary Richmond Square', '50-3915 51 Street SW', 'Calgary', 'AB', 'Canada', 'T3E 6N1', 51.0456064, -114.057541, CAST('2025-11-01' AS date), 'November  2025', 2039, 32, 60, 1979, 2011, 69, 84, 16, 68, 1, 4.1, 1),\r\n    (10, 'Calgary Shepard and 130th SE', '4916 130 Avenue SE', 'Calgary', 'AB', 'Canada', 'T2Z 0B2', 50.9342133, -113.9630653, CAST('2026-04-01' AS date), 'April     2026', 2589, 54, 93, 2496, 2550, 233, 270, 45, 230, 3, 4.3, 4),\r\n    (10, 'Calgary Shepard and 130th SE', '4916 130 Avenue SE', 'Calgary', 'AB', 'Canada', 'T2Z 0B2', 50.9342133, -113.9630653, CAST('2026-03-01' AS date), 'March     2026', 2593, 51, 55, 2538, 2589, 214, 233, 23, 212, 2, 4.1, 4),\r\n    (10, 'Calgary Shepard and 130th SE', '4916 130 Avenue SE', 'Calgary', 'AB', 'Canada', 'T2Z 0B2', 50.9342133, -113.9630653, CAST('2026-02-01' AS date), 'February  2026', 2574, 55, 41, 2533, 2593, 231, 214, 32, 229, 2, 4.3, 3),\r\n    (10, 'Calgary Shepard and 130th SE', '4916 130 Avenue SE', 'Calgary', 'AB', 'Canada', 'T2Z 0B2', 50.9342133, -113.9630653, CAST('2026-01-01' AS date), 'January   2026', 2570, 51, 47, 2523, 2574, 215, 231, 16, 213, 2, 4.2, 4),\r\n    (10, 'Calgary Shepard and 130th SE', '4916 130 Avenue SE', 'Calgary', 'AB', 'Canada', 'T2Z 0B2', 50.9342133, -113.9630653, CAST('2025-12-01' AS date), 'December  2025', 2580, 55, 65, 2515, 2570, 206, 215, 11, 203, 3, 4.1, 4),\r\n    (10, 'Calgary Shepard and 130th SE', '4916 130 Avenue SE', 'Calgary', 'AB', 'Canada', 'T2Z 0B2', 50.9342133, -113.9630653, CAST('2025-11-01' AS date), 'November  2025', 2650, 29, 99, 2551, 2580, 157, 206, 53, 156, 1, 4.2, 4),\r\n    (11, 'Calgary Stephen Avenue', '140 8th Avenue SW', 'Calgary', 'AB', 'Canada', 'T2P 1B3', 51.0457573, -114.065127, CAST('2026-04-01' AS date), 'April     2026', 2177, 63, 61, 2116, 2179, 137, 144, 7, 136, 1, 4.4, 2),\r\n    (11, 'Calgary Stephen Avenue', '140 8th Avenue SW', 'Calgary', 'AB', 'Canada', 'T2P 1B3', 51.0457573, -114.065127, CAST('2026-03-01' AS date), 'March     2026', 2196, 27, 46, 2150, 2177, 121, 137, 17, 120, 1, 4.3, 2),\r\n    (11, 'Calgary Stephen Avenue', '140 8th Avenue SW', 'Calgary', 'AB', 'Canada', 'T2P 1B3', 51.0457573, -114.065127, CAST('2026-02-01' AS date), 'February  2026', 2190, 50, 44, 2146, 2196, 96, 121, 25, 95, 1, 4, 2),\r\n    (11, 'Calgary Stephen Avenue', '140 8th Avenue SW', 'Calgary', 'AB', 'Canada', 'T2P 1B3', 51.0457573, -114.065127, CAST('2026-01-01' AS date), 'January   2026', 2222, 40, 72, 2150, 2190, 80, 96, 18, 79, 1, 4, 2),\r\n    (11, 'Calgary Stephen Avenue', '140 8th Avenue SW', 'Calgary', 'AB', 'Canada', 'T2P 1B3', 51.0457573, -114.065127, CAST('2025-12-01' AS date), 'December  2025', 2250, 41, 69, 2181, 2222, 58, 80, 21, 57, 1, 4.5, 2),\r\n    (11, 'Calgary Stephen Avenue', '140 8th Avenue SW', 'Calgary', 'AB', 'Canada', 'T2P 1B3', 51.0457573, -114.065127, CAST('2025-11-01' AS date), 'November  2025', 2259, 41, 50, 2209, 2250, 56, 58, 2, 55, 1, 4.2, 1),\r\n    (12, 'Calgary Sunridge', '2929 Sunridge Way', 'Calgary', 'AB', 'Canada', 'T1Y 7K7', 51.0677527, -113.9951518, CAST('2026-04-01' AS date), 'April     2026', 3085, 60, 113, 2972, 3032, 344, 360, 24, 341, 3, 4.1, 1),\r\n    (12, 'Calgary Sunridge', '2929 Sunridge Way', 'Calgary', 'AB', 'Canada', 'T1Y 7K7', 51.0677527, -113.9951518, CAST('2026-03-01' AS date), 'March     2026', 3148, 68, 131, 3017, 3085, 328, 344, 28, 324, 4, 4.5, 1),\r\n    (12, 'Calgary Sunridge', '2929 Sunridge Way', 'Calgary', 'AB', 'Canada', 'T1Y 7K7', 51.0677527, -113.9951518, CAST('2026-02-01' AS date), 'February  2026', 3219, 40, 111, 3108, 3148, 316, 328, 23, 312, 4, 3.9, 1),\r\n    (12, 'Calgary Sunridge', '2929 Sunridge Way', 'Calgary', 'AB', 'Canada', 'T1Y 7K7', 51.0677527, -113.9951518, CAST('2026-01-01' AS date), 'January   2026', 3201, 86, 68, 3133, 3219, 258, 316, 55, 255, 3, 4.2, 1),\r\n    (12, 'Calgary Sunridge', '2929 Sunridge Way', 'Calgary', 'AB', 'Canada', 'T1Y 7K7', 51.0677527, -113.9951518, CAST('2025-12-01' AS date), 'December  2025', 3207, 71, 77, 3130, 3201, 260, 258, 3, 256, 4, 4.3, 1),\r\n    (12, 'Calgary Sunridge', '2929 Sunridge Way', 'Calgary', 'AB', 'Canada', 'T1Y 7K7', 51.0677527, -113.9951518, CAST('2025-11-01' AS date), 'November  2025', 3240, 70, 103, 3137, 3207, 248, 260, 13, 247, 1, 4.4, 1),\r\n    (13, 'Calgary Trinity Hills at Olympic Park', '2200 Na''a Drive SW', 'Calgary', 'AB', 'Canada', 'T3B 2S6', 51.0792757, -114.1937143, CAST('2026-04-01' AS date), 'April     2026', 2307, 46, 103, 2204, 2250, 144, 159, 19, 142, 2, 4.4, 2),\r\n    (13, 'Calgary Trinity Hills at Olympic Park', '2200 Na''a Drive SW', 'Calgary', 'AB', 'Canada', 'T3B 2S6', 51.0792757, -114.1937143, CAST('2026-03-01' AS date), 'March     2026', 2339, 45, 77, 2262, 2307, 163, 144, 34, 162, 1, 4.3, 1),\r\n    (13, 'Calgary Trinity Hills at Olympic Park', '2200 Na''a Drive SW', 'Calgary', 'AB', 'Canada', 'T3B 2S6', 51.0792757, -114.1937143, CAST('2026-02-01' AS date), 'February  2026', 2358, 39, 58, 2300, 2339, 148, 163, 17, 146, 2, 4.3, 2),\r\n    (13, 'Calgary Trinity Hills at Olympic Park', '2200 Na''a Drive SW', 'Calgary', 'AB', 'Canada', 'T3B 2S6', 51.0792757, -114.1937143, CAST('2026-01-01' AS date), 'January   2026', 2372, 37, 51, 2321, 2358, 108, 148, 41, 107, 1, 4.1, 2),\r\n    (13, 'Calgary Trinity Hills at Olympic Park', '2200 Na''a Drive SW', 'Calgary', 'AB', 'Canada', 'T3B 2S6', 51.0792757, -114.1937143, CAST('2025-12-01' AS date), 'December  2025', 2373, 65, 66, 2307, 2372, 91, 108, 18, 90, 1, 4.2, 2),\r\n    (13, 'Calgary Trinity Hills at Olympic Park', '2200 Na''a Drive SW', 'Calgary', 'AB', 'Canada', 'T3B 2S6', 51.0792757, -114.1937143, CAST('2025-11-01' AS date), 'November  2025', 2408, 67, 102, 2306, 2373, 76, 91, 15, 75, 1, 4.4, 2),\r\n    (14, 'Calgary West Springs For Women', '918 85 Street SW', 'Calgary', 'AB', 'Canada', 'T3H 5L1', 51.0272798, -114.2109704, CAST('2026-04-01' AS date), 'April     2026', 2620, 55, 111, 2509, 2564, 242, 253, 17, 240, 2, 4.1, 1),\r\n    (14, 'Calgary West Springs For Women', '918 85 Street SW', 'Calgary', 'AB', 'Canada', 'T3H 5L1', 51.0272798, -114.2109704, CAST('2026-03-01' AS date), 'March     2026', 2617, 50, 47, 2570, 2620, 229, 242, 15, 227, 2, 3.7, 1),\r\n    (14, 'Calgary West Springs For Women', '918 85 Street SW', 'Calgary', 'AB', 'Canada', 'T3H 5L1', 51.0272798, -114.2109704, CAST('2026-02-01' AS date), 'February  2026', 2648, 30, 61, 2587, 2617, 205, 229, 28, 203, 2, 4.4, 1),\r\n    (14, 'Calgary West Springs For Women', '918 85 Street SW', 'Calgary', 'AB', 'Canada', 'T3H 5L1', 51.0272798, -114.2109704, CAST('2026-01-01' AS date), 'January   2026', 2627, 73, 52, 2575, 2648, 160, 205, 45, 158, 2, 4, 1),\r\n    (14, 'Calgary West Springs For Women', '918 85 Street SW', 'Calgary', 'AB', 'Canada', 'T3H 5L1', 51.0272798, -114.2109704, CAST('2025-12-01' AS date), 'December  2025', 2660, 53, 86, 2574, 2627, 140, 160, 21, 138, 2, 3.9, 1),\r\n    (14, 'Calgary West Springs For Women', '918 85 Street SW', 'Calgary', 'AB', 'Canada', 'T3H 5L1', 51.0272798, -114.2109704, CAST('2025-11-01' AS date), 'November  2025', 2655, 56, 51, 2604, 2660, 100, 140, 41, 99, 1, 4.5, 1),\r\n    (15, 'Calgary Westwinds and Castleridge', '3633 Westwinds Dr NE', 'Calgary', 'AB', 'Canada', 'T3J 5K3', 51.10965, -113.9715349, CAST('2026-04-01' AS date), 'April     2026', 2726, 14, 86, 2640, 2654, 173, 197, 30, 171, 2, 3.9, 1),\r\n    (15, 'Calgary Westwinds and Castleridge', '3633 Westwinds Dr NE', 'Calgary', 'AB', 'Canada', 'T3J 5K3', 51.10965, -113.9715349, CAST('2026-03-01' AS date), 'March     2026', 2719, 86, 79, 2640, 2726, 161, 173, 13, 159, 2, 4.6, 1),\r\n    (15, 'Calgary Westwinds and Castleridge', '3633 Westwinds Dr NE', 'Calgary', 'AB', 'Canada', 'T3J 5K3', 51.10965, -113.9715349, CAST('2026-02-01' AS date), 'February  2026', 2772, 14, 67, 2705, 2719, 149, 161, 16, 147, 2, 4.2, 1),\r\n    (15, 'Calgary Westwinds and Castleridge', '3633 Westwinds Dr NE', 'Calgary', 'AB', 'Canada', 'T3J 5K3', 51.10965, -113.9715349, CAST('2026-01-01' AS date), 'January   2026', 2753, 72, 53, 2700, 2772, 144, 149, 5, 143, 1, 4.4, 1),\r\n    (15, 'Calgary Westwinds and Castleridge', '3633 Westwinds Dr NE', 'Calgary', 'AB', 'Canada', 'T3J 5K3', 51.10965, -113.9715349, CAST('2025-12-01' AS date), 'December  2025', 2757, 54, 58, 2699, 2753, 93, 144, 52, 92, 1, 4.3, 1),\r\n    (15, 'Calgary Westwinds and Castleridge', '3633 Westwinds Dr NE', 'Calgary', 'AB', 'Canada', 'T3J 5K3', 51.10965, -113.9715349, CAST('2025-11-01' AS date), 'November  2025', 2795, 68, 106, 2689, 2757, 86, 93, 8, 85, 1, 4.4, 1),\r\n    (16, 'Cochrane Points West', '210 5th Avenue West', 'Cochrane', 'AB', 'Canada', 'T4C 2G4', 51.186927, -114.4748292, CAST('2026-04-01' AS date), 'April     2026', 2465, 26, 131, 2334, 2360, 304, 314, 23, 302, 2, 3.8, 1),\r\n    (16, 'Cochrane Points West', '210 5th Avenue West', 'Cochrane', 'AB', 'Canada', 'T4C 2G4', 51.186927, -114.4748292, CAST('2026-03-01' AS date), 'March     2026', 2477, 56, 68, 2409, 2465, 291, 304, 16, 290, 1, 4.5, 1),\r\n    (16, 'Cochrane Points West', '210 5th Avenue West', 'Cochrane', 'AB', 'Canada', 'T4C 2G4', 51.186927, -114.4748292, CAST('2026-02-01' AS date), 'February  2026', 2531, 44, 98, 2433, 2477, 273, 291, 26, 272, 1, 4.6, 1),\r\n    (16, 'Cochrane Points West', '210 5th Avenue West', 'Cochrane', 'AB', 'Canada', 'T4C 2G4', 51.186927, -114.4748292, CAST('2026-01-01' AS date), 'January   2026', 2544, 51, 64, 2480, 2531, 252, 273, 25, 249, 3, 4.2, 1),\r\n    (16, 'Cochrane Points West', '210 5th Avenue West', 'Cochrane', 'AB', 'Canada', 'T4C 2G4', 51.186927, -114.4748292, CAST('2025-12-01' AS date), 'December  2025', 2521, 67, 44, 2477, 2544, 226, 252, 30, 224, 2, 3.8, 1),\r\n    (16, 'Cochrane Points West', '210 5th Avenue West', 'Cochrane', 'AB', 'Canada', 'T4C 2G4', 51.186927, -114.4748292, CAST('2025-11-01' AS date), 'November  2025', 2568, 60, 107, 2461, 2521, 196, 226, 33, 194, 2, 4.4, 1),\r\n    (17, 'Edmonton Brewery District', '201 - 11962 104 Avenue NW', 'Edmonton', 'AB', 'Canada', 'T5K 0G6', 53.5470514, -113.5208716, CAST('2026-04-01' AS date), 'April     2026', 1991, 34, 90, 1901, 1935, 176, 188, 18, 174, 2, 4.4, 2),\r\n    (17, 'Edmonton Brewery District', '201 - 11962 104 Avenue NW', 'Edmonton', 'AB', 'Canada', 'T5K 0G6', 53.5470514, -113.5208716, CAST('2026-03-01' AS date), 'March     2026', 1973, 56, 38, 1935, 1991, 153, 176, 22, 151, 2, 4.5, 2),\r\n    (17, 'Edmonton Brewery District', '201 - 11962 104 Avenue NW', 'Edmonton', 'AB', 'Canada', 'T5K 0G6', 53.5470514, -113.5208716, CAST('2026-02-01' AS date), 'February  2026', 2002, 37, 66, 1936, 1973, 133, 153, 22, 132, 1, 4.3, 2),\r\n    (17, 'Edmonton Brewery District', '201 - 11962 104 Avenue NW', 'Edmonton', 'AB', 'Canada', 'T5K 0G6', 53.5470514, -113.5208716, CAST('2026-01-01' AS date), 'January   2026', 2029, 43, 70, 1959, 2002, 117, 133, 18, 116, 1, 4.3, 2),\r\n    (17, 'Edmonton Brewery District', '201 - 11962 104 Avenue NW', 'Edmonton', 'AB', 'Canada', 'T5K 0G6', 53.5470514, -113.5208716, CAST('2025-12-01' AS date), 'December  2025', 2038, 42, 51, 1987, 2029, 125, 117, 2, 124, 1, 4.2, 1),\r\n    (17, 'Edmonton Brewery District', '201 - 11962 104 Avenue NW', 'Edmonton', 'AB', 'Canada', 'T5K 0G6', 53.5470514, -113.5208716, CAST('2025-11-01' AS date), 'November  2025', 2096, 39, 97, 1999, 2038, 111, 125, 18, 110, 1, 4.3, 2),\r\n    (18, 'Edmonton Clareview Town Centre', '4211, 139th Avenue', 'Edmonton', 'AB', 'Canada', 'T5Y 2W8', 53.5996988, -113.408379, CAST('2026-04-01' AS date), 'April     2026', 1768, 35, 35, 1733, 1768, 176, 204, 30, 175, 1, 4.1, 2),\r\n    (18, 'Edmonton Clareview Town Centre', '4211, 139th Avenue', 'Edmonton', 'AB', 'Canada', 'T5Y 2W8', 53.5996988, -113.408379, CAST('2026-03-01' AS date), 'March     2026', 1774, 42, 48, 1726, 1768, 162, 176, 17, 161, 1, 4, 2),\r\n    (18, 'Edmonton Clareview Town Centre', '4211, 139th Avenue', 'Edmonton', 'AB', 'Canada', 'T5Y 2W8', 53.5996988, -113.408379, CAST('2026-02-01' AS date), 'February  2026', 1774, 31, 31, 1743, 1774, 148, 162, 16, 146, 2, 4.2, 2),\r\n    (18, 'Edmonton Clareview Town Centre', '4211, 139th Avenue', 'Edmonton', 'AB', 'Canada', 'T5Y 2W8', 53.5996988, -113.408379, CAST('2026-01-01' AS date), 'January   2026', 1802, 49, 77, 1725, 1774, 148, 148, 6, 146, 2, 3.9, 2),\r\n    (18, 'Edmonton Clareview Town Centre', '4211, 139th Avenue', 'Edmonton', 'AB', 'Canada', 'T5Y 2W8', 53.5996988, -113.408379, CAST('2025-12-01' AS date), 'December  2025', 1842, 16, 56, 1786, 1802, 118, 148, 33, 117, 1, 3.8, 2),\r\n    (18, 'Edmonton Clareview Town Centre', '4211, 139th Avenue', 'Edmonton', 'AB', 'Canada', 'T5Y 2W8', 53.5996988, -113.408379, CAST('2025-11-01' AS date), 'November  2025', 1866, 43, 67, 1799, 1842, 91, 118, 28, 90, 1, 4.1, 2),\r\n    (19, 'Edmonton Commerce Place', '10155 102 St NW, Suite 230', 'Edmonton', 'AB', 'Canada', 'T5J 4G8', 53.5402978, -113.6060271, CAST('2026-04-01' AS date), 'April     2026', 2620, 43, 75, 2545, 2588, 257, 268, 16, 254, 3, 4.4, 2),\r\n    (19, 'Edmonton Commerce Place', '10155 102 St NW, Suite 230', 'Edmonton', 'AB', 'Canada', 'T5J 4G8', 53.5402978, -113.6060271, CAST('2026-03-01' AS date), 'March     2026', 2647, 63, 90, 2557, 2620, 234, 257, 27, 231, 3, 4, 2),\r\n    (19, 'Edmonton Commerce Place', '10155 102 St NW, Suite 230', 'Edmonton', 'AB', 'Canada', 'T5J 4G8', 53.5402978, -113.6060271, CAST('2026-02-01' AS date), 'February  2026', 2669, 53, 75, 2594, 2647, 217, 234, 20, 215, 2, 3.7, 2),\r\n    (19, 'Edmonton Commerce Place', '10155 102 St NW, Suite 230', 'Edmonton', 'AB', 'Canada', 'T5J 4G8', 53.5402978, -113.6060271, CAST('2026-01-01' AS date), 'January   2026', 2704, 69, 104, 2600, 2669, 201, 217, 21, 199, 2, 4.4, 2),\r\n    (19, 'Edmonton Commerce Place', '10155 102 St NW, Suite 230', 'Edmonton', 'AB', 'Canada', 'T5J 4G8', 53.5402978, -113.6060271, CAST('2025-12-01' AS date), 'December  2025', 2709, 85, 90, 2619, 2704, 176, 201, 25, 175, 1, 4, 2),\r\n    (19, 'Edmonton Commerce Place', '10155 102 St NW, Suite 230', 'Edmonton', 'AB', 'Canada', 'T5J 4G8', 53.5402978, -113.6060271, CAST('2025-11-01' AS date), 'November  2025', 2732, 64, 87, 2645, 2709, 141, 176, 33, 140, 1, 4.5, 2),\r\n    (20, 'Edmonton Heritage Valley', '2920 James Mowatt Trail SW', 'Edmonton', 'AB', 'Canada', 'T6W 3R3', 53.4053999, -113.536399, CAST('2026-04-01' AS date), 'April     2026', 2693, 68, 39, 2654, 2722, 281, 291, 14, 278, 3, 4.3, 1),\r\n    (20, 'Edmonton Heritage Valley', '2920 James Mowatt Trail SW', 'Edmonton', 'AB', 'Canada', 'T6W 3R3', 53.4053999, -113.536399, CAST('2026-03-01' AS date), 'March     2026', 2686, 79, 72, 2614, 2693, 265, 281, 20, 262, 3, 4.7, 1),\r\n    (20, 'Edmonton Heritage Valley', '2920 James Mowatt Trail SW', 'Edmonton', 'AB', 'Canada', 'T6W 3R3', 53.4053999, -113.536399, CAST('2026-02-01' AS date), 'February  2026', 2714, 37, 65, 2649, 2686, 243, 265, 27, 241, 2, 4.1, 1),\r\n    (20, 'Edmonton Heritage Valley', '2920 James Mowatt Trail SW', 'Edmonton', 'AB', 'Canada', 'T6W 3R3', 53.4053999, -113.536399, CAST('2026-01-01' AS date), 'January   2026', 2808, 26, 120, 2688, 2714, 207, 243, 44, 204, 3, 4.4, 1),\r\n    (20, 'Edmonton Heritage Valley', '2920 James Mowatt Trail SW', 'Edmonton', 'AB', 'Canada', 'T6W 3R3', 53.4053999, -113.536399, CAST('2025-12-01' AS date), 'December  2025', 2843, 37, 72, 2771, 2808, 182, 207, 27, 181, 1, 4.7, 1),\r\n    (20, 'Edmonton Heritage Valley', '2920 James Mowatt Trail SW', 'Edmonton', 'AB', 'Canada', 'T6W 3R3', 53.4053999, -113.536399, CAST('2025-11-01' AS date), 'November  2025', 2855, 54, 66, 2789, 2843, 149, 182, 35, 147, 2, 4.1, 1)\r\n  ) AS v(gym_id, gym_name, street_address, city, state, country, zip_code, latitude, longitude, month, formatted_date, month_starting_members, month_new_members, month_lost_members, month_retained_members, month_ending_members, month_starting_pt_members, month_ending_pt_members, month_enrolled_pt_members, month_retained_pt_members, month_unenrolled_pt_members, month_avg_csat, month_active_trainers)\r\n)\r\nSELECT * FROM sample_data s\r\n",
+  "json_data": {
+    "column_types": {}
+  },
+  "tags": [
+    "sample"
+  ],
+  "default_params": [],
+  "id": "2874b941-fe8c-4ce3-8fdf-84c9b391c133",
+  "columns": [
+    {
+      "name": "gym_id",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "gym_name",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "street_address",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "city",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "state",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "country",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "zip_code",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "latitude",
+      "type_code": 1700,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": 65535,
+      "scale": 65535,
+      "null_ok": null,
+      "type": "NUMERIC"
+    },
+    {
+      "name": "longitude",
+      "type_code": 1700,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": 65535,
+      "scale": 65535,
+      "null_ok": null,
+      "type": "NUMERIC"
+    },
+    {
+      "name": "month",
+      "type_code": 1082,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "DATE"
+    },
+    {
+      "name": "formatted_date",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "month_starting_members",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "month_new_members",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "month_lost_members",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "month_retained_members",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "month_ending_members",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "month_starting_pt_members",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "month_ending_pt_members",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "month_enrolled_pt_members",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "month_retained_pt_members",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "month_unenrolled_pt_members",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "month_avg_csat",
+      "type_code": 1700,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": 65535,
+      "scale": 65535,
+      "null_ok": null,
+      "type": "NUMERIC"
+    },
+    {
+      "name": "month_active_trainers",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    }
+  ],
+  "updated_at": "2026-06-29T16:07:41.847432Z",
+  "created_at": "2026-04-30T22:22:28.027200Z",
+  "error": null,
+  "database_connection": null
+}

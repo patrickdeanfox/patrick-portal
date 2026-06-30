@@ -1,0 +1,49 @@
+{
+  "name": "SYS · Logins by Month",
+  "sql": "SELECT * \nFROM (\n    SELECT \n        jsonb_extract_path_text(value::jsonb, 'username') AS username,\n        EXTRACT(MONTH FROM date_created) AS login_month,\n        COUNT(*) AS login_count\n    FROM events\n    WHERE type = 'USER_LOGIN'\n      AND jsonb_extract_path_text(value::jsonb, 'success') = 'true'\n    GROUP BY username, login_month\n    ORDER BY login_month, username\n) AS anon_1 \n\n",
+  "json_data": {
+    "column_types": {}
+  },
+  "tags": [
+    "system",
+    "telemetry"
+  ],
+  "default_params": [],
+  "id": "a2b3474b-054b-4131-96fa-710ff1e8f3a5",
+  "columns": [
+    {
+      "name": "username",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "login_month",
+      "type_code": 701,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "FLOAT(8)"
+    },
+    {
+      "name": "login_count",
+      "type_code": 20,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(8)"
+    }
+  ],
+  "updated_at": "2026-06-29T16:07:15.828929Z",
+  "created_at": "2024-06-06T18:00:20.949020Z",
+  "error": null,
+  "database_connection": null
+}

@@ -1,0 +1,99 @@
+{
+  "name": "SYS · Groups",
+  "sql": "SELECT * FROM groups",
+  "json_data": {
+    "column_types": {}
+  },
+  "tags": [
+    "system",
+    "telemetry"
+  ],
+  "default_params": [],
+  "id": "f0e08096-29f4-420f-8a99-9fdb94dbd184",
+  "columns": [
+    {
+      "name": "id",
+      "type_code": 2950,
+      "display_size": null,
+      "internal_size": 16,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "UUID"
+    },
+    {
+      "name": "name",
+      "type_code": 1043,
+      "display_size": null,
+      "internal_size": 255,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "VARCHAR"
+    },
+    {
+      "name": "domain_name",
+      "type_code": 1043,
+      "display_size": null,
+      "internal_size": 255,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "VARCHAR"
+    },
+    {
+      "name": "updated_at",
+      "type_code": 1184,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TIMESTAMPTZ"
+    },
+    {
+      "name": "created_at",
+      "type_code": 1184,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TIMESTAMPTZ"
+    },
+    {
+      "name": "tableau_id",
+      "type_code": 1043,
+      "display_size": null,
+      "internal_size": 255,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "VARCHAR"
+    },
+    {
+      "name": "source",
+      "type_code": 1043,
+      "display_size": null,
+      "internal_size": 64,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "VARCHAR"
+    },
+    {
+      "name": "json_data",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    }
+  ],
+  "updated_at": "2026-06-29T16:07:23.533848Z",
+  "created_at": "2023-09-05T20:08:58.905986Z",
+  "error": null,
+  "database_connection": null
+}

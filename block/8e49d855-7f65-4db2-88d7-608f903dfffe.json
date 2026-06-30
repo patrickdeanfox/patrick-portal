@@ -1,0 +1,35 @@
+{
+  "name": "IOT · KPI Band",
+  "type": "html",
+  "css": [
+    ".ind-kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;height:100%;box-sizing:border-box;font-family:var(--font-stack-primary,system-ui,-apple-system,sans-serif);}\n.ind-kpis .ind-kpi{background:#fff;border:1px solid rgba(0,0,0,.07);border-radius:12px;box-shadow:0 1px 3px rgba(16,24,40,.06);padding:14px 16px;display:flex;flex-direction:column;justify-content:center;gap:6px;min-width:0;}\n.ind-kpis .ind-kpi-top{display:flex;align-items:center;gap:8px;}\n.ind-kpis .ind-kpi-dot{width:8px;height:8px;border-radius:50%;background:var(--color-primary,#009fe4);flex:0 0 auto;}\n.ind-kpis .ind-kpi-label{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:#6b7280;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}\n.ind-kpis .ind-kpi-val{font-size:26px;font-weight:800;color:var(--color-text,#1f2937);line-height:1;letter-spacing:-.01em;}\n.ind-kpis .ind-kpi-sub{font-size:11px;color:#9ca3af;font-weight:600;}\n@media(max-width:1100px){.ind-kpis{grid-template-columns:repeat(3,1fr);}}\n@media(max-width:640px){.ind-kpis{grid-template-columns:repeat(2,1fr);}}"
+  ],
+  "json_data": {
+    "isolated": false,
+    "html": [
+      "<div class=\"ind-kpis\">\n  <div class=\"ind-kpi\"><div class=\"ind-kpi-top\"><span class=\"ind-kpi-dot\"></span><span class=\"ind-kpi-label\">Total Alerts</span></div><div class=\"ind-kpi-val\" id=\"k-alerts\">—</div><div class=\"ind-kpi-sub\">&nbsp;</div></div>\n  <div class=\"ind-kpi\"><div class=\"ind-kpi-top\"><span class=\"ind-kpi-dot\"></span><span class=\"ind-kpi-label\">Availability</span></div><div class=\"ind-kpi-val\" id=\"k-avail\">—</div><div class=\"ind-kpi-sub\">uptime / total</div></div>\n  <div class=\"ind-kpi\"><div class=\"ind-kpi-top\"><span class=\"ind-kpi-dot\"></span><span class=\"ind-kpi-label\">Downtime</span></div><div class=\"ind-kpi-val\" id=\"k-downtime\">—</div><div class=\"ind-kpi-sub\">hours</div></div>\n  <div class=\"ind-kpi\"><div class=\"ind-kpi-top\"><span class=\"ind-kpi-dot\"></span><span class=\"ind-kpi-label\">Uptime</span></div><div class=\"ind-kpi-val\" id=\"k-uptimeh\">—</div><div class=\"ind-kpi-sub\">hours</div></div>\n  <div class=\"ind-kpi\"><div class=\"ind-kpi-top\"><span class=\"ind-kpi-dot\"></span><span class=\"ind-kpi-label\">Facilities</span></div><div class=\"ind-kpi-val\" id=\"k-fac\">—</div><div class=\"ind-kpi-sub\">in view</div></div>\n  <div class=\"ind-kpi\"><div class=\"ind-kpi-top\"><span class=\"ind-kpi-dot\"></span><span class=\"ind-kpi-label\">Equipment Types</span></div><div class=\"ind-kpi-val\" id=\"k-equip\">—</div><div class=\"ind-kpi-sub\">in view</div></div>\n</div>\n<script>(function(){\n  var DS_ID=\"496fad86-25e2-4483-b971-a82702cb714c\";\n  function rows(){var cb=(typeof currentBlock!=='undefined')?currentBlock:null;var r=cb&&cb.queryResults&&cb.queryResults[0];if(!r)return[];if(Array.isArray(r.mappedData))return r.mappedData;var cols=(r.columns||[]).map(function(c){return typeof c==='string'?c:(c&&c.name);});return(r.data||[]).map(function(rw){var o={};cols.forEach(function(c,i){o[c]=rw[i];});return o;});}\n  function num(v){var n=parseFloat(v);return isNaN(n)?0:n;}\n  function fmtInt(n){return Math.round(n).toLocaleString();}\n  function set(id,v){var e=document.getElementById(id);if(e)e.textContent=v;}\n  function render(){var d=rows();var al=0,up=0,dn=0,fac={},eq={};d.forEach(function(r){al+=num(r.alerts);up+=num(r.uptime_minutes);dn+=num(r.downtime_minutes);if(r.facility)fac[r.facility]=1;if(r.equipment_type)eq[r.equipment_type]=1;});set('k-alerts',fmtInt(al));set('k-avail',((up+dn)?(up/(up+dn)*100):0).toFixed(1)+'%');set('k-downtime',(dn/60).toFixed(1)+' h');set('k-uptimeh',fmtInt(up/60)+' h');set('k-fac',Object.keys(fac).length);set('k-equip',Object.keys(eq).length);}\n  function init(){var loaded=(typeof currentBlock!=='undefined'&&currentBlock&&currentBlock.getOnLoadedCallback)?currentBlock.getOnLoadedCallback():function(){};try{render();}finally{loaded();}try{if(typeof zPortal!=='undefined'&&zPortal.dataSource&&zPortal.dataSource.on)zPortal.dataSource.on('load',DS_ID,render);}catch(e){}}\n  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();\n})();</script>"
+    ]
+  },
+  "ui_queries": [
+    {
+      "enabled": true,
+      "page_size": null,
+      "filter_strategy": {
+        "type": "blacklist",
+        "value": []
+      },
+      "query_id": "2e1148b4-8ab8-418b-92c3-1686bd35e7bc"
+    }
+  ],
+  "tags": [
+    "industry-showcase",
+    "iot",
+    "kpi"
+  ],
+  "access": {
+    "groups": []
+  },
+  "id": "8e49d855-7f65-4db2-88d7-608f903dfffe",
+  "updated_at": "2026-06-26T16:16:26.247170Z",
+  "created_at": "2026-06-26T16:16:26.247180Z"
+}

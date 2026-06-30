@@ -1,0 +1,109 @@
+{
+  "name": "DW · Fact Sales Order",
+  "sql": "SELECT\n    gs                                                                          AS sales_order_id,\n    'SO-' || lpad(gs::text, 6, '0')                                            AS order_number,\n    1 + (('x'||substr(md5('SOCUST'||gs::text),1,8))::bit(32)::bigint % 2000)::int    AS customer_id,\n    1 + (('x'||substr(md5('SOEMP'||gs::text),1,8))::bit(32)::bigint % 300)::int      AS employee_id,\n    1 + (('x'||substr(md5('SOSTORE'||gs::text),1,8))::bit(32)::bigint % 50)::int     AS store_id,\n    (CURRENT_DATE - (('x'||substr(md5('SODATE'||gs::text),1,8))::bit(32)::bigint % 1095)::int) AS order_date,\n    (ARRAY['Web','Phone','In-Store','Partner'])\n        [1 + (('x'||substr(md5('SOCHAN'||gs::text),1,8))::bit(32)::bigint % 4)::int] AS order_channel,\n    (ARRAY['Completed','Completed','Completed','Shipped','Cancelled','Returned'])\n        [1 + (('x'||substr(md5('SOSTAT'||gs::text),1,8))::bit(32)::bigint % 6)::int] AS status,\n    (ARRAY['Credit Card','PayPal','Invoice','Wire'])\n        [1 + (('x'||substr(md5('SOPAY'||gs::text),1,8))::bit(32)::bigint % 4)::int]  AS payment_method\nFROM generate_series(1, 5000) AS gs",
+  "json_data": null,
+  "tags": [
+    "data-warehouse",
+    "fact",
+    "sales",
+    "sample"
+  ],
+  "default_params": [],
+  "id": "4993d6b7-01aa-494f-bf47-49bf7a183b91",
+  "columns": [
+    {
+      "name": "sales_order_id",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "order_number",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "customer_id",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "employee_id",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "store_id",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "order_date",
+      "type_code": 1082,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "DATE"
+    },
+    {
+      "name": "order_channel",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "status",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "payment_method",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    }
+  ],
+  "updated_at": "2026-06-29T16:53:49.058801Z",
+  "created_at": "2026-06-29T16:53:49.058812Z",
+  "error": null,
+  "database_connection": null
+}

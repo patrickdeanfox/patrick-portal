@@ -1,0 +1,49 @@
+{
+  "name": "SYS · User Retention (MoM)",
+  "sql": "WITH initial_users AS (\n    SELECT DISTINCT jsonb_extract_path_text(value::jsonb, 'username') AS username\n    FROM events\n    WHERE type = 'USER_LOGIN'\n    AND date_created >= '2024-05-01'  -- Replace with your desired start date\n    AND date_created < '2024-05-31'    -- Replace with your desired end date\n),\nreturning_users AS (\n    SELECT DISTINCT jsonb_extract_path_text(value::jsonb, 'username') AS username\n    FROM events\n    WHERE type = 'USER_LOGIN'\n    AND date_created >= '2024-06-01'  -- Replace with your desired start date for the subsequent period\n    AND date_created < '2024-06-30'   -- Replace with your desired end date for the subsequent period\n)\nSELECT \n    COUNT(DISTINCT i.username) AS initial_users,\n    COUNT(DISTINCT r.username) AS returning_users,\n    COUNT(DISTINCT r.username) * 100.0 / NULLIF(COUNT(DISTINCT i.username), 0) AS retention_rate\nFROM initial_users i\nLEFT JOIN returning_users r ON i.username = r.username\n",
+  "json_data": {
+    "column_types": {}
+  },
+  "tags": [
+    "system",
+    "telemetry"
+  ],
+  "default_params": [],
+  "id": "26de64b9-ec00-4120-8e94-52b9e4bee98d",
+  "columns": [
+    {
+      "name": "initial_users",
+      "type_code": 20,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(8)"
+    },
+    {
+      "name": "returning_users",
+      "type_code": 20,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(8)"
+    },
+    {
+      "name": "retention_rate",
+      "type_code": 1700,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": 65535,
+      "scale": 65535,
+      "null_ok": null,
+      "type": "NUMERIC"
+    }
+  ],
+  "updated_at": "2026-06-29T16:07:02.413177Z",
+  "created_at": "2024-06-06T18:45:00.066696Z",
+  "error": null,
+  "database_connection": null
+}

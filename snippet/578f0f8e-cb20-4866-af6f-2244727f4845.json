@@ -1,0 +1,7 @@
+{
+  "name": "Comments Submission",
+  "snippet": "document.addEventListener('DOMContentLoaded', (event) => {\n    const nameInput = document.getElementById('nameInput');\n    const emailInput = document.getElementById('emailInput');\n    const commentInput = document.getElementById('commentInput');\n    const submitBtn = document.getElementById('submitBtn');\n    const clearBtn = document.getElementById('clearBtn');\n\n    submitBtn.addEventListener('click', function() {\n        if (nameInput.value === \"\" || emailInput.value === \"\" || commentInput.value === \"\") {\n            alert(\"All fields are required.\");\n            return;\n        }\n        const name = nameInput.value;\n        const email = emailInput.value;\n        const comment = commentInput.value;\n        saveComment({name, email, comment});\n        alert(\"Comment submitted.\");\n        nameInput.value = '';\n        emailInput.value = '';\n        commentInput.value = '';\n    });\n\n    clearBtn.addEventListener('click', function() {\n        localStorage.removeItem('comments');\n        alert(\"Comments cleared.\");\n    });\n\n    function saveComment(comment) {\n        let comments = localStorage.getItem('comments');\n        comments = comments ? JSON.parse(comments) : [];\n        comments.push(comment);\n        localStorage.setItem('comments', JSON.stringify(comments));\n    }\n});\n",
+  "id": "578f0f8e-cb20-4866-af6f-2244727f4845",
+  "updated_at": "2023-06-28T17:48:35.554484Z",
+  "created_at": "2023-06-28T17:37:36.624653Z"
+}

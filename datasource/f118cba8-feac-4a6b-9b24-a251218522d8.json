@@ -1,0 +1,128 @@
+{
+  "name": "DW · Mkt Web Session",
+  "sql": "SELECT\n    gs                                                                          AS session_id,\n    md5('SESSION' || gs::text)                                                  AS session_guid,\n    CASE WHEN (('x'||substr(md5('WSKNOWN'||gs::text),1,8))::bit(32)::bigint % 10) < 6  -- 60% known visitors\n         THEN 1 + (('x'||substr(md5('WSCUST'||gs::text),1,8))::bit(32)::bigint % 2000)\n         ELSE NULL END                                                          AS customer_id,\n    1 + (('x'||substr(md5('WSCMP'||gs::text),1,8))::bit(32)::bigint % 100)      AS campaign_id,\n    1 + (('x'||substr(md5('WSCHAN'||gs::text),1,8))::bit(32)::bigint % 12)      AS channel_id,\n    (CURRENT_DATE - (('x'||substr(md5('WSDATE'||gs::text),1,8))::bit(32)::bigint % 180)::int) AS session_date,\n    (ARRAY['Desktop','Mobile','Tablet'])\n        [1 + (('x'||substr(md5('WSDEV'||gs::text),1,8))::bit(32)::bigint % 3)]  AS device_type,\n    (('x'||substr(md5('WSPAGES'||gs::text),1,8))::bit(32)::bigint % 25) + 1     AS page_views,\n    (('x'||substr(md5('WSDUR'||gs::text),1,8))::bit(32)::bigint % 1800) + 5     AS duration_seconds,\n    ((('x'||substr(md5('WSBOUNCE'||gs::text),1,8))::bit(32)::bigint % 100) < 35) AS bounced,\n    ((('x'||substr(md5('WSCONV'||gs::text),1,8))::bit(32)::bigint % 100) < 8)   AS converted\nFROM generate_series(1, 10000) AS gs",
+  "json_data": null,
+  "tags": [
+    "data-warehouse",
+    "marketing",
+    "sample"
+  ],
+  "default_params": [],
+  "id": "f118cba8-feac-4a6b-9b24-a251218522d8",
+  "columns": [
+    {
+      "name": "session_id",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "session_guid",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "customer_id",
+      "type_code": 20,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(8)"
+    },
+    {
+      "name": "campaign_id",
+      "type_code": 20,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(8)"
+    },
+    {
+      "name": "channel_id",
+      "type_code": 20,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(8)"
+    },
+    {
+      "name": "session_date",
+      "type_code": 1082,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "DATE"
+    },
+    {
+      "name": "device_type",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "page_views",
+      "type_code": 20,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(8)"
+    },
+    {
+      "name": "duration_seconds",
+      "type_code": 20,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(8)"
+    },
+    {
+      "name": "bounced",
+      "type_code": 16,
+      "display_size": null,
+      "internal_size": 1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "BOOL"
+    },
+    {
+      "name": "converted",
+      "type_code": 16,
+      "display_size": null,
+      "internal_size": 1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "BOOL"
+    }
+  ],
+  "updated_at": "2026-06-29T16:50:09.305630Z",
+  "created_at": "2026-06-29T16:50:09.305640Z",
+  "error": null,
+  "database_connection": null
+}

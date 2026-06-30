@@ -1,0 +1,118 @@
+{
+  "name": "DW · Dim Employee",
+  "sql": "SELECT\n    gs                                                                          AS employee_id,\n    'EMP-' || lpad(gs::text, 4, '0')                                           AS employee_code,\n    (ARRAY['Alice','Bob','Charlie','Diana','Eve','Frank','Grace','Henry'])\n        [1 + (('x'||substr(md5('EFN'||gs::text),1,8))::bit(32)::bigint % 8)::int]    AS first_name,\n    (ARRAY['Smith','Jones','Brown','Garcia','Miller','Davis','Lopez','Wilson'])\n        [1 + (('x'||substr(md5('ELN'||gs::text),1,8))::bit(32)::bigint % 8)::int]    AS last_name,\n    (ARRAY['Sales','Support','Marketing','Finance','Operations'])\n        [1 + (('x'||substr(md5('EDEPT'||gs::text),1,8))::bit(32)::bigint % 5)::int]  AS department,\n    (ARRAY['Rep','Senior Rep','Lead','Manager','Director'])\n        [1 + (('x'||substr(md5('EROLE'||gs::text),1,8))::bit(32)::bigint % 5)::int]  AS role,\n    1 + (('x'||substr(md5('ESTORE'||gs::text),1,8))::bit(32)::bigint % 50)::int      AS store_id,       -- FK -> dim_store (1..50)\n    CASE WHEN gs <= 20 THEN NULL                                                                   -- top 20 are unmanaged\n         ELSE 1 + (('x'||substr(md5('EMGR'||gs::text),1,8))::bit(32)::bigint % 20)::int END AS manager_id, -- FK -> dim_employee (1..20)\n    CURRENT_DATE - (('x'||substr(md5('EHIRE'||gs::text),1,8))::bit(32)::bigint % 2500)::int AS hire_date,\n    round((( ('x'||substr(md5('ESAL'||gs::text),1,8))::bit(32)::bigint % 120000)::int + 40000)::numeric, 2) AS annual_salary\nFROM generate_series(1, 300) AS gs",
+  "json_data": null,
+  "tags": [
+    "data-warehouse",
+    "dimension",
+    "sample"
+  ],
+  "default_params": [],
+  "id": "4e3711b1-abf9-48cc-9136-68e8a3f8f813",
+  "columns": [
+    {
+      "name": "employee_id",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "employee_code",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "first_name",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "last_name",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "department",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "role",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "store_id",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "manager_id",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "hire_date",
+      "type_code": 1082,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "DATE"
+    },
+    {
+      "name": "annual_salary",
+      "type_code": 1700,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": 65535,
+      "scale": 65535,
+      "null_ok": null,
+      "type": "NUMERIC"
+    }
+  ],
+  "updated_at": "2026-06-29T16:53:33.443992Z",
+  "created_at": "2026-06-29T16:53:33.444002Z",
+  "error": null,
+  "database_connection": null
+}

@@ -1,0 +1,99 @@
+{
+  "name": "SC · Inventory — Sample",
+  "sql": "SELECT\n    'PRD-' || lpad(gs::text, 3, '0') AS product_id,\n    (ARRAY['Widget','Gadget','Gizmo','Thingamajig','Doohickey'])[gs] AS product_name,\n    floor(random() * 500 + 50)::int AS stock_on_hand,\n    floor(random() * 100 + 10)::int AS reorder_level,\n    (ARRAY['Warehouse A','Warehouse B','Warehouse C'])[floor(random() * 3 + 1)::int] AS warehouse,\n    round((random() * 200 + 5)::numeric, 2) AS unit_cost,\n    (ARRAY['Active','Discontinued','Backordered'])[floor(random() * 3 + 1)::int] AS status,\n    CURRENT_DATE - (floor(random() * 90)::int) AS last_restock_date\nFROM generate_series(1, 5) AS gs",
+  "json_data": {
+    "column_types": {}
+  },
+  "tags": [
+    "sample",
+    "supply-chain"
+  ],
+  "default_params": [],
+  "id": "c2421ae2-0534-4f22-995a-341d3f567f78",
+  "columns": [
+    {
+      "name": "product_id",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "product_name",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "stock_on_hand",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "reorder_level",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "warehouse",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "unit_cost",
+      "type_code": 1700,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": 65535,
+      "scale": 65535,
+      "null_ok": null,
+      "type": "NUMERIC"
+    },
+    {
+      "name": "status",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "last_restock_date",
+      "type_code": 1082,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "DATE"
+    }
+  ],
+  "updated_at": "2026-06-29T16:06:57.599216Z",
+  "created_at": "2026-03-20T18:45:30.807157Z",
+  "error": null,
+  "database_connection": null
+}

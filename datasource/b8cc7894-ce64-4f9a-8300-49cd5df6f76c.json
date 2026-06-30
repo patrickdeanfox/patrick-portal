@@ -1,0 +1,99 @@
+{
+  "name": "SC · Shipping — Sample",
+  "sql": "SELECT\n        gs AS sale_id,\n        'PRD-' || lpad((floor(random() * 5 + 1)::int)::text, 3, '0') AS product_id,\n        (ARRAY['Electronics','Clothing','Food','Books','Sports'])[floor(random() * 5 + 1)::int] AS category,\n        round((random() * 500 + 10)::numeric, 2) AS price,\n        floor(random() * 100 + 1)::int AS quantity_sold,\n        (ARRAY['Alice','Bob','Charlie','Diana','Eve'])[floor(random() * 5 + 1)::int] AS salesperson,\n        (ARRAY['New York','Chicago','LA','Houston','Miami'])[floor(random() * 5 + 1)::int] AS city,\n        CURRENT_DATE - (floor(random() * 365)::int) AS sale_date\n    FROM generate_series(1, 10) AS gs",
+  "json_data": {
+    "column_types": {}
+  },
+  "tags": [
+    "sample",
+    "supply-chain"
+  ],
+  "default_params": [],
+  "id": "b8cc7894-ce64-4f9a-8300-49cd5df6f76c",
+  "columns": [
+    {
+      "name": "sale_id",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "product_id",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "category",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "price",
+      "type_code": 1700,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": 65535,
+      "scale": 65535,
+      "null_ok": null,
+      "type": "NUMERIC"
+    },
+    {
+      "name": "quantity_sold",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "salesperson",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "city",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "sale_date",
+      "type_code": 1082,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "DATE"
+    }
+  ],
+  "updated_at": "2026-06-29T16:07:32.765750Z",
+  "created_at": "2026-03-20T18:46:41.619845Z",
+  "error": null,
+  "database_connection": null
+}

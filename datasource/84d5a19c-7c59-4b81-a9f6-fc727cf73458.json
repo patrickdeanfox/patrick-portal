@@ -1,0 +1,39 @@
+{
+  "name": "SYS · Top Pages",
+  "sql": "SELECT \n    jsonb_extract_path_text(value::jsonb, 'page_url') AS page_url,\n    COUNT(*) AS page_views\nFROM events\nWHERE type = 'PAGE_VIEW'\nGROUP BY jsonb_extract_path_text(value::jsonb, 'page_url')\n",
+  "json_data": {
+    "column_types": {}
+  },
+  "tags": [
+    "system",
+    "telemetry"
+  ],
+  "default_params": [],
+  "id": "84d5a19c-7c59-4b81-a9f6-fc727cf73458",
+  "columns": [
+    {
+      "name": "page_url",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "page_views",
+      "type_code": 20,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(8)"
+    }
+  ],
+  "updated_at": "2026-06-29T16:07:37.057062Z",
+  "created_at": "2024-06-06T18:32:03.142423Z",
+  "error": null,
+  "database_connection": null
+}

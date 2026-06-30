@@ -1,0 +1,128 @@
+{
+  "name": "DW · Dim Customer",
+  "sql": "SELECT\n    gs                                                                          AS customer_id,\n    'CUST-' || lpad(gs::text, 5, '0')                                          AS customer_code,\n    (ARRAY['Alice','Bob','Charlie','Diana','Eve','Frank','Grace','Henry','Ivy','Jack',\n           'Kara','Liam','Mona','Noah','Olive','Paul','Quinn','Rosa','Sam','Tina'])\n        [1 + (('x'||substr(md5('CFN'||gs::text),1,8))::bit(32)::bigint % 20)::int]   AS first_name,\n    (ARRAY['Smith','Jones','Brown','Garcia','Miller','Davis','Lopez','Wilson','Lee','Clark',\n           'Patel','Nguyen','Kim','Khan','Ali','Reed','Cole','Ford','Hart','Page'])\n        [1 + (('x'||substr(md5('CLN'||gs::text),1,8))::bit(32)::bigint % 20)::int]   AS last_name,\n    'cust' || gs || '@example.com'                                              AS email,\n    (ARRAY['New York','Chicago','LA','Houston','Miami','Seattle','Boston','Denver','Atlanta','Austin'])\n        [1 + (('x'||substr(md5('CCITY'||gs::text),1,8))::bit(32)::bigint % 10)::int] AS city,\n    (ARRAY['NY','IL','CA','TX','FL','WA','MA','CO','GA','TX'])\n        [1 + (('x'||substr(md5('CCITY'||gs::text),1,8))::bit(32)::bigint % 10)::int] AS state,  -- aligned to city salt for consistency\n    (ARRAY['Consumer','SMB','Enterprise','Government'])\n        [1 + (('x'||substr(md5('CSEG'||gs::text),1,8))::bit(32)::bigint % 4)::int]   AS segment,\n    (ARRAY['Bronze','Silver','Gold','Platinum'])\n        [1 + (('x'||substr(md5('CTIER'||gs::text),1,8))::bit(32)::bigint % 4)::int]  AS loyalty_tier,\n    CURRENT_DATE - (('x'||substr(md5('CACQ'||gs::text),1,8))::bit(32)::bigint % 1095)::int AS acquisition_date,\n    round((( ('x'||substr(md5('CLTV'||gs::text),1,8))::bit(32)::bigint % 50000)::int + 100)::numeric, 2) AS lifetime_value\nFROM generate_series(1, 2000) AS gs",
+  "json_data": null,
+  "tags": [
+    "data-warehouse",
+    "dimension",
+    "sample"
+  ],
+  "default_params": [],
+  "id": "8e9b7e82-7b1a-4b42-ba11-4b613909c864",
+  "columns": [
+    {
+      "name": "customer_id",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "customer_code",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "first_name",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "last_name",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "email",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "city",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "state",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "segment",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "loyalty_tier",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "acquisition_date",
+      "type_code": 1082,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "DATE"
+    },
+    {
+      "name": "lifetime_value",
+      "type_code": 1700,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": 65535,
+      "scale": 65535,
+      "null_ok": null,
+      "type": "NUMERIC"
+    }
+  ],
+  "updated_at": "2026-06-29T16:53:26.417059Z",
+  "created_at": "2026-06-29T16:53:26.417071Z",
+  "error": null,
+  "database_connection": null
+}

@@ -1,0 +1,98 @@
+{
+  "name": "DW · Dim Store",
+  "sql": "SELECT\n    gs                                                                          AS store_id,\n    'STR-' || lpad(gs::text, 3, '0')                                           AS store_code,\n    (ARRAY['Downtown','Uptown','Midtown','Eastside','Westside','Harbor','Central','North','South','Plaza'])\n        [1 + (('x'||substr(md5('STNM'||gs::text),1,8))::bit(32)::bigint % 10)::int]\n        || ' #' || gs                                                          AS store_name,\n    (ARRAY['New York','Chicago','LA','Houston','Miami'])\n        [1 + (('x'||substr(md5('STCITY'||gs::text),1,8))::bit(32)::bigint % 5)::int] AS city,\n    (ARRAY['Northeast','Midwest','West','South','Southeast'])\n        [1 + (('x'||substr(md5('STREG'||gs::text),1,8))::bit(32)::bigint % 5)::int]  AS region,\n    (ARRAY['Retail','Outlet','Online','Pop-up'])\n        [1 + (('x'||substr(md5('STTYPE'||gs::text),1,8))::bit(32)::bigint % 4)::int] AS store_type,\n    1000 + (('x'||substr(md5('STSQFT'||gs::text),1,8))::bit(32)::bigint % 9000)::int AS square_feet,\n    CURRENT_DATE - (('x'||substr(md5('STOPEN'||gs::text),1,8))::bit(32)::bigint % 4000)::int AS opened_date\nFROM generate_series(1, 50) AS gs",
+  "json_data": null,
+  "tags": [
+    "data-warehouse",
+    "dimension",
+    "sample"
+  ],
+  "default_params": [],
+  "id": "4a8709a5-6910-446a-9744-a70d64e6581c",
+  "columns": [
+    {
+      "name": "store_id",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "store_code",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "store_name",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "city",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "region",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "store_type",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "square_feet",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "opened_date",
+      "type_code": 1082,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "DATE"
+    }
+  ],
+  "updated_at": "2026-06-29T16:53:38.180731Z",
+  "created_at": "2026-06-29T16:53:38.180743Z",
+  "error": null,
+  "database_connection": null
+}

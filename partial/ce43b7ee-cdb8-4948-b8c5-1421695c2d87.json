@@ -1,0 +1,45 @@
+{
+  "name": "footer",
+  "json_data": {
+    "id": "footer",
+    "blocks": [],
+    "layouts": {
+      "lg": {
+        "align": "left",
+        "cellSize": 5,
+        "sizingUnit": "%",
+        "height": 100,
+        "width": 100
+      },
+      "md": {
+        "align": "left",
+        "cellSize": 5,
+        "sizingUnit": "%",
+        "height": 100,
+        "width": 100
+      },
+      "sm": {
+        "align": "left",
+        "cellSize": 5,
+        "sizingUnit": "%",
+        "height": 100,
+        "width": 100
+      }
+    },
+    "block_hidden": [],
+    "sidebar": {
+      "collapsable": false,
+      "openIcon": "fa-chevron-left",
+      "closeIcon": "fa-chevron-right",
+      "iconPosition": "middle"
+    },
+    "block_layouts": {
+      "lg": {},
+      "md": {},
+      "sm": {}
+    }
+  },
+  "id": "ce43b7ee-cdb8-4948-b8c5-1421695c2d87",
+  "updated_at": "2025-08-13T17:47:53.671207Z",
+  "created_at": "2020-12-03T15:59:36.832043Z"
+}

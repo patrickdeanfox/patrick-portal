@@ -1,0 +1,294 @@
+{
+  "user_id": null,
+  "name": "Helios · Sales & Revenue",
+  "order": 20,
+  "icon": "fa-chart-line",
+  "json_data": {
+    "slug": "helios-sales",
+    "grid": {
+      "blocks": [
+        "0d117c6b-3569-411e-8167-f9fefad979cc",
+        "300b1cf6-983c-4635-84a0-84c227b681d8",
+        "37f6dc9c-ab90-4c72-baf6-8fd0ba57cd80",
+        "b7c9432d-6957-4035-98c1-1f90401824a1",
+        "5e068d93-1a77-42e2-87ed-1e20aaab58f4",
+        "98e6ea4e-f524-4c99-b2af-d1bc254caa29",
+        "460c6784-2306-4665-8e9e-47b0b13465f8",
+        "9430012b-a0d7-46ac-9b4e-5cbf722170cd",
+        "7312210f-a6ca-4579-91e0-75b55f68b215"
+      ],
+      "block_layouts": {
+        "lg": {
+          "0d117c6b-3569-411e-8167-f9fefad979cc": {
+            "left": 0,
+            "top": 0,
+            "width": 100,
+            "height": 8,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "300b1cf6-983c-4635-84a0-84c227b681d8": {
+            "left": 0,
+            "top": 8,
+            "width": 100,
+            "height": 16,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "37f6dc9c-ab90-4c72-baf6-8fd0ba57cd80": {
+            "left": 0,
+            "top": 24,
+            "width": 100,
+            "height": 28,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "b7c9432d-6957-4035-98c1-1f90401824a1": {
+            "left": 0,
+            "top": 52,
+            "width": 50,
+            "height": 28,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "5e068d93-1a77-42e2-87ed-1e20aaab58f4": {
+            "left": 50,
+            "top": 52,
+            "width": 50,
+            "height": 28,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "98e6ea4e-f524-4c99-b2af-d1bc254caa29": {
+            "left": 0,
+            "top": 80,
+            "width": 50,
+            "height": 26,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "460c6784-2306-4665-8e9e-47b0b13465f8": {
+            "left": 50,
+            "top": 80,
+            "width": 50,
+            "height": 26,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "9430012b-a0d7-46ac-9b4e-5cbf722170cd": {
+            "left": 0,
+            "top": 106,
+            "width": 100,
+            "height": 40,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "7312210f-a6ca-4579-91e0-75b55f68b215": {
+            "left": 0,
+            "top": 146,
+            "width": 100,
+            "height": 40,
+            "sizingUnit": "%",
+            "zIndex": 0
+          }
+        },
+        "md": {
+          "0d117c6b-3569-411e-8167-f9fefad979cc": {
+            "left": 0,
+            "top": 0,
+            "width": 100,
+            "height": 8,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "300b1cf6-983c-4635-84a0-84c227b681d8": {
+            "left": 0,
+            "top": 8,
+            "width": 100,
+            "height": 16,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "37f6dc9c-ab90-4c72-baf6-8fd0ba57cd80": {
+            "left": 0,
+            "top": 24,
+            "width": 100,
+            "height": 28,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "b7c9432d-6957-4035-98c1-1f90401824a1": {
+            "left": 0,
+            "top": 52,
+            "width": 50,
+            "height": 28,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "5e068d93-1a77-42e2-87ed-1e20aaab58f4": {
+            "left": 50,
+            "top": 52,
+            "width": 50,
+            "height": 28,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "98e6ea4e-f524-4c99-b2af-d1bc254caa29": {
+            "left": 0,
+            "top": 80,
+            "width": 50,
+            "height": 26,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "460c6784-2306-4665-8e9e-47b0b13465f8": {
+            "left": 50,
+            "top": 80,
+            "width": 50,
+            "height": 26,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "9430012b-a0d7-46ac-9b4e-5cbf722170cd": {
+            "left": 0,
+            "top": 106,
+            "width": 100,
+            "height": 40,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "7312210f-a6ca-4579-91e0-75b55f68b215": {
+            "left": 0,
+            "top": 146,
+            "width": 100,
+            "height": 40,
+            "sizingUnit": "%",
+            "zIndex": 0
+          }
+        },
+        "sm": {
+          "0d117c6b-3569-411e-8167-f9fefad979cc": {
+            "left": 0,
+            "top": 0,
+            "width": 100,
+            "height": 8,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "300b1cf6-983c-4635-84a0-84c227b681d8": {
+            "left": 0,
+            "top": 8,
+            "width": 100,
+            "height": 16,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "37f6dc9c-ab90-4c72-baf6-8fd0ba57cd80": {
+            "left": 0,
+            "top": 24,
+            "width": 100,
+            "height": 28,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "b7c9432d-6957-4035-98c1-1f90401824a1": {
+            "left": 0,
+            "top": 52,
+            "width": 100,
+            "height": 28,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "5e068d93-1a77-42e2-87ed-1e20aaab58f4": {
+            "left": 0,
+            "top": 80,
+            "width": 100,
+            "height": 28,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "98e6ea4e-f524-4c99-b2af-d1bc254caa29": {
+            "left": 0,
+            "top": 108,
+            "width": 100,
+            "height": 26,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "460c6784-2306-4665-8e9e-47b0b13465f8": {
+            "left": 0,
+            "top": 134,
+            "width": 100,
+            "height": 26,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "9430012b-a0d7-46ac-9b4e-5cbf722170cd": {
+            "left": 0,
+            "top": 160,
+            "width": 100,
+            "height": 40,
+            "sizingUnit": "%",
+            "zIndex": 0
+          },
+          "7312210f-a6ca-4579-91e0-75b55f68b215": {
+            "left": 0,
+            "top": 200,
+            "width": 100,
+            "height": 40,
+            "sizingUnit": "%",
+            "zIndex": 0
+          }
+        }
+      },
+      "id": "content",
+      "layouts": {
+        "lg": {
+          "width": 100,
+          "height": 100,
+          "align": "center",
+          "sizingUnit": "%",
+          "cellSize": 2
+        },
+        "md": {
+          "width": 100,
+          "height": 100,
+          "align": "center",
+          "sizingUnit": "%",
+          "cellSize": 6
+        },
+        "sm": {
+          "width": 100,
+          "height": 100,
+          "align": "center",
+          "sizingUnit": "%",
+          "cellSize": 10
+        }
+      },
+      "block_hidden": []
+    },
+    "javascripts": {
+      "onPageLoad": []
+    },
+    "css": [],
+    "theme": {
+      "template": {
+        "header": true,
+        "leftSidebar": true,
+        "rightSidebar": false,
+        "footer": false
+      },
+      "customProperties": {}
+    }
+  },
+  "tags": [
+    "helios",
+    "sales"
+  ],
+  "access": {
+    "groups": []
+  },
+  "id": "ea9ac302-7fe5-4488-a3f9-78715c184f3e",
+  "updated_at": "2026-06-29T19:47:17.010097Z",
+  "created_at": "2026-06-29T18:32:46.380604Z"
+}

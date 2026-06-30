@@ -1,0 +1,7 @@
+{
+  "name": "SAVE URI PARAMETERS TO RUNNER",
+  "snippet": "async function uploadSavedUrlAsTextFile() {\n  const savedUrl = localStorage.getItem(\"savedUrl\");\n  if (!savedUrl) {\n    alert('Please save a URL first');\n    return;\n  }\n\n  const userName = 'admin';\n  const password = 'uHkwV1ww82wckDyh';\n  const encodedCredentials = btoa(`${userName}:${password}`);\n\n  const fileName = 'saved-url.txt';\n  const file = new File([savedUrl], fileName, { type: 'text/plain' });\n\n  const formData = new FormData();\n  formData.append('file', file);\n\n  try {\n    const response = await fetch('https://patrick-mcgrory-mitto3.zuarbase.net/api/v2/files/upload', {\n      method: 'POST',\n      headers: {\n        'Authorization': `Basic ${encodedCredentials}`,\n      },\n      body: formData,\n    });\n\n    if (response.ok) {\n      const data = await response.json();\n      alert('File uploaded successfully');\n      console.log(data);\n    } else {\n      throw new Error('Error uploading file');\n    }\n  } catch (error) {\n    alert('Error uploading file');\n    console.error(error);\n  }\n}\n",
+  "id": "187d6756-0e94-4fcd-9a13-382e99bca291",
+  "updated_at": "2023-12-05T18:40:19.226501Z",
+  "created_at": "2023-12-05T18:40:19.226518Z"
+}

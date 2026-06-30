@@ -1,0 +1,89 @@
+{
+  "name": "DW · Fact Sales Order Line",
+  "sql": "SELECT\n    gs                                                                          AS sales_order_line_id,\n    ((gs - 1) / 3) + 1                                                          AS sales_order_id,    -- FK, 3 lines/order\n    ((gs - 1) % 3) + 1                                                          AS line_number,\n    1 + (('x'||substr(md5('SOLPROD'||gs::text),1,8))::bit(32)::bigint % 200)    AS product_id,\n    1 + (('x'||substr(md5('SOLQTY'||gs::text),1,8))::bit(32)::bigint % 20)      AS quantity,\n    round((( ('x'||substr(md5('SOLPRICE'||gs::text),1,8))::bit(32)::bigint % 50000)/100.0 + 10)::numeric, 2) AS unit_price,\n    round((( ('x'||substr(md5('SOLDISC'||gs::text),1,8))::bit(32)::bigint % 30))::numeric / 100.0, 2)        AS discount_pct\nFROM generate_series(1, 15000) AS gs",
+  "json_data": null,
+  "tags": [
+    "data-warehouse",
+    "fact",
+    "sales",
+    "sample"
+  ],
+  "default_params": [],
+  "id": "5d54ac03-6f8e-4031-9cf6-1f9e42c55f22",
+  "columns": [
+    {
+      "name": "sales_order_line_id",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "sales_order_id",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "line_number",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "product_id",
+      "type_code": 20,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(8)"
+    },
+    {
+      "name": "quantity",
+      "type_code": 20,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(8)"
+    },
+    {
+      "name": "unit_price",
+      "type_code": 1700,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": 65535,
+      "scale": 65535,
+      "null_ok": null,
+      "type": "NUMERIC"
+    },
+    {
+      "name": "discount_pct",
+      "type_code": 1700,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": 65535,
+      "scale": 65535,
+      "null_ok": null,
+      "type": "NUMERIC"
+    }
+  ],
+  "updated_at": "2026-06-29T16:46:30.179923Z",
+  "created_at": "2026-06-29T16:46:30.179934Z",
+  "error": null,
+  "database_connection": null
+}

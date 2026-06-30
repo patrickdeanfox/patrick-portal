@@ -1,0 +1,7 @@
+{
+  "name": "Insert Fonts",
+  "snippet": "const fonts = [\n        'https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap',\n        'https://fonts.googleapis.com/css2?family=Roboto&display=swap'\n    ];\n\nconst doc = document.querySelector('iframe');\nconst ifrDoc = doc.contentDocument;\n\nconst linkEl1 = ifrDoc.createElement(\"link\");\nlinkEl1.href = \"https://fonts.googleapis.com\";\nlinkEl1.rel = \"preconnect\";\nlinkEl1.crossorigin = true;\nifrDoc.head.appendChild(linkEl1);\n\nvar linkEl2 = ifrDoc.createElement(\"link\");\nlinkEl2.href = \"https://fonts.gstatic.com\";\nlinkEl2.rel = \"preconnect\";\nifrDoc.head.appendChild(linkEl2);\n\nfonts.forEach(font => {\n    var linkEl3 = ifrDoc.createElement(\"link\");\n    linkEl3.href = font;\n    linkEl3.rel = \"stylesheet\";\n    ifrDoc.head.appendChild(linkEl3);\n});\n",
+  "id": "7ef35827-a406-44cf-bb91-505a0a44af16",
+  "updated_at": "2022-10-20T16:34:23.575412Z",
+  "created_at": "2022-10-04T17:02:33.601967Z"
+}

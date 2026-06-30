@@ -1,0 +1,128 @@
+{
+  "name": "DW · CRM Lead",
+  "sql": "SELECT\n    gs                                                                          AS lead_id,\n    'LEAD-' || lpad(gs::text, 6, '0')                                          AS lead_code,\n    (ARRAY['Alice','Bob','Charlie','Diana','Eve','Frank','Grace','Henry','Ivy','Jack'])\n        [1 + (('x'||substr(md5('LDFN'||gs::text),1,8))::bit(32)::bigint % 10)]\n        || ' ' ||\n    (ARRAY['Smith','Jones','Brown','Garcia','Miller','Davis','Lopez','Wilson','Lee','Clark'])\n        [1 + (('x'||substr(md5('LDLN'||gs::text),1,8))::bit(32)::bigint % 10)]  AS lead_name,\n    'lead' || gs || '@prospect.com'                                             AS email,\n    1 + (('x'||substr(md5('LDEMP'||gs::text),1,8))::bit(32)::bigint % 300)      AS owner_employee_id,\n    1 + (('x'||substr(md5('LDCMP'||gs::text),1,8))::bit(32)::bigint % 100)      AS campaign_id,\n    (ARRAY['Web Form','Cold Call','Event','Referral','Partner','Inbound'])\n        [1 + (('x'||substr(md5('LDSRC'||gs::text),1,8))::bit(32)::bigint % 6)]  AS lead_source,\n    (ARRAY['New','Contacted','Qualified','Unqualified','Converted'])\n        [1 + (('x'||substr(md5('LDSTAT'||gs::text),1,8))::bit(32)::bigint % 5)] AS status,\n    (('x'||substr(md5('LDSCORE'||gs::text),1,8))::bit(32)::bigint % 100)        AS lead_score,\n    (CURRENT_DATE - (('x'||substr(md5('LDDATE'||gs::text),1,8))::bit(32)::bigint % 730)::int) AS created_date,\n    CASE WHEN (('x'||substr(md5('LDSTAT'||gs::text),1,8))::bit(32)::bigint % 5) = 4   -- 'Converted' bucket\n         THEN 1 + (('x'||substr(md5('LDCUST'||gs::text),1,8))::bit(32)::bigint % 2000)\n         ELSE NULL END                                                          AS converted_customer_id\nFROM generate_series(1, 3000) AS gs",
+  "json_data": null,
+  "tags": [
+    "crm",
+    "data-warehouse",
+    "sample"
+  ],
+  "default_params": [],
+  "id": "f8e32399-b13d-4547-8a2d-4a2393ff5c01",
+  "columns": [
+    {
+      "name": "lead_id",
+      "type_code": 23,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(4)"
+    },
+    {
+      "name": "lead_code",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "lead_name",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "email",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "owner_employee_id",
+      "type_code": 20,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(8)"
+    },
+    {
+      "name": "campaign_id",
+      "type_code": 20,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(8)"
+    },
+    {
+      "name": "lead_source",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "status",
+      "type_code": 25,
+      "display_size": null,
+      "internal_size": -1,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "TEXT"
+    },
+    {
+      "name": "lead_score",
+      "type_code": 20,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(8)"
+    },
+    {
+      "name": "created_date",
+      "type_code": 1082,
+      "display_size": null,
+      "internal_size": 4,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "DATE"
+    },
+    {
+      "name": "converted_customer_id",
+      "type_code": 20,
+      "display_size": null,
+      "internal_size": 8,
+      "precision": null,
+      "scale": null,
+      "null_ok": null,
+      "type": "INTEGER(8)"
+    }
+  ],
+  "updated_at": "2026-06-29T16:48:40.465108Z",
+  "created_at": "2026-06-29T16:48:40.465121Z",
+  "error": null,
+  "database_connection": null
+}

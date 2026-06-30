@@ -1,0 +1,7 @@
+{
+  "name": "SAVE URI PARAMETERS SCRIPT",
+  "snippet": "function loadSavedUrl() {\n  const savedUrl = localStorage.getItem(\"savedUrl\");\n  if (savedUrl) {\n    window.location.href = savedUrl;\n  } else {\n    alert(\"No URL saved!\");\n  }\n}\n\ndocument.getElementById(\"saveUrlBtn\").addEventListener(\"click\", function() {\n  const currentUrl = window.location.href;\n  localStorage.setItem(\"savedUrl\", currentUrl);\n  alert(\"URL saved!\");\n});\n\ndocument.getElementById(\"clearUrlBtn\").addEventListener(\"click\", function() {\n  localStorage.removeItem(\"savedUrl\");\n  alert(\"Saved URL cleared!\");\n});\n\ndocument.getElementById(\"loadUrlBtn\").addEventListener(\"click\", function() {\n  loadSavedUrl();\n});\n\ndocument.getElementById(\"uploadBtn\").addEventListener(\"click\", function() {\n  uploadSavedUrlAsTextFile();\n});",
+  "id": "acb384f5-7459-4101-b9f2-dd9915203196",
+  "updated_at": "2023-12-05T18:39:39.856933Z",
+  "created_at": "2023-12-05T18:39:39.856947Z"
+}

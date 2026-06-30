@@ -1,0 +1,7 @@
+{
+  "name": "counter",
+  "snippet": "window.onload = function() {\n    // Check if a count already exists in localStorage\n    if (localStorage.getItem(\"count\") === null) {\n        // If not, initialize it to 1\n        localStorage.setItem(\"count\", 1);\n    } else {\n        // If it does, increment the count\n        localStorage.setItem(\"count\", Number(localStorage.getItem(\"count\")) + 1);\n    }\n\n    // Get the count from localStorage and set it as the page counter\n    var count = localStorage.getItem(\"count\");\n\n    // Display the counter. This is where you'll need to implement\n    // logic to control the 8-segment display based on the count.\n    document.querySelector(\".counter\").textContent = count;\n}\n",
+  "id": "68a33933-0f0d-408f-9e2d-386667da8a3e",
+  "updated_at": "2023-06-15T19:29:05.442862Z",
+  "created_at": "2023-06-15T19:29:05.442875Z"
+}

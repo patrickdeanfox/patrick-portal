@@ -1,0 +1,81 @@
+{
+  "name": "Helios Dark",
+  "user_id": null,
+  "json_data": {
+    "customProperties": {
+      "--header-height": "85px",
+      "--footer-height": "85px",
+      "--sidebar-left-width": "255px",
+      "--sidebar-right-width": "250px",
+      "--page-max-width": "initial",
+      "--page-min-width": "initial",
+      "--modal-width-sm": "300px",
+      "--modal-width-md": "500px",
+      "--modal-width-lg": "800px",
+      "--font-size": "13px",
+      "--font-stack-primary": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+      "--font-stack-heading": "var(--font-stack-primary)",
+      "--color-primary": "#FFD21E",
+      "--color-primary-dark": "#E0B000",
+      "--color-secondary": "#FF3D8B",
+      "--color-info": "#34B9F3",
+      "--color-success": "#36D399",
+      "--color-danger": "#FF5A6E",
+      "--color-text": "#F4F4F7",
+      "--color-link": "#FFD21E",
+      "--color-link-visited": "#FFB3D6",
+      "--color-white": "#F4F4F7",
+      "--color-darkgray": "#8A8A96",
+      "--color-lightgray": "#C2C2CC",
+      "--body-bg-color": "#0B0B0D",
+      "--header-bg-color": "#0E0E12",
+      "--sidebar-bg-color": "#0C0C10",
+      "--footer-bg-color": "#0C0C10",
+      "--block-bg-color": "#15151A",
+      "--modal-bg-color": "#15151A",
+      "--color-gray-50": "#0E0E12",
+      "--color-gray-100": "#15151A",
+      "--color-gray-200": "#26262B",
+      "--color-gray-300": "#2A2A32",
+      "--color-gray-400": "#3A3A44",
+      "--color-gray-500": "#8A8A96",
+      "--color-gray-600": "#A0A0AC",
+      "--color-gray-700": "#C2C2CC",
+      "--color-gray-800": "#DCDCE4",
+      "--color-gray-900": "#F4F4F7",
+      "--input-bg-color": "#1B1B21",
+      "--input-text-color": "#F4F4F7",
+      "--input-border-color": "#2A2A32",
+      "--input-highlight-bg-color": "#23232B",
+      "--input-highlight-text-color": "#FFD21E",
+      "--button-primary-bg-color": "var(--color-primary)",
+      "--button-primary-text-color": "#0B0B0D",
+      "--button-primary-border-color": "var(--color-primary)",
+      "--button-primary-hover-color": "#FFDE52",
+      "--button-secondary-bg-color": "var(--color-secondary)",
+      "--button-secondary-text-color": "#0B0B0D",
+      "--button-secondary-border-color": "var(--color-secondary)",
+      "--button-secondary-hover-color": "#FF5DA0"
+    },
+    "css": [
+      ".header-1-c196691b-ca1d-4bb2-a5cd-4106332949c0, .id-c196691b-ca1d-4bb2-a5cd-4106332949c0 {",
+      "    overflow: visible !important;",
+      "    z-index: 99 !important;",
+      "}"
+    ],
+    "chartTheme": "kelly",
+    "fonts": [],
+    "favicon": {
+      "ext": "png"
+    },
+    "logo": {
+      "ext": "png"
+    }
+  },
+  "access": {
+    "groups": []
+  },
+  "id": "a5a122b7-51c8-40ed-be2e-633005eecc34",
+  "updated_at": "2026-06-29T18:29:44.372339Z",
+  "created_at": "2024-07-15T16:15:43.128288Z"
+}

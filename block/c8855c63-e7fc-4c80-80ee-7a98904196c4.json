@@ -1,0 +1,35 @@
+{
+  "name": "HC · KPI Band",
+  "type": "html",
+  "css": [
+    ".hc-kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;height:100%;box-sizing:border-box;font-family:var(--font-stack-primary,system-ui,-apple-system,sans-serif);}\n.hc-kpis .hc-kpi{background:#fff;border:1px solid rgba(0,0,0,.07);border-radius:12px;box-shadow:0 1px 3px rgba(16,24,40,.06);padding:14px 16px;display:flex;flex-direction:column;justify-content:center;gap:6px;min-width:0;}\n.hc-kpis .hc-kpi-top{display:flex;align-items:center;gap:8px;}\n.hc-kpis .hc-kpi-dot{width:8px;height:8px;border-radius:50%;background:var(--color-primary,#009fe4);flex:0 0 auto;}\n.hc-kpis .hc-kpi-label{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:#6b7280;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}\n.hc-kpis .hc-kpi-val{font-size:26px;font-weight:800;color:var(--color-text,#1f2937);line-height:1;letter-spacing:-.01em;}\n.hc-kpis .hc-kpi-sub{font-size:11px;color:#9ca3af;font-weight:600;}\n@media(max-width:1100px){.hc-kpis{grid-template-columns:repeat(3,1fr);}}\n@media(max-width:640px){.hc-kpis{grid-template-columns:repeat(2,1fr);}}"
+  ],
+  "json_data": {
+    "isolated": false,
+    "html": [
+      "<div class=\"hc-kpis\">\n  <div class=\"hc-kpi\"><div class=\"hc-kpi-top\"><span class=\"hc-kpi-dot\"></span><span class=\"hc-kpi-label\">Total Patients</span></div><div class=\"hc-kpi-val\" id=\"k-patients\">—</div><div class=\"hc-kpi-sub\" id=\"k-patients-sub\">&nbsp;</div></div>\n  <div class=\"hc-kpi\"><div class=\"hc-kpi-top\"><span class=\"hc-kpi-dot\"></span><span class=\"hc-kpi-label\">Total Revenue</span></div><div class=\"hc-kpi-val\" id=\"k-revenue\">—</div><div class=\"hc-kpi-sub\" id=\"k-revenue-sub\">&nbsp;</div></div>\n  <div class=\"hc-kpi\"><div class=\"hc-kpi-top\"><span class=\"hc-kpi-dot\"></span><span class=\"hc-kpi-label\">Avg Length of Stay</span></div><div class=\"hc-kpi-val\" id=\"k-los\">—</div><div class=\"hc-kpi-sub\">weighted by patients</div></div>\n  <div class=\"hc-kpi\"><div class=\"hc-kpi-top\"><span class=\"hc-kpi-dot\"></span><span class=\"hc-kpi-label\">Readmission Rate</span></div><div class=\"hc-kpi-val\" id=\"k-readmit\">—</div><div class=\"hc-kpi-sub\" id=\"k-readmit-sub\">&nbsp;</div></div>\n  <div class=\"hc-kpi\"><div class=\"hc-kpi-top\"><span class=\"hc-kpi-dot\"></span><span class=\"hc-kpi-label\">Departments</span></div><div class=\"hc-kpi-val\" id=\"k-depts\">—</div><div class=\"hc-kpi-sub\">in view</div></div>\n  <div class=\"hc-kpi\"><div class=\"hc-kpi-top\"><span class=\"hc-kpi-dot\"></span><span class=\"hc-kpi-label\">Physicians</span></div><div class=\"hc-kpi-val\" id=\"k-phys\">—</div><div class=\"hc-kpi-sub\">in view</div></div>\n</div>\n<script>(function(){\n  var DS_ID=\"dd2191e6-9dc3-4ff3-8b63-6f2e33c07c2a\";\n  var D=String.fromCharCode(36);\n  function rows(){var cb=(typeof currentBlock!=='undefined')?currentBlock:null;var r=cb&&cb.queryResults&&cb.queryResults[0];if(!r)return[];if(Array.isArray(r.mappedData))return r.mappedData;var cols=(r.columns||[]).map(function(c){return typeof c==='string'?c:(c&&c.name);});return(r.data||[]).map(function(rw){var o={};cols.forEach(function(c,i){o[c]=rw[i];});return o;});}\n  function num(v){var n=parseFloat(v);return isNaN(n)?0:n;}\n  function fmtInt(n){return Math.round(n).toLocaleString();}\n  function fmtMoney(n){if(n>=1e6)return D+(n/1e6).toFixed(2)+'M';if(n>=1e3)return D+Math.round(n/1e3)+'K';return D+fmtInt(n);}\n  function set(id,v){var e=document.getElementById(id);if(e)e.textContent=v;}\n  function render(){var d=rows();var pat=0,rev=0,re=0,losw=0,deps={},phys={};d.forEach(function(r){var pc=num(r.patient_count);pat+=pc;rev+=num(r.revenue);re+=num(r.readmissions);losw+=num(r.avg_los_days)*pc;if(r.department)deps[r.department]=1;if(r.physician)phys[r.physician]=1;});set('k-patients',fmtInt(pat));set('k-revenue',fmtMoney(rev));set('k-revenue-sub',pat?(D+fmtInt(rev/pat)+' / patient'):' ');set('k-los',(pat?(losw/pat):0).toFixed(1)+' d');set('k-readmit',(pat?(re/pat*100):0).toFixed(1)+'%');set('k-readmit-sub',fmtInt(re)+' readmissions');set('k-depts',Object.keys(deps).length);set('k-phys',Object.keys(phys).length);set('k-patients-sub',(Object.keys(deps).length)+' depts');}\n  function init(){var loaded=(typeof currentBlock!=='undefined'&&currentBlock&&currentBlock.getOnLoadedCallback)?currentBlock.getOnLoadedCallback():function(){};try{render();}finally{loaded();}try{if(typeof zPortal!=='undefined'&&zPortal.dataSource&&zPortal.dataSource.on)zPortal.dataSource.on('load',DS_ID,render);}catch(e){}}\n  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();\n})();</script>"
+    ]
+  },
+  "ui_queries": [
+    {
+      "enabled": true,
+      "page_size": null,
+      "filter_strategy": {
+        "type": "blacklist",
+        "value": []
+      },
+      "query_id": "ad4f4c31-e9e8-438a-9a44-426c2a3bcda0"
+    }
+  ],
+  "tags": [
+    "healthcare",
+    "industry-showcase",
+    "kpi"
+  ],
+  "access": {
+    "groups": []
+  },
+  "id": "c8855c63-e7fc-4c80-80ee-7a98904196c4",
+  "updated_at": "2026-06-26T15:55:51.747991Z",
+  "created_at": "2026-06-26T15:38:23.890780Z"
+}
